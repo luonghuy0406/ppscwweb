@@ -1,17 +1,22 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import Footer from "./Footer";
 import Header from "./Header";
+import { makeStyles } from "@mui/styles";
 
-function DefaultLayout({children}) {
-    return ( 
-        <div>
-            <Header/>
-            <div className="content">
-                {children}
-            </div>
-            <Footer/>
-        </div>
-     );
+
+
+
+
+function DefaultLayout({ children }) {
+  
+
+  return (
+    <>
+      <Header />
+      <Grid container></Grid>
+    </>
+  );
 }
 
 export default DefaultLayout;
