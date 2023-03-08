@@ -14,7 +14,7 @@ function DefaultLayout({ children }) {
   return (
     <>
       <Header />
-      <Grid container></Grid>
+      <Grid container>{children}</Grid>
     </>
   );
 }

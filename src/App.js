@@ -1,17 +1,12 @@
 import React, { Fragment } from "react";
-import { HashRouter } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { publicRoutes } from "./routes";
 import { DefaultLayout } from "./components/Layout";
-
+import { Routes, Route, HashRouter } from "react-router-dom";
 function App() {
-  return <div>
-    ádasdasdsadassad
-  </div>
   return (
     <HashRouter>
-      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Routes>
             {publicRoutes.map((route, index) => {
@@ -31,8 +26,7 @@ function App() {
             })}
           </Routes>
         </div>
-      </Router>
-    </HashRouter>
+      </HashRouter>
   );
 }
 
