@@ -1,34 +1,38 @@
-import React, { Fragment } from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import './App.css';
-import  {publicRoutes} from './routes'
-import {DefaultLayout} from './components/Layout'
-
+import React, { Fragment } from "react";
+import { HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { publicRoutes } from "./routes";
+import { DefaultLayout } from "./components/Layout";
 
 function App() {
+  return <div>
+    ádasdasdsadassad
+  </div>
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <div className="App">
-        <Routes>
-          {
-            publicRoutes.map((route, index)=>{
-              const Layout = route.layout === null ? Fragment : DefaultLayout             
-              const Page = route.component
+    <HashRouter>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="App">
+          <Routes>
+            {publicRoutes.map((route, index) => {
+              const Layout = route.layout === null ? Fragment : DefaultLayout;
+              const Page = route.component;
               return (
-                <Route 
-                  key={index} 
-                  path={route.path} 
+                <Route
+                  key={index}
+                  path={route.path}
                   element={
                     <Layout>
-                      <Page/>
+                      <Page />
                     </Layout>
-                  }/>
-              )
-            })
-          }
-        </Routes>
-      </div>
-    </Router>
+                  }
+                />
+              );
+            })}
+          </Routes>
+        </div>
+      </Router>
+    </HashRouter>
   );
 }
 
