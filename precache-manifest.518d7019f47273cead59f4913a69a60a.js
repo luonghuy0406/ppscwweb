@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "38bc370c4f1a8e7c989f",
+    "revision": "07ff31cb177dafa3eeb7",
     "url": "/ppscwweb/static/css/main.fa88dcfc.chunk.css"
   },
   {
-    "revision": "38bc370c4f1a8e7c989f",
-    "url": "/ppscwweb/static/js/main.ed29e033.chunk.js"
+    "revision": "07ff31cb177dafa3eeb7",
+    "url": "/ppscwweb/static/js/main.ba53960a.chunk.js"
   },
   {
     "revision": "77a0f24e2d9346a54cb5",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/ppscwweb/static/media/getFetch.2b2b7da4.cjs"
   },
   {
-    "revision": "a57672b6cf96caf9cb03696506959b3a",
+    "revision": "d507ae8e78b125113fc5314c34a5a745",
     "url": "/ppscwweb/index.html"
   }
 ];
