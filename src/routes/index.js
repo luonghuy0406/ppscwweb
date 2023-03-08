@@ -4,9 +4,9 @@ import Products from '../pages/Products';
 
 // public view
 const publicRoutes = [
-    {path:'/',component:Home},    
-    {path:'/about',component:AboutUs},
-    {path:'/product',component:Products, layout: null},
+    {path:'/',component:Home,label:"Home"},    
+    {path:'/about',component:AboutUs,label:"About us"},
+    {path:'/product',component:Products, layout: null,label:"Product"},
 ]
 
 //need to login

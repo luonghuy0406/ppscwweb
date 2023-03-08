@@ -1,24 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import i18n from './translation/i18n';
-import { I18nextProvider } from 'react-i18next';
-import { HashRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import i18n from "./translation/i18n";
+import { I18nextProvider } from "react-i18next";
+import { HashRouter } from "react-router-dom";
 
-window.currentLanguage = 'en'
+window.currentLanguage = "en";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <HashRouter> */}
-      <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18n}>
+      <HashRouter>
         <App />
-      </I18nextProvider>
-    {/* </HashRouter> */}
-   
-
+      </HashRouter>
+    </I18nextProvider>
   </React.StrictMode>
 );
 

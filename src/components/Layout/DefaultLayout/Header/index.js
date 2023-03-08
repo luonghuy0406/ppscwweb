@@ -17,12 +17,17 @@ import LanguageSwitch from "./LanguageSwitch";
 import { makeStyles } from "@mui/styles";
 import { Trans, useTranslation } from "react-i18next";
 import { Translation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { publicRoutes } from "../../../../routes";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "Brand", "Product", "Service", "Contact"];
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "var(--primary-color) !important",
     maxHeight: "60px",
+    position:"fixed !important",
+    top:"0",
+    left:"0"
   },
   menu: {
     backgroundColor: "var(--primary-color) !important",
@@ -126,6 +131,7 @@ function Header(props) {
             }}
           >
             {pages.map((page) => (
+
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -135,13 +141,17 @@ function Header(props) {
                   display: "block", 
                   fontSize:"1rem", 
                   fontWeight:"bold",
+                  borderRadius:"unset",
+                  transition: "0.25s",
                   '&:hover': {
-                    borderBottom: '1px solid #fff',
+                    // boxShadow:  "0px 2px 0px #ffffff"
+                    boxShadow: "inset 0 -2px 0 0 #ffffff"
                   },
                 }}
               >
                 {t(page)}
               </Button>
+              
             ))}
           </Box>
 

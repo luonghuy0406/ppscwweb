@@ -24,7 +24,7 @@ function LanguageSwitch() {
   };
   return (
     <>
-      <IconButton onMouseEnter={handleOpenUserMenu}  sx={{ p: 0 }}>
+      <IconButton onClick={handleOpenUserMenu}  sx={{ p: 0 }}>
         <img src={lang[currentLang].icon} width={32} />
       </IconButton>
       <Menu
