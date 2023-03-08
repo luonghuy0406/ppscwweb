@@ -7,7 +7,7 @@ import {DefaultLayout} from './components/Layout'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/home'>
       <div className="App">
         <Routes>
           {

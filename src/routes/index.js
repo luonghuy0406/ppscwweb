@@ -4,7 +4,7 @@ import Products from '../pages/Products';
 
 // public view
 const publicRoutes = [
-    {path:'/',component:Home},    
+    {path:'/home',component:Home},    
     {path:'/about',component:AboutUs},
     {path:'/product',component:Products, layout: null},
 ]
