@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "60px",
     position:"fixed !important",
     top:"0",
-    left:"0"
+    left:"0",
+    zIndex:"1"
   },
   menu: {
     backgroundColor: "var(--primary-color) !important",
@@ -49,7 +50,7 @@ function Header(props) {
     <AppBar position="static" classes={{ root: classes.header }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ width: "100px" }}>
+          <Box sx={{width:{xs:"0", md: "100px"},justifyContent: "center", display: 'flex' }}>
             <Typography
               variant="h6"
               noWrap
@@ -69,7 +70,7 @@ function Header(props) {
             </Typography>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow:0, display: { xs: "flex", md: "none" },justifyContent:{xs:"flex-start"} ,width:{xs:"100px", md: "0"}}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -77,6 +78,7 @@ function Header(props) {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{p:0}}
             >
               <MenuIcon />
             </IconButton>
@@ -105,24 +107,27 @@ function Header(props) {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <Box sx={{flexGrow: {xs:1,md:0},justifyContent: "center", display: 'flex' }}>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+                justifyContent: "center"
+              }}
+            >
+              LOGO a
+            </Typography>
+          </Box>
+          
           <Box
             sx={{
               flexGrow: 1,
@@ -130,32 +135,41 @@ function Header(props) {
               justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
-
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ 
-                  m: 1, 
-                  color: "white", 
-                  display: "block", 
-                  fontSize:"1rem", 
-                  fontWeight:"bold",
-                  borderRadius:"unset",
-                  transition: "0.25s",
-                  '&:hover': {
-                    // boxShadow:  "0px 2px 0px #ffffff"
-                    boxShadow: "inset 0 -2px 0 0 #ffffff"
-                  },
-                }}
-              >
-                {t(page)}
-              </Button>
-              
-            ))}
+            {pages.map((page) => {
+              let path ='/404'
+              Object.values(publicRoutes).forEach((route)=>{
+                if(page === route.label){
+                  path = route.path
+                }
+              })
+              return (
+                <Link key={page} to={path} style={{ textDecoration: 'none' }}>
+                  <Button
+                    
+                    onClick={handleCloseNavMenu}
+                    sx={{ 
+                      m: 1, 
+                      px:3,
+                      color: "white", 
+                      display: "block", 
+                      fontSize:"1rem", 
+                      fontWeight:"bold",
+                      borderRadius:"unset",
+                      transition: "0.25s",
+                      '&:hover': {
+                        // boxShadow:  "0px 2px 0px #ffffff"
+                        boxShadow: "inset 0 -2px 0 0 #ffffff"
+                      },
+                    }}
+                  >
+                    {t(page)}
+                  </Button>
+                </Link>
+              )
+            })}
           </Box>
 
-          <Box sx={{ flexGrow: 0, width: "100px",justifyContent: "flex-end", display: 'flex'}}>
+          <Box sx={{ flexGrow: 0, width: "100px",justifyContent: {xs:"flex-end", md: "center"}, display: 'flex'}}>
             <LanguageSwitch />
           </Box>
         </Toolbar>

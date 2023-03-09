@@ -1,7 +1,7 @@
 import { IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
-import en from "./us.png";
-import vi from "./vietnam.png";
+import en from "../../../../assets/images/us.png";
+import vi from "../../../../assets/images/vietnam.png";
 import { useTranslation } from 'react-i18next'
 
 const lang = {en:{label: "English",icon: en },vi:{label: "Tiếng Việt",icon: vi }};

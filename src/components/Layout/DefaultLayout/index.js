@@ -11,6 +11,7 @@ import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
 import SaveIcon from "@mui/icons-material/Save";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
+import { Typography } from "@mui/material";
 const actions = [
   { icon: <FileCopyIcon />, name: "Copy" },
   { icon: <SaveIcon />, name: "Save" },
@@ -45,6 +46,7 @@ function DefaultLayout({ children }) {
           ))}
         </SpeedDial>
       </Box>
+      <Footer />
     </div>
   );
 }

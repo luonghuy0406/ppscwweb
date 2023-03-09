@@ -1,5 +1,8 @@
 {
-    "Home" : "Nhà", 
+    "Home" : "Trang chủ", 
+    "Brand" : "Thương hiệu", 
+    "Service" : "Dịch vụ", 
+    "Contact" : "Liên hệ", 
     "About us" : "Về chúng tôi", 
     "Product" : "Sản phẩm"
 }
