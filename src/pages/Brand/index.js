@@ -20,10 +20,10 @@ const useStyles = makeStyles((props) => ({
     marginLeft:"0 !important"
   },
   background: {
-    backgroundColor: "#eee",
+    backgroundColor: "var(--gray-color)",
   },
   backgroundWhite: {
-    backgroundColor: "#fff",
+    backgroundColor: "white",
   }
 }));
 
@@ -35,7 +35,7 @@ function Brand() {
       <Container maxWidth="lg" sx={{p:2}}>
         <Grid container spacing={2} classes={{root:classes.container}}>
           <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}}>
-            <Typography fontFamily={"var(--font-family)"} variant="h5" component="h5" sx={{color:"#fff"}} fontWeight="bolder">
+            <Typography fontFamily={"var(--font-family)"} variant="h5" component="h5" sx={{color:"white"}} fontWeight="bolder">
               {t("Our brand")}
             </Typography>
             <span className={'line-brand'}></span>

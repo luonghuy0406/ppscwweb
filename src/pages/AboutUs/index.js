@@ -29,14 +29,14 @@ function AboutUs() {
                 {t("ABOUT US")}
             </Typography>
             <span className={'line-about-us'}></span>
-            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3}>
+            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3} fontSize="17px">
               {t("About us content")}
             </Typography>
             <Typography fontFamily={"var(--font-family)"} variant="h5" component="h5" fontWeight="bolder">
                 {t("MOTTO, MISSION")}
             </Typography>
             <span className={'line-about-us'}></span>
-            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3}>
+            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3} fontSize="17px">
               {t("Mission content")}
             </Typography>
           </Grid>

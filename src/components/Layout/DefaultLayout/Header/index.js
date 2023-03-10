@@ -195,8 +195,7 @@ function Header(props) {
                       transition: "0.25s",
                       fontFamily: "var(--font-family)",
                       "&:hover": {
-                        // boxShadow:  "0px 2px 0px #ffffff"
-                        boxShadow: "inset 0 -2px 0 0 #ffffff",
+                        boxShadow: "inset 0 -2px 0 0 white",
                       },
                     }}
                   >

@@ -4,6 +4,7 @@ import ChildBrand from '../pages/Brand/ChildBrand';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import Products from '../pages/Products';
+import Service from '../pages/Service';
 
 // public view
 const publicRoutes = [
@@ -11,6 +12,7 @@ const publicRoutes = [
     {path:'/about',component:AboutUs,label:"About us"},
     {path:'/product',component:Products,label:"Product"},
     {path:'/brand',component:Brand,label:"Brand"},
+    {path:'/service',component:Service,label:"Service"},
     {path:'/brand/:id',component:ChildBrand},
     {path:'/404',component:NotFound,label:"404",layout:null},
     {path:'*',component:NotFound,layout:null},
