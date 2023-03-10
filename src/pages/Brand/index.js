@@ -31,7 +31,7 @@ function Brand() {
   const classes = useStyles();
   const {t} = useTranslation()
   return (
-    <Grid item md={12} sx={{padding:"70px 0",backgroundColor:"var(--primary-color)"}}>
+    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"70px 0"},backgroundColor:"var(--primary-color)"}}>
       <Container maxWidth="lg" sx={{p:2}}>
         <Grid container spacing={2} classes={{root:classes.container}}>
           <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}}>

@@ -21,7 +21,7 @@ function AboutUs() {
   const classes = useStyles();
   const { t } = useTranslation();
   return (
-    <Grid item md={12} sx={{padding:"70px 0"}}>
+    <Grid item md={12} sx={{padding:{xs:"25px 0",md:"70px 0"}}}>
       <Container maxWidth="lg" sx={{p:2}}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>

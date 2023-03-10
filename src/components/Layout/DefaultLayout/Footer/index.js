@@ -2,20 +2,14 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Container, Grid, Typography, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
-    padding: "20px",
+    padding: "20px 0",
     marginTop: "20px",
     marginBottom: "20px",
   },
   item: {
-    // display: 'flex',
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     marginBottom: "15px",
   },
 }));
