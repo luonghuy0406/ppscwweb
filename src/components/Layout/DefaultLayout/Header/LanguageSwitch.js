@@ -7,13 +7,14 @@ import { useTranslation } from 'react-i18next'
 const lang = {en:{label: "English",icon: en },vi:{label: "Tiếng Việt",icon: vi }};
 
 function LanguageSwitch() {
-  const [currentLang, setCurrentLang] = useState('en');
+  const [currentLang, setCurrentLang] = useState(window.currentLanguage);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const { t, i18n } = useTranslation()
   const changeLanguageHandler = (lang) =>
      {
        i18n.changeLanguage(lang)
        setCurrentLang(lang)
+       window.currentLanguage = lang
      }
   const handleCloseUserMenu = (e) => {
     setAnchorElUser(null);
@@ -54,9 +55,8 @@ function LanguageSwitch() {
             <ListItemIcon >
                 <img src={lang[language].icon}/>
             </ListItemIcon>
-            <ListItemText>{lang[language].label}</ListItemText>
-            {/* <Typography textAlign="center">{lang[language].label}</Typography> */}
-          </MenuItem>
+            <ListItemText> <Typography fontFamily={"var(--font-family)"} textAlign="center">{lang[language].label}</Typography></ListItemText>
+            </MenuItem>
         ))}
       </Menu>
     </>

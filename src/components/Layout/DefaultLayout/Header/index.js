@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Grid from "@mui/material/Grid";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,16 +19,25 @@ import { Trans, useTranslation } from "react-i18next";
 import { Translation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { publicRoutes } from "../../../../routes";
+import logo from "../../../../assets/images/logo_white.png";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 
 const pages = ["Home", "Brand", "Product", "Service", "Contact"];
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "var(--primary-color) !important",
     maxHeight: "60px",
-    position:"fixed !important",
-    top:"0",
-    left:"0",
-    zIndex:"1"
+    position: "fixed !important",
+    top: "0",
+    left: "0",
+    zIndex: "1",
   },
   menu: {
     backgroundColor: "var(--primary-color) !important",
@@ -37,40 +46,54 @@ const useStyles = makeStyles((theme) => ({
 
 function Header(props) {
   const classes = useStyles();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(false);
   const { t } = useTranslation();
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+    setAnchorElNav(true);
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setAnchorElNav(false);
   };
+
   return (
     <AppBar position="static" classes={{ root: classes.header }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{width:{xs:"0", md: "100px"},justifyContent: "center", display: 'flex' }}>
+          <Box
+            sx={{
+              width: { xs: "0",md: "0", lg: "150px" },
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
             <Typography
+              fontFamily={"var(--font-family)"}
               variant="h6"
               noWrap
               component="a"
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
+                display: { xs: "none",md: "none", lg: "flex" },
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
-              LOGO
+              <img src={logo} width={90} />
             </Typography>
           </Box>
 
-          <Box sx={{ flexGrow:0, display: { xs: "flex", md: "none" },justifyContent:{xs:"flex-start"} ,width:{xs:"100px", md: "0"}}}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: { xs: "flex", md: "flex", lg: "none" },
+              justifyContent: { xs: "flex-start" },
+              width: { xs: "100px",md: "100px", lg: "0" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -78,98 +101,120 @@ function Header(props) {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{p:0}}
+              sx={{ p: 0 }}
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
+            <Drawer
+              anchor={"left"}
+              open={anchorElNav}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              <Box
+                sx={{ width: 250 }}
+                role="presentation"
+                onClick={handleCloseNavMenu}
+                onKeyDown={handleCloseNavMenu}
+              >
+                <List>
+                  {pages.map((text, index) => {
+                    let path = "/404";
+                    Object.values(publicRoutes).forEach((route) => {
+                      if (text === route.label) {
+                        path = route.path;
+                      }
+                    });
+                    return (
+                      <Link key={index} to={path} style={{ textDecoration: "none" }}>
+                        <ListItem key={text} disablePadding>
+                          <ListItemButton>
+                            <ListItemText primary={t(text)} />
+                          </ListItemButton>
+                        </ListItem>
+                      </Link>
+                    );
+                  })}
+                </List>
+              </Box>
+            </Drawer>
           </Box>
-          <Box sx={{flexGrow: {xs:1,md:0},justifyContent: "center", display: 'flex' }}>
+          <Box
+            sx={{
+              flexGrow: { xs: 1,md: 1, lg: 0 },
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
             <Typography
+              fontFamily={"var(--font-family)"}
               variant="h5"
               noWrap
               component="a"
               href=""
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "none" },
+                display: { xs: "flex", md: "flex", lg: "none" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
-                justifyContent: "center"
+                justifyContent: "center",
               }}
             >
-              LOGO a
+              <img src={logo} width={70} />
             </Typography>
           </Box>
-          
+
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none",md: "none", lg: "flex" },
               justifyContent: "center",
             }}
           >
             {pages.map((page) => {
-              let path ='/404'
-              Object.values(publicRoutes).forEach((route)=>{
-                if(page === route.label){
-                  path = route.path
+              let path = "/404";
+              Object.values(publicRoutes).forEach((route) => {
+                if (page === route.label) {
+                  path = route.path;
                 }
-              })
+              });
               return (
-                <Link key={page} to={path} style={{ textDecoration: 'none' }}>
+                <Link key={page} to={path} style={{ textDecoration: "none" }}>
                   <Button
-                    
                     onClick={handleCloseNavMenu}
-                    sx={{ 
-                      m: 1, 
-                      px:3,
-                      color: "white", 
-                      display: "block", 
-                      fontSize:"1rem", 
-                      fontWeight:"bold",
-                      borderRadius:"unset",
+                    sx={{
+                      m: 1,
+                      px: 3,
+                      color: "white",
+                      display: "block",
+                      fontSize: "1rem",
+                      fontWeight: "bold",
+                      borderRadius: "unset",
                       transition: "0.25s",
-                      '&:hover': {
+                      fontFamily: "var(--font-family)",
+                      "&:hover": {
                         // boxShadow:  "0px 2px 0px #ffffff"
-                        boxShadow: "inset 0 -2px 0 0 #ffffff"
+                        boxShadow: "inset 0 -2px 0 0 #ffffff",
                       },
                     }}
                   >
                     {t(page)}
                   </Button>
                 </Link>
-              )
+              );
             })}
           </Box>
 
-          <Box sx={{ flexGrow: 0, width: "100px",justifyContent: {xs:"flex-end", md: "center"}, display: 'flex'}}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              width: { xs: "100px",md: "100px", lg: "150px" },
+              justifyContent: { xs: "flex-end",md: "flex-end", lg: "center" },
+              display: "flex",
+            }}
+          >
             <LanguageSwitch />
           </Box>
         </Toolbar>

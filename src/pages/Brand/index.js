@@ -10,34 +10,42 @@ import br7 from "../../assets/images/Picture7.png";
 import br8 from "../../assets/images/Picture8.png";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const arrBrand = [br1, br2, br3, br4, br5, br6, br7, br8];
 
 const useStyles = makeStyles((props) => ({
+  container:{
+    width: "calc(100%)  !important",
+    marginLeft:"0 !important"
+  },
   background: {
-    backgroundColor: "#eee"
+    backgroundColor: "#eee",
   },
   backgroundWhite: {
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
   }
 }));
 
 function Brand() {
   const classes = useStyles();
+  const {t} = useTranslation()
   return (
-    <Grid item md={12} sx={{padding:"50px 0",backgroundColor:"var(--primary-color)"}}>
-      <Container maxWidth="md" sx={{p:2}}>
-        <Grid container spacing={2}>
+    <Grid item md={12} sx={{padding:"70px 0",backgroundColor:"var(--primary-color)"}}>
+      <Container maxWidth="lg" sx={{p:2}}>
+        <Grid container spacing={2} classes={{root:classes.container}}>
           <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}}>
-            <Typography variant="h5" component="h5" sx={{color:"#fff"}}>
-              Our brands
+            <Typography fontFamily={"var(--font-family)"} variant="h5" component="h5" sx={{color:"#fff"}} fontWeight="bolder">
+              {t("Our brand")}
             </Typography>
             <span className={'line-brand'}></span>
           </Grid>
           {arrBrand.map((brand, index) => {
             return (
               <Grid
+                key={"brand-"+index}
                 classes={[0,2,5,7].indexOf(index) > -1 ? { root: classes.background } : {root: classes.backgroundWhite}}
+                sx={{padding:{xs:"10px !important",md:"35px 25px !important"}}}
                 item
                 xs={6}
                 md={3}
@@ -46,19 +54,21 @@ function Brand() {
                 alignItems="center"
                 container
               >
-                <Link to={'/brand/'+index} style={{ textDecoration: 'none' }}>
+                <Link to={'/brand/'+index} style={{ textDecoration: 'none'}}>
+                    <div style={{display: 'flex', alignItems:'center', justifyContent: 'center',width:'100%', height:"100%"}}>
                     <Box
-                    component="img"
-                    sx={{
-                        width: { xs: "50%", md: "70%" },
-                        aspectRatio: " 3/2",
-                        objectFit: "contain",
-                        maxHeight: { xs: 233, md: 167 },
-                        maxWidth: { xs: 350, md: 250 },
-                    }}
-                    //   alt="The house from the offer."
-                    src={brand}
-                    />
+                      component="img"
+                      sx={{
+                          width: { xs: "60%", md: "80%" },
+                          aspectRatio: " 3/2",
+                          objectFit: "contain",
+                          maxHeight: { xs: 233, md: 167 },
+                          maxWidth: { xs: 350, md: 250 },
+                      }}
+                      //   alt="The house from the offer."
+                      src={brand}
+                      />
+                    </div>
                 </Link>
                 
               </Grid>
