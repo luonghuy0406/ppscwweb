@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "68fef9acda1ab73894ab",
-    "url": "./static/css/main.257758e7.chunk.css"
+    "revision": "64c093dcdfa8a0845597",
+    "url": "./static/css/main.8937b2bd.chunk.css"
   },
   {
-    "revision": "68fef9acda1ab73894ab",
-    "url": "./static/js/main.27ab9d9d.chunk.js"
+    "revision": "64c093dcdfa8a0845597",
+    "url": "./static/js/main.a205bccf.chunk.js"
   },
   {
-    "revision": "5b67ac18faa7bbb019d1",
-    "url": "./static/js/runtime~main.5a18b826.js"
+    "revision": "1b7b8097da9a52156511",
+    "url": "./static/js/runtime~main.beddebed.js"
   },
   {
-    "revision": "5db26fb37a4f9fb61784",
-    "url": "./static/js/2.69f44bb3.chunk.js"
+    "revision": "28de75b061db3f3d2b62",
+    "url": "./static/js/2.ccd66c60.chunk.js"
   },
   {
-    "revision": "c85602717d63b5955765",
-    "url": "./static/js/3.3ee3a74e.chunk.js"
+    "revision": "6f8c0c0c6d56b4cfaa47",
+    "url": "./static/js/3.748633a4.chunk.js"
   },
   {
     "revision": "f2cc71834f00995b996efa5c31aa4353",
@@ -52,7 +52,23 @@ self.__precacheManifest = [
     "url": "./static/media/aboutus.33859171.png"
   },
   {
-    "revision": "322079bcb027ac023829535e19975cd7",
+    "revision": "b56bd2aa8499350e627ce18ffa8f7b24",
+    "url": "./static/media/MIR.b56bd2aa.png"
+  },
+  {
+    "revision": "c9291779160f386fbda9a702cc937564",
+    "url": "./static/media/SELL.c9291779.png"
+  },
+  {
+    "revision": "5e38d16f30dc38f0e6d681f4286aae4e",
+    "url": "./static/media/RENTAL.5e38d16f.png"
+  },
+  {
+    "revision": "e1ce3a2e12b7938896a5d2b23ab2f452",
+    "url": "./static/media/OTHER.e1ce3a2e.png"
+  },
+  {
+    "revision": "ff062b92ff8a23b1bc66af46d1a76681",
     "url": "./index.html"
   }
 ];
