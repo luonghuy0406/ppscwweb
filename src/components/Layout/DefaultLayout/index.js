@@ -20,7 +20,12 @@ const actions = [
 ];
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop:"60px !important"
+    '@media (max-width:600px)': {
+      marginTop: '56px !important',
+    },
+    '@media (min-width:600px)': {
+      marginTop: '60px !important',
+    },
   },
 }));
 function DefaultLayout({ children }) {

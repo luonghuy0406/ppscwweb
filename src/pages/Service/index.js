@@ -50,20 +50,56 @@ const useStyles = makeStyles((props) => ({
   },
   root: {
     paddingLeft:"0",
-    "& &:hover":{
-        '& $box':{
-            backgroundSize:'210%',
+    paddingBottom: "25px",
+    "&:hover":{
+        '& > div div':{
             backgroundColor:"var(--primary-color)",
-            color:"white"
-        }
+            color:"white !important",
+            backgroundSize:'210%',
+        }, '& > div div p':{
+          color:"white !important",
+      }
     }
   },
   image: {
     maxWidth: '100%',
     maxHeight: '100%',
   },
-  box:{
-
+  boxContent:{
+    height: '400px',
+    backgroundColor:"#f5f5f5",
+    color:"var(--primary-color)",
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    flexDirection:"column",
+    transition: 'background-color .2s linear',
+  },
+  boxImage:{
+    width: '100%',
+    height: '400px',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize:'200%',
+    transition: 'background-size .3s linear',
+  },
+  content:{
+    fontFamily:"var(--font-family) !important",
+    color:"var(--primary-color)",
+    '@media (max-width:600px)': {
+      fontSize: '15px !important',
+    },
+    '@media (min-width:600px)': {
+      fontSize: '17px !important',
+    },
+  },
+  button:{
+    backgroundColor: "var(--primary-color) !important",
+    fontWeight: "bold !important",
+    padding: "10px 15px !important",
+    "&:hover" : {
+      backgroundColor:"var(--secondary-color) !important",
+    }
   }
 }));
 
@@ -74,56 +110,35 @@ function Service() {
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
       <Container maxWidth="lg" sx={{ p: 2 }}>
-        <Grid container classes={{ root: classes.container }} spacing={4}>
+        <Typography style={{ padding: theme.spacing(5), paddingTop:"0" }} color={"var(--primary-color)"} fontFamily={"var(--font-family)"} variant="h4" component="h4" fontWeight="bolder" textAlign={"center"}>
+            {t("OUR SERVICE")}
+        </Typography>
+        <Grid container classes={{ root: classes.container }}>
           {service.map((item, index) => {
             return (
               <Grid item xs={12} md={12} container direction={ (index%2!=0) ?  "row-reverse" :"row"} classes={{root:classes.root}}>
                     <Grid item xs={12} md={6}>
                         <Box
-                            className={classes.box}
+                            className={classes.boxImage}
                             sx={{
-                                width: '100%',
-                                height: 400,
                                 backgroundImage: `url('${item.img}')`,
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center',
-                                backgroundSize:'200%',
-                                transition: 'background-size .3s linear',
-                                // '&:hover': {
-                                //     backgroundSize:'210%',
-                                // },
                             }}
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box
-                        className={classes.box}
-                            sx={{
-                                height: '400px',
-                                backgroundColor:"#f5f5f5",
-                                color:"var(--primary-color)",
-                                display:"flex",
-                                alignItems:"center",
-                                justifyContent:"center",
-                                flexDirection:"column",
-                                transition: 'all .2s linear',
-                                // '&:hover': {
-                                //     backgroundColor:"var(--primary-color)",
-                                //     color:"white"
-                                // },
-                            }}
-                        >
-                            <div style={{padding:"25px",textAlign:"center"}}>
+                            className={classes.boxContent}>
+                            <label style={{padding:"25px",textAlign:"center"}}>
                                 <Typography style={{ padding: theme.spacing(2) }} fontFamily={"var(--font-family)"} variant="h5" component="h5" fontWeight="bolder" px={2}>
                                     {t(item.label)}
                                 </Typography>
-                                <Typography fontFamily={"var(--font-family)"} fontSize="17px">
+                                <Typography className={classes.content}>
                                     {t(item.content)}
                                 </Typography>
-                            </div>
-                            <div>
+                            </label>
+                            <label>
                                 <FormContact/>
-                            </div>
+                            </label>
                             
                         </Box>
                     </Grid>
@@ -141,8 +156,9 @@ export default Service;
 
 
 const FormContact = () =>{
-    const [open, setOpen] = React.useState(false);
-    const {t} = useTranslation()
+  const [open, setOpen] = React.useState(false);
+  const {t} = useTranslation()
+  const classes = useStyles();
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -153,7 +169,7 @@ const FormContact = () =>{
 
   return (
     <div>
-      <Button  variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen} className={classes.button}>
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>

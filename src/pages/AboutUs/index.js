@@ -15,6 +15,21 @@ const useStyles = makeStyles   ((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
+  wrapperImage:{
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  content:{
+    fontFamily:"var(--font-family) !important",
+    color:"var(--primary-color) !important",
+    '@media (max-width:600px)': {
+      fontSize: '15px !important',
+    },
+    '@media (min-width:600px)': {
+      fontSize: '17px !important',
+    },
+  }
 }));
 
 function AboutUs() {
@@ -29,18 +44,18 @@ function AboutUs() {
                 {t("ABOUT US")}
             </Typography>
             <span className={'line-about-us'}></span>
-            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3} fontSize="17px">
+            <Typography variant="body1" py={3} className={classes.content}>
               {t("About us content")}
             </Typography>
             <Typography fontFamily={"var(--font-family)"} variant="h5" component="h5" fontWeight="bolder">
                 {t("MOTTO, MISSION")}
             </Typography>
             <span className={'line-about-us'}></span>
-            <Typography fontFamily={"var(--font-family)"} variant="body1" py={3} fontSize="17px">
+            <Typography variant="body1" py={3} className={classes.content}>
               {t("Mission content")}
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} classes={{root:classes.wrapperImage}}>
             <img src={aboutus} alt="About us picture" className={classes.image} />
           </Grid>
         </Grid>
