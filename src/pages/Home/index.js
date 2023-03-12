@@ -1,10 +1,13 @@
 import { Box, Container, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import banner from '../../assets/videos/banner.mp4'
 import AboutUs from "../AboutUs";
 import Brand from "../Brand";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
      <Grid item xs={12}>

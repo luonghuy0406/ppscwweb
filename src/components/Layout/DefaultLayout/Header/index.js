@@ -67,23 +67,24 @@ function Header(props) {
               display: "flex",
             }}
           >
-            <Typography
-              fontFamily={"var(--font-family)"}
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none",md: "none", lg: "flex" },
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              <img src={logo} width={90} />
-            </Typography>
+            <Link to={'/'}>
+              <Typography
+                fontFamily={"var(--font-family)"}
+                variant="h6"
+                noWrap
+                component="a"
+                sx={{
+                  mr: 2,
+                  display: { xs: "none",md: "none", lg: "flex" },
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                <img src={logo} width={90} />
+              </Typography>
+            </Link>
           </Box>
 
           <Box
@@ -128,7 +129,7 @@ function Header(props) {
                       <Link key={index} to={path} style={{ textDecoration: "none" }}>
                         <ListItem key={text} disablePadding>
                           <ListItemButton>
-                            <ListItemText primary={t(text)} />
+                            <ListItemText primary={t(text)} sx={{fontFamily:"var(--font-family)",fontWeight:"bold", color:"var(--primary-color)", textTransform:"uppercase"}}/>
                           </ListItemButton>
                         </ListItem>
                       </Link>
@@ -145,25 +146,27 @@ function Header(props) {
               display: "flex",
             }}
           >
-            <Typography
-              fontFamily={"var(--font-family)"}
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "flex", lg: "none" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                justifyContent: "center",
-              }}
-            >
-              <img src={logo} width={70} />
-            </Typography>
+            <Link to={'/'}>
+              <Typography
+                fontFamily={"var(--font-family)"}
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "flex", lg: "none" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={logo} width={70} />
+              </Typography>
+            </Link>
           </Box>
 
           <Box

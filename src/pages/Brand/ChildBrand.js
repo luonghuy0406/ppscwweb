@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { Grid, Box, Container, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import br1 from "../../assets/images/Picture1.png";
 import br2 from "../../assets/images/Picture2.png";

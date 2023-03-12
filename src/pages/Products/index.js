@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Grid,
   Container,
@@ -144,16 +144,27 @@ const useStyles = makeStyles((props) => ({
     "&:hover":{
         color:"white !important",
         backgroundColor:"var(--primary-color) !important"
+      //   , '& > button':{
+      //     color:"white !important",
+      // }
+    }
+  },
+  button: {
+    "&:hover":{
+      color: "var(--secondary-color)"
     }
   }
 }));
 
 function Products() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const classes = useStyles();
   const { t } = useTranslation();
   const theme = useTheme();
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
+    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
       <Container maxWidth="lg" sx={{ p: 2 }}>
         <Typography
           style={{ padding: theme.spacing(5), paddingTop: "0" }}
@@ -183,7 +194,7 @@ function Products() {
                     </CardContent>
                     <CardActions>
                         <Link to={`/product/${item.id}`}  style={{ textDecoration: 'none'}}>
-                            <Button > Learn More</Button>
+                            <Button classes={{root: classes.button}}> Learn More</Button>
                         </Link>
                     </CardActions>
                   </Card>

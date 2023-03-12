@@ -38,3 +38,9 @@ body {
   background-color: var(--secondary-color);
   margin-top:5px;
 }
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 18px #1a76d242;
+  }
+}

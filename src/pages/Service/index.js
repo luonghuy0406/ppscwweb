@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Container, CardMedia, CardContent, Card, Typography, useTheme } from "@mui/material";
 import mir from "../../assets/images/MIR.png";
 import sales from "../../assets/images/SELL.png";
@@ -66,7 +66,15 @@ const useStyles = makeStyles((props) => ({
     maxHeight: '100%',
   },
   boxContent:{
-    height: '400px',
+    "@media (max-width:600px)": {
+      height: '250px',
+    },
+    "@media (max-width:900px)": {
+      height: '300px',
+    },
+    "@media (min-width:900px)": {
+      height: '600px',
+    },
     backgroundColor:"#f5f5f5",
     color:"var(--primary-color)",
     display:"flex",
@@ -77,7 +85,15 @@ const useStyles = makeStyles((props) => ({
   },
   boxImage:{
     width: '100%',
-    height: '400px',
+    "@media (max-width:600px)": {
+      height: '250px',
+    },
+    "@media (max-width:900px)": {
+      height: '300px',
+    },
+    "@media (min-width:900px)": {
+      height: '600px',
+    },
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize:'200%',
@@ -100,10 +116,28 @@ const useStyles = makeStyles((props) => ({
     "&:hover" : {
       backgroundColor:"var(--secondary-color) !important",
     }
-  }
+  },
+   textLabel :{
+
+    "@media (max-width:600px)": {
+      padding: '10px',
+      textAlign: 'center'
+    },
+    "@media (max-width:900px)": {
+      padding: '20px',
+      textAlign: 'center'
+    },
+    "@media (min-width:900px)": {
+      padding: '25px',
+      textAlign: 'center'
+    },
+   }
 }));
 
 function Service() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const classes = useStyles();
   const { t } = useTranslation();
   const theme = useTheme();
@@ -111,7 +145,7 @@ function Service() {
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
       <Container maxWidth="lg" sx={{ p: 2 }}>
         <Typography style={{ padding: theme.spacing(5), paddingTop:"0" }} color={"var(--primary-color)"} fontFamily={"var(--font-family)"} variant="h4" component="h4" fontWeight="bolder" textAlign={"center"}>
-            {t("OUR SERVICE")}
+            {t("OUR BUSINESS")}
         </Typography>
         <Grid container classes={{ root: classes.container }}>
           {service.map((item, index) => {
@@ -128,8 +162,8 @@ function Service() {
                     <Grid item xs={12} md={6}>
                         <Box
                             className={classes.boxContent}>
-                            <label style={{padding:"25px",textAlign:"center"}}>
-                                <Typography style={{ padding: theme.spacing(2) }} fontFamily={"var(--font-family)"} variant="h5" component="h5" fontWeight="bolder" px={2}>
+                            <label className={classes.textLabel}>
+                                <Typography style={{ padding: {xs: theme.spacing(1), md: theme.spacing(1), lg:theme.spacing(2)} }} fontFamily={"var(--font-family)"} variant="h5" component="h5" fontWeight="bolder">
                                     {t(item.label)}
                                 </Typography>
                                 <Typography className={classes.content}>
