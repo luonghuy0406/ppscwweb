@@ -25,7 +25,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 
@@ -198,7 +197,8 @@ function Header(props) {
                       transition: "0.25s",
                       fontFamily: "var(--font-family)",
                       "&:hover": {
-                        boxShadow: "inset 0 -2px 0 0 white",
+                        boxShadow: "inset 0 -2px 0 0 var(--secondary-color)",
+                        color: "var(--secondary-color)",
                       },
                     }}
                   >

@@ -6,14 +6,16 @@
     "About us" : "Về chúng tôi", 
     "Product" : "Sản phẩm",
     "Our brand": "Thương hiệu của chúng tôi",
-    "HEAD OFFICE" : "HEAD OFFICE",
-    "VUNG TAU OFFICE":"VUNG TAU OFFICE",
+    "HEAD OFFICE" : "TRỤ SỞ CHÍNH",
+    "VUNG TAU OFFICE":"VĂN PHÒNG VŨNG TÀU",
     "Floor 1st, Building 16 Yen The St, Ward 2, Tan Binh Dist., HCMC, Viet Nam" : "Tầng 1, Toà nhà số 16 Yên Thế, Phường 2, Quận Tân Bình, HCMC, Việt Nam.",
     "D1-2/8 Chi Linh Urban Area, Vung Tau City, Viet Nam" : "D1-2/8 Khu đô thị Chí Linh, Thành phố Vũng Tàu, Việt Nam." ,
     "ABOUT US" : "VỀ CHÚNG TÔI",
-    "MOTTO, MISSION" : "Phương châm, Sứ mệnh",
-    "About us content": "Pacific Pressure Systems and Components (PPSC) được thành lập năm 2021 thuộc nhóm công ty Pressure System Builders có kinh nghiệm trên 20 năm trong việc cung cấp các thiết bị cho các ngành công nghiệp. PPSC tự hào là nhà nhập khẩu và phân phối chính hãng các sản phẩm từ các hãng nổi tiếng tại thị trường Việt Nam. Với đội ngũ nhân viên, kỹ thuật viên chuyên nghiệp, kết hợp với dịch vụ tư vấn kỹ thuật cụ thể cho các loại hàng hóa, chúng tôi tự tin đem đến trải nghiệm an toàn và đáng tin cậy cho khách hàng. Với uy tín và trách nhiệm cao, PPSC cam kết cung cấp đúng chủng loại, chính hãng nhà sản xuất mà chúng tôi đang phân phối. Hàng hóa được đảm bảo chất lượng tốt, đúng nguồn gốc, đầy đủ chứng từ CO, CQ/CC, thời gian giao hàng nhanh, giá thành cạnh tranh.",
-    "Mission content" : "Công ty Pacific Pressure Systems and Components luôn hoạt động với phương châm: “Đem đến dịch vụ toàn diện và chất lượng nhất”, với mục tiêu cung cấp sản phẩm và tư vấn kỹ thuật tốt nhất, phù hợp với yêu cầu của Quý khách hàng. Chúng tôi đảm bảo sự hài lòng và tin tưởng mà Quý hàng giao phó cho chúng ",
+    "Our mission" : "Sứ mệnh của chúng tôi",
+    "About us content": "Pacific Pressure Systems and Components Co., Ltd (PPSC) là thành viên của Pressure System Builders Group với hơn 20 năm kinh nghiệm bán thiết bị cho nhiều lĩnh vực khác nhau. Đội ngũ của chúng tôi bao gồm các nhân viên và kỹ thuật viên có trình độ với dịch vụ tư vấn kỹ thuật chuyên biệt, giúp chúng tôi tự tin mang đến trải nghiệm đáng tin cậy cho khách hàng.",
+    "About us content2": "Chúng tôi tự hào là nhà phân phối ủy quyền của các thương hiệu nổi tiếng tại Việt Nam. Với uy tín và trách nhiệm cao, PPSC cam kết cung cấp sản phẩm đúng chủng loại, chính hãng từ nhà sản xuất mà chúng tôi đang phân phối. Hàng hóa được đảm bảo chất lượng cao, nguồn gốc xuất xứ rõ ràng, đầy đủ chứng từ CO, CQ/CC, thời gian giao hàng nhanh chóng và giá cả cạnh tranh.",
+    
+    "Mission content" : "“Mang đến dịch vụ chất lượng và toàn diện nhất”, với mục tiêu cung cấp sản phẩm tốt nhất và tư vấn kỹ thuật phù hợp với nhu cầu của khách hàng, chúng tôi không phụ lòng tin mà khách hàng đã đặt vào chúng tôi.",
     "Sales content" :  "Với hơn 15 năm kinh nghiệm kinh doanh các loại máy móc thiết bị công nghiệp, Pacific Pressure System & Component tự hào là một trong những công ty đi đầu chuyên cung cấp các sản phẩm chất lượng cao với thời gian vận chuyển ngắn nhất, từ các nước Đức, Mỹ, Anh... đến các khách hàng trên toàn thế giới. ",
     "MIR content" :    "Những chuyên gia cơ khí của chúng tôi luôn cung cấp các dịch vụ chu đáo và tận tâm nhất đến quý khách, từ bảo trì, kiểm tra, sửa chữa máy móc nhằm hỗ trợ sản phẩm bạn mang tới có thể hoạt động tối ưu. Chúng tôi đã vinh dự nhận được những lời khen tặng đầy hài lòng nhờ vào sự chuyên nghiệp của mình. ",
     "Rental content" : "PPSC sở hữu những thiết bị luôn trong tình trạng sẵn sàng cho thuê theo thời hạn ngày, tháng, năm. ",
@@ -24,6 +26,7 @@
     "OTHER SERVICES" : "CÁC DỊCH VỤ KHÁC",
     "Contact us" : "Liên hệ chúng tôi",
     "OUR BUSINESS" : "DỊCH VỤ CỦA CHÚNG TÔI",
-    "PRODUCTS" : "Sản phẩm"
+    "PRODUCT LINES" : "DÒNG SẢN PHẨM",
+    "Our company" : "Công ty chúng tôi"
 }
 

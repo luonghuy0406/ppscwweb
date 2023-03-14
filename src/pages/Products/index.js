@@ -120,7 +120,6 @@ const useStyles = makeStyles((props) => ({
   },
   content: {
     fontFamily: "var(--font-family) !important",
-    color: "var(--primary-color)",
     "@media (max-width:600px)": {
       fontSize: "15px !important",
     },
@@ -138,15 +137,17 @@ const useStyles = makeStyles((props) => ({
   },
   card:{
     borderRadius: "0 !important", 
-    boxShadow: '0px 0px 0px 1px rgb(0 0 0 / 10%) !important' ,
+    boxShadow: 'unset !important' ,
+    backgroundColor:"var(--background-gray) !important",
     color:"var(--primary-color) !important",
     transition: 'all .2s linear !important',
+    cursor:"pointer",
     "&:hover":{
         color:"white !important",
         backgroundColor:"var(--primary-color) !important"
-      //   , '& > button':{
-      //     color:"white !important",
-      // }
+        , '& span':{
+          color:"var(--secondary-color) !important",
+      }
     }
   },
   button: {
@@ -175,31 +176,32 @@ function Products() {
           fontWeight="bolder"
           textAlign={"center"}
         >
-          {t("PRODUCTS")}
+          {t("PRODUCT LINES")}
         </Typography>
-        <Grid container classes={{ root: classes.container }} rowSpacing={{xs:2, sm: 2, md: 3}} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
+        <Grid container classes={{ root: classes.container }} rowSpacing={{xs:3, sm: 4, md: 5}} columnSpacing={{ xs: 0, sm: 4, md: 5 }}>
           {service.map((item, index) => {
             return (
-              <Grid item xs={12} md={6} lg={4} container>
-                <Grid item xs={12}>
-                  <Card className={classes.card}>
-                    <CardMedia
-                      sx={{ height: 300 }}
-                      image={item.img}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Link to={`/product/${item.id}`}  style={{ textDecoration: 'none'}}>
-                            <Button classes={{root: classes.button}}> Learn More</Button>
-                        </Link>
-                    </CardActions>
-                  </Card>
+              // <Link to={`/product/${item.id}`}>
+                <Grid item xs={12} md={6} container>
+                  <Grid item xs={12}>
+                    <Card className={classes.card}>
+                      <CardMedia
+                        sx={{ height: 300 }}
+                        image={item.img}
+                      />
+                      <CardContent classes={{root:classes.content}}>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                      </CardContent>
+                      <CardActions classes={{root:classes.content}}>
+                        <span> {t("Learn more")}</span>
+                      </CardActions>
+                    </Card>
+                  </Grid>
                 </Grid>
-              </Grid>
+              // </Link>
+              
             );
           })}
         </Grid>

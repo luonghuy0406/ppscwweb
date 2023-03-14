@@ -19,7 +19,7 @@ function Footer() {
   const { t } = useTranslation();
   return (
     <div className={classes.root}>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <Box>

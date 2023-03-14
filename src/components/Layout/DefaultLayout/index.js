@@ -6,17 +6,14 @@ import { makeStyles } from "@mui/styles";
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
 import SaveIcon from "@mui/icons-material/Save";
-import PrintIcon from "@mui/icons-material/Print";
-import ShareIcon from "@mui/icons-material/Share";
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const actions = [
-  { icon: <FileCopyIcon />, name: "Copy" },
-  { icon: <SaveIcon />, name: "Save" },
-  { icon: <PrintIcon />, name: "Print" },
-  { icon: <ShareIcon />, name: "Share" },
+  { icon: <FacebookIcon />, name: "facebook", link: 'https://www.facebook.com/ppscvn' },
+  { icon: <LinkedInIcon />, name: "linkedin", link: 'https://www.linkedin.com/in/ppscvn/' },
 ];
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -32,6 +29,16 @@ const useStyles = makeStyles((theme) => ({
       animation: 'pulse 2s infinite 2s cubic-bezier(0.25, 0, 0, 1)',
       boxShadow: '0 0 0 0 #1a76d242',
     }
+  },
+  buttonIcon :{
+    backgroundColor:"var(--primary-color) !important",
+    color:"white !important",
+    width:"50px !important",
+    height:"50px !important",
+    "&:hover" :{
+      backgroundColor:"var(--secondary-color) !important",
+    }
+    
   }
 }));
 function DefaultLayout({ children }) {
@@ -53,7 +60,8 @@ function DefaultLayout({ children }) {
             <SpeedDialAction
               key={action.name}
               icon={action.icon}
-              tooltipTitle={action.name}
+              className={classes.buttonIcon}
+              onClick={()=>{window.open(action.link, '_blank');}}
             />
           ))}
         </SpeedDial>

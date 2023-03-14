@@ -2,17 +2,17 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { Box } from "@mui/material";
+import cat_pumps from "../../assets/images/cat_pumps.png";
+import spir_star from "../../assets/images/spir_star.png";
+import techcal from "../../assets/images/techcal.png";
+import hydraulics_international from "../../assets/images/hydraulics_international.png";
+import graphic from "../../assets/images/graphic.png";
+import norriseal from "../../assets/images/norriseal.png";
+import taylor from "../../assets/images/taylor.png";
+import hidraulics from "../../assets/images/hidraulics.png";
 
-import br1 from "../../assets/images/Picture1.png";
-import br2 from "../../assets/images/Picture2.png";
-import br3 from "../../assets/images/Picture3.png";
-import br4 from "../../assets/images/Picture4.png";
-import br5 from "../../assets/images/Picture5.png";
-import br6 from "../../assets/images/Picture6.png";
-import br7 from "../../assets/images/Picture7.png";
-import br8 from "../../assets/images/Picture8.png";
+const arrBrand = [cat_pumps, spir_star, techcal, hydraulics_international, graphic, norriseal, taylor, hidraulics];
 
-const arrBrand = [br1, br2, br3, br4, br5, br6, br7, br8];
 function ChildBrand() {
     let { id } = useParams();
     return ( 

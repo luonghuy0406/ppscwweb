@@ -56,9 +56,13 @@ const useStyles = makeStyles((props) => ({
             backgroundColor:"var(--primary-color)",
             color:"white !important",
             backgroundSize:'210%',
-        }, '& > div div p':{
+        }, 
+        '& > div div p':{
           color:"white !important",
-      }
+        },
+        '& button':{
+          backgroundColor:"var(--secondary-color) !important",
+        }
     }
   },
   image: {
@@ -73,9 +77,9 @@ const useStyles = makeStyles((props) => ({
       height: '300px',
     },
     "@media (min-width:900px)": {
-      height: '600px',
+      height: '500px',
     },
-    backgroundColor:"#f5f5f5",
+    backgroundColor:"var(--background-gray)",
     color:"var(--primary-color)",
     display:"flex",
     alignItems:"center",
@@ -92,7 +96,7 @@ const useStyles = makeStyles((props) => ({
       height: '300px',
     },
     "@media (min-width:900px)": {
-      height: '600px',
+      height: '500px',
     },
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -142,8 +146,8 @@ function Service() {
   const { t } = useTranslation();
   const theme = useTheme();
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
-      <Container maxWidth="lg" sx={{ p: 2 }}>
+    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
+      <Container maxWidth="md" sx={{ p: 2 }}>
         <Typography style={{ padding: theme.spacing(5), paddingTop:"0" }} color={"var(--primary-color)"} fontFamily={"var(--font-family)"} variant="h4" component="h4" fontWeight="bolder" textAlign={"center"}>
             {t("OUR BUSINESS")}
         </Typography>
