@@ -10,7 +10,7 @@ import Service from '../pages/Service';
 // public view
 const publicRoutes = [
     {path:'/',component:Home,label:"Home"},    
-    {path:'/about',component:AboutUs,label:"About us"},
+    {path:'/about',component:AboutUs,label:"ABOUT US"},
     {path:'/product',component:Products,label:"Product"},
     {path:'/brand',component:Brand,label:"Brand"},
     {path:'/business',component:Service,label:"Our business"},

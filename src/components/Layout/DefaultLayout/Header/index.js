@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed !important",
     top: "0",
     left: "0",
-    zIndex: "1",
+    zIndex: "10",
   },
   menu: {
     backgroundColor: "var(--primary-color) !important",

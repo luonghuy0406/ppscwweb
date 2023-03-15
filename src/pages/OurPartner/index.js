@@ -10,7 +10,6 @@ import TBC_BALL from "../../assets/images/TBC_BALL.jpg";
 import THAINAM from "../../assets/images/THAINAM.png";
 import THINH_VUONG from "../../assets/images/THINH_VUONG.png";
 import { makeStyles } from "@mui/styles";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { useInView } from 'react-intersection-observer';
@@ -26,7 +25,6 @@ const useStyles = makeStyles((props) => ({
       "& img":{
         width:"95%",
         transition: 'width .1s linear !important',
-        
       }
     }
   },
@@ -43,8 +41,8 @@ function OurPartner() {
     threshold: 0,
   });
   return (
-    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"}}} ref={ref}>
-      <Container maxWidth="md" sx={{p:2}}>
+    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"}}}>
+      <Container maxWidth="md" sx={{p:2}} ref={ref}>
         <Grid container spacing={2} classes={{root:classes.container}} direction="row"
                 justifyContent="center"
                 alignItems="center">
@@ -60,14 +58,14 @@ function OurPartner() {
                 className={inView ? "animate__animated animate__fadeInRight animate__delay-0.7s" : "animate__animated animate__fadeOutLeft animate__delay-0.7s"}
                 key={"brand-"+index}
                 classes={{root: classes.background}}
-                sx={{padding:{xs:"10px !important",md:"15px !important"},height:{xs:"160px !important",md:"180px !important"}}}
+                sx={{padding:{xs:"10px !important",md:"15px !important"},height:{xs:"100px !important",md:"120px !important"}}}
                 item
                 xs={6}
                 md={3}
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                container
+                container 
               >
                 <div style={{display: 'flex', alignItems:'center', justifyContent: 'center',width:'100%', height:"100%"}}>
                     <Box

@@ -1,8 +1,9 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import banner from '../../assets/videos/banner.mp4'
 import AboutUs from "../AboutUs";
 import Brand from "../Brand";
+import FeaturedProduct from "../FeaturedProduct";
 import OurPartner from "../OurPartner";
 
 function Home() {

@@ -24,7 +24,9 @@ const useStyles = makeStyles((props) => ({
     backgroundColor: "var(--gray-color)",
     
     "&:hover":{
-      filter: 'drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.4))',
+      filter: 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))',
+      zIndex: '1',
+      backgroundColor: 'var(--primary-color)',
       "& img":{
         width:"95%",
         transition: 'width .1s linear !important',
@@ -35,7 +37,9 @@ const useStyles = makeStyles((props) => ({
   backgroundWhite: {
     backgroundColor: "white",
     "&:hover":{
-      filter: 'drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.4))',
+      filter: 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))',
+      zIndex: '1',
+      backgroundColor: 'var(--primary-color)',
       "& img":{
         width:"95%",
         transition: 'width .1s linear !important',
@@ -56,12 +60,12 @@ function Brand() {
     threshold: 0,
   });
   return (
-    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"},backgroundColor:"var(--primary-color)"}} ref={ref}>
+    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"}}} ref={ref}>
       <Container maxWidth="md" sx={{p:2}}>
         <Grid container spacing={2} classes={{root:classes.container}}>
           <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
-            <Typography fontFamily={"var(--font-family-header)"} variant="h4" component="h4" sx={{color:"white"}} fontWeight="bolder">
-              {t("Our brand")}
+            <Typography fontFamily={"var(--font-family-header)"} variant="h4" component="h4" sx={{color:"var(--primary-color)"}} fontWeight="bolder" >
+              {t("OUR BRAND")}
             </Typography>
             <span className={'line-brand'}></span>
           </Grid>
