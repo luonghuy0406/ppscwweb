@@ -1,7 +1,7 @@
 {
     "Home" : "Trang chủ", 
     "Brand" : "Thương hiệu", 
-    "Service" : "Dịch vụ", 
+    "Our business" : "Dịch vụ của chúng tôi", 
     "Contact" : "Liên hệ", 
     "About us" : "Về chúng tôi", 
     "Product" : "Sản phẩm",
@@ -27,6 +27,14 @@
     "Contact us" : "Liên hệ chúng tôi",
     "OUR BUSINESS" : "DỊCH VỤ CỦA CHÚNG TÔI",
     "PRODUCT LINES" : "DÒNG SẢN PHẨM",
-    "Our company" : "Công ty chúng tôi"
+    "Our company" : "Công ty chúng tôi",
+    "Our partner" : "Đối tác của chúng tôi",
+    "Full name" : "Họ tên",
+    "Email address" : "Địa chỉ emai",
+    "Phone number" : "Số điện thoại",
+    "Message" : "Lời nhắn",
+    "I'm interested in " : "Tôi quan tâm đến dịch vụ ",
+    "CANCEL" : "HUỶ",
+    "SEND" : "GỬI"
 }
 

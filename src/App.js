@@ -3,6 +3,8 @@ import "./App.css";
 import { publicRoutes } from "./routes";
 import { DefaultLayout } from "./components/Layout";
 import { Routes, Route} from "react-router-dom";
+import 'animate.css'
+
 function App() {
   return (
     <div className="App">

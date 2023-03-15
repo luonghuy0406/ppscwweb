@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import banner from '../../assets/videos/banner.mp4'
 import AboutUs from "../AboutUs";
 import Brand from "../Brand";
+import OurPartner from "../OurPartner";
 
 function Home() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function Home() {
     </Grid>
     <AboutUs/>
     <Brand/>
+    <OurPartner/>
     </>
    
   );

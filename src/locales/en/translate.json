@@ -1,7 +1,7 @@
 {
     "Home" : "Home", 
     "Brand" : "Brand", 
-    "Service" : "Service", 
+    "Our business" : "Our business", 
     "Contact" : "Contact", 
     "About us" : "About us", 
     "Product" : "Product",
@@ -26,5 +26,13 @@
     "Contact us" : "Contact us",
     "OUR BUSINESS" : "OUR BUSINESS",
     "PRODUCT LINES" : "PRODUCT LINES",
-    "Our company" : "Our company"
+    "Our company" : "Our company",
+    "Our partner" : "Our partner",
+    "Full name" : "Full name",
+    "Email address" : "Email address",
+    "Phone number" : "Phone number",
+    "Message" : "Message",
+    "I'm interested in " : "I'm interested in ",
+    "CANCEL" : "CANCEL",
+    "SEND" : "SEND"
 }

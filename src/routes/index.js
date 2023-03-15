@@ -13,7 +13,7 @@ const publicRoutes = [
     {path:'/about',component:AboutUs,label:"About us"},
     {path:'/product',component:Products,label:"Product"},
     {path:'/brand',component:Brand,label:"Brand"},
-    {path:'/service',component:Service,label:"Service"},
+    {path:'/business',component:Service,label:"Our business"},
     {path:'/brand/:id',component:ChildBrand},
     {path:'/product/:id',component:ChildProduct},
     {path:'/404',component:NotFound,label:"404",layout:null},

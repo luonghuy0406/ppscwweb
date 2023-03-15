@@ -12,6 +12,7 @@ import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { useInView } from 'react-intersection-observer';
 const arrBrand = [cat_pumps, spir_star, techcal, hydraulics_international, graphic, norriseal, taylor, hidraulics];
 
 const useStyles = makeStyles((props) => ({ 
@@ -20,7 +21,6 @@ const useStyles = makeStyles((props) => ({
     marginLeft:"0 !important"
   },
   background: {
-    margin:"1px",
     backgroundColor: "var(--gray-color)",
     
     "&:hover":{
@@ -33,7 +33,6 @@ const useStyles = makeStyles((props) => ({
     }
   },
   backgroundWhite: {
-    margin:"1px",
     backgroundColor: "white",
     "&:hover":{
       filter: 'drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.4))',
@@ -52,11 +51,15 @@ function Brand() {
   }, [])
   const classes = useStyles();
   const {t} = useTranslation()
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
   return (
-    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"},backgroundColor:"var(--primary-color)"}}>
+    <Grid item md={12} sx={{ padding:{xs:"25px 0",md:"50px 0"},backgroundColor:"var(--primary-color)"}} ref={ref}>
       <Container maxWidth="md" sx={{p:2}}>
         <Grid container spacing={2} classes={{root:classes.container}}>
-          <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}}>
+          <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
             <Typography fontFamily={"var(--font-family-header)"} variant="h4" component="h4" sx={{color:"white"}} fontWeight="bolder">
               {t("Our brand")}
             </Typography>
@@ -65,6 +68,7 @@ function Brand() {
           {arrBrand.map((brand, index) => {
             return (
               <Grid
+                className={inView ? "animate__animated animate__fadeInRight animate__delay-0.7s" : "animate__animated animate__fadeOutLeft animate__delay-0.7s"}
                 key={"brand-"+index}
                 classes={[0,2,5,7].indexOf(index) > -1 ? { root: classes.background } : {root: classes.backgroundWhite}}
                 sx={{padding:{xs:"10px !important",md:"15px !important"},height:{xs:"160px !important",md:"180px !important"}}}

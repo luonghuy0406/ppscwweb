@@ -175,7 +175,7 @@ function Service() {
                                 </Typography>
                             </label>
                             <label>
-                                <FormContact/>
+                                <FormContact content={t(item.label)}/>
                             </label>
                             
                         </Box>
@@ -193,7 +193,7 @@ function Service() {
 export default Service;
 
 
-const FormContact = () =>{
+const FormContact = ({...props}) =>{
   const [open, setOpen] = React.useState(false);
   const {t} = useTranslation()
   const classes = useStyles();
@@ -211,25 +211,52 @@ const FormContact = () =>{
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>{t("Contact")}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
-          </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Email Address"
+            name="name"
+            label={t("Full name")}
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            margin="dense"
+            id="email"
+            name="email"
+            label={t("Email address")}
             type="email"
             fullWidth
             variant="standard"
           />
+          <TextField
+            margin="dense"
+            id="phone"
+            name="phone"
+            label={t("Phone number")}
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            margin="dense"
+            id="Message"
+            name="Message"
+            label={t("Message")}
+            multiline
+            rows={4}
+            defaultValue={t("I'm interested in ") + props.content}
+            fullWidth
+            variant="standard"
+            pt={1}
+          />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>{t("CANCEL")}</Button>
+          <Button onClick={handleClose}>{t("SEND")}</Button>
         </DialogActions>
       </Dialog>
     </div>
