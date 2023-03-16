@@ -1,27 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "a5c6e8c271226481177f",
-    "url": "./static/css/main.aaed5226.chunk.css"
+    "revision": "b0d4b8421f2ee5f432d6",
+    "url": "./static/css/main.1f0aa84b.chunk.css"
   },
   {
-    "revision": "a5c6e8c271226481177f",
-    "url": "./static/js/main.44c12474.chunk.js"
+    "revision": "b0d4b8421f2ee5f432d6",
+    "url": "./static/js/main.d67cca77.chunk.js"
   },
   {
-    "revision": "f5841a2367222ccc0e28",
-    "url": "./static/js/runtime~main.0c49f834.js"
+    "revision": "5f114690593ed1716137",
+    "url": "./static/js/runtime~main.9aaf6374.js"
   },
   {
-    "revision": "7a0f8c41f91319153b7b",
-    "url": "./static/css/2.91d19fc4.chunk.css"
+    "revision": "af38986ff83430991a04",
+    "url": "./static/css/2.da01fc74.chunk.css"
   },
   {
-    "revision": "7a0f8c41f91319153b7b",
-    "url": "./static/js/2.1213de48.chunk.js"
+    "revision": "af38986ff83430991a04",
+    "url": "./static/js/2.66371708.chunk.js"
   },
   {
-    "revision": "6814bd40b52ef750991e",
-    "url": "./static/js/3.1b8247c0.chunk.js"
+    "revision": "ab0f3c0c31834426a361",
+    "url": "./static/js/3.f11c4cf7.chunk.js"
+  },
+  {
+    "revision": "e10850c6e49d4fda66dd30aabc4a7a28",
+    "url": "./static/media/cat_pump.e10850c6.png"
   },
   {
     "revision": "b56bd2aa8499350e627ce18ffa8f7b24",
@@ -44,12 +48,12 @@ self.__precacheManifest = [
     "url": "./static/media/cat_pumps.c5711afd.png"
   },
   {
-    "revision": "21e5f73f12c8ab07f08f48e6900db761",
-    "url": "./static/media/hydraulics_international.21e5f73f.png"
+    "revision": "544d76fdfa7216ebf82d91a5e5ae588f",
+    "url": "./static/media/hydraulics_international.544d76fd.png"
   },
   {
-    "revision": "5e1077fb0e8739fc738c4d8d4fd9157d",
-    "url": "./static/media/graphic.5e1077fb.png"
+    "revision": "15b037c12733633a17de7e36f9e40042",
+    "url": "./static/media/graphic.15b037c1.png"
   },
   {
     "revision": "f2cc71834f00995b996efa5c31aa4353",
@@ -58,6 +62,10 @@ self.__precacheManifest = [
   {
     "revision": "2b2b7da40e9fe37746226683d444215a",
     "url": "./static/media/getFetch.2b2b7da4.cjs"
+  },
+  {
+    "revision": "33859171c78759987df60bc47b0a76ac",
+    "url": "./static/media/aboutus.33859171.png"
   },
   {
     "revision": "18d8ad618e4c0bf147029b9c8f54b4e2",
@@ -72,8 +80,28 @@ self.__precacheManifest = [
     "url": "./static/media/logo_white.a1f1646b.png"
   },
   {
-    "revision": "33859171c78759987df60bc47b0a76ac",
-    "url": "./static/media/aboutus.33859171.png"
+    "revision": "7e81a98af48ea3a9e9dac4a8345f6dda",
+    "url": "./static/media/white_cat_pumps.7e81a98a.png"
+  },
+  {
+    "revision": "e035be6b96579b3560e92d0e19058773",
+    "url": "./static/media/white_hydraulics_international.e035be6b.png"
+  },
+  {
+    "revision": "9c3aa9a5259e47800d1a8354a1999b7c",
+    "url": "./static/media/white_graphic.9c3aa9a5.png"
+  },
+  {
+    "revision": "928d33a1f91279675f4a0223ccc46677",
+    "url": "./static/media/white_norriseal.928d33a1.png"
+  },
+  {
+    "revision": "d5fa0f3af510fd37b31fbbad7c3bc6e4",
+    "url": "./static/media/white_taylor.d5fa0f3a.png"
+  },
+  {
+    "revision": "2e23d3d6b4871654b4f5617493d2ee35",
+    "url": "./static/media/white_hidraulics.2e23d3d6.png"
   },
   {
     "revision": "1a2cf917bec22e9e25522bd51d6df6fb",
@@ -108,7 +136,19 @@ self.__precacheManifest = [
     "url": "./static/media/THINH_VUONG.f008e625.png"
   },
   {
-    "revision": "29227f6f986ef1cdaba039a1fd95150c",
+    "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
+    "url": "./static/media/revicons.04eb8fc5.woff"
+  },
+  {
+    "revision": "17629a5dfe0d3c3946cf401e1895f091",
+    "url": "./static/media/revicons.17629a5d.ttf"
+  },
+  {
+    "revision": "2feb69ccb596730c72920c6ba3e37ef8",
+    "url": "./static/media/revicons.2feb69cc.eot"
+  },
+  {
+    "revision": "d060846d2dd6403afd9b90d2385d1a8a",
     "url": "./index.html"
   }
 ];
