@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "100%",
     boxShadow: "20px 20px 20px -15px rgb(0 0 0 / 50%)",
   },
+  imageXs: {
+    maxWidth: "60%",
+    maxHeight: "100%",
+    boxShadow: "20px 20px 20px -15px rgb(0 0 0 / 50%)",
+  },
   content: {
     fontFamily: "var(--font-family) !important",
     "@media (max-width:600px)": {
@@ -24,6 +29,26 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: "calc(100%)  !important",
     marginLeft: "0 !important",
+    "@media (max-width:600px)": {
+      display: "none !important",
+    },
+    "@media (min-width:601px)": {
+      display: "flex !important",
+    },
+  },
+  containerMission: {
+    width: "calc(100%)  !important",
+    marginLeft: "0 !important",
+  },
+  containerXs: {
+    width: "calc(100%)  !important",
+    marginLeft: "0 !important",
+    "@media (max-width:600px)": {
+      display: "flex !important",
+    },
+    "@media (min-width:601px)": {
+      display: "none !important",
+    },
   },
   aboutUsContent: {
     position: "relative",
@@ -33,15 +58,18 @@ const useStyles = makeStyles((theme) => ({
 function AboutUs() {
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
-      <AboutUsContent />
-      <MissionContent/>
+      <Container maxWidth="md" sx={{ p: 2 }}>
+        <AboutUsContent1 />
+        <AboutUsContent2 />
+      </Container>
+      <MissionContent />
     </Grid>
   );
 }
 
 export default AboutUs;
 
-const AboutUsContent = () => {
+const AboutUsContent1 = () => {
   const classes = useStyles();
 
   const { t } = useTranslation();
@@ -50,100 +78,199 @@ const AboutUsContent = () => {
     threshold: 0,
   });
   return (
-    <Container maxWidth="md" sx={{ p: 2 }}>
-      <Grid container classes={{ root: classes.container }} ref={ref}>
-        <Grid
-          item
-          xs={12}
-          md={12}
-          
-          sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
+    <Grid container classes={{ root: classes.container }} ref={ref}>
+      <Grid
+        item
+        xs={12}
+        md={12}
+        sx={{ padding: "20px 0 !important", fontSize: "22px" }}
+        className={
+          inView
+            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
+            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
+        }
+      >
+        <Typography
+          fontFamily={"var(--font-family-header)"}
+          variant="h4"
+          component="h4"
+          sx={{ color: "var(--primary-color)" }}
+          fontWeight="bolder"
         >
-          <Typography
-            fontFamily={"var(--font-family-header)"}
-            variant="h4"
-            component="h4"
-            sx={{ color: "var(--primary-color)" }}
-            fontWeight="bolder"
-          >
-            {t("ABOUT US")}
-          </Typography>
-          <span className={"line-brand"}></span>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
-        >
-          <Typography
-            variant="body1"
-            pr={5}
-            pt={3}
-            className={classes.content}
-            textAlign="justify"
-            color={"var(--primary-color)"}
-          >
-            {t("About us content")}
-          </Typography>
-          <Typography
-            variant="body1"
-            pr={5}
-            pt={3}
-            className={classes.content}
-            textAlign="justify"
-            color={"var(--primary-color)"}
-          >
-            {t("About us content2")}
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          className={
-            classes.aboutUsContent +
-            (inView
-              ? " animate__animated animate__fadeInRight animate__delay-0.7s"
-              : " animate__animated animate__fadeOutLeft animate__delay-0.7s")
-          }
-        >
-          <div style={{paddingLeft:"40px"}}>
-            <div
-              style={{
-                width: "100px",
-                height: "30px",
-                backgroundColor: "var(--secondary-color)",
-                position: "absolute",
-                bottom: "30px",
-                left: "-5px",
-              }}
-            ></div>
-            <div
-              style={{
-                position: "absolute",
-                width: "50vw",
-                height: "100%",
-                background: "var(--primary-color)",
-                zIndex: "-1",
-                top: "-50px",
-                left: "90px",
-              }}
-              
-          
-            ></div>
-            <img src={aboutus} alt="About us picture" className={classes.image} />
-          </div>
-        </Grid>
+          {t("ABOUT US")}
+        </Typography>
+        <span className={"line-brand"}></span>
       </Grid>
-    </Container>
+      <Grid
+        item
+        xs={6}
+        className={
+          inView
+            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
+            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
+        }
+      >
+        <Typography
+          variant="body1"
+          pr={5}
+          pt={3}
+          className={classes.content}
+          textAlign="justify"
+          color={"var(--primary-color)"}
+        >
+          {t("About us content")}
+        </Typography>
+        <Typography
+          variant="body1"
+          pr={5}
+          pt={3}
+          className={classes.content}
+          textAlign="justify"
+          color={"var(--primary-color)"}
+        >
+          {t("About us content2")}
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={6}
+        className={
+          classes.aboutUsContent +
+          (inView
+            ? " animate__animated animate__fadeInRight animate__delay-0.7s"
+            : " animate__animated animate__fadeOutLeft animate__delay-0.7s")
+        }
+      >
+        <div style={{ paddingLeft: "40px" }}>
+          <div
+            style={{
+              width: "100px",
+              height: "30px",
+              backgroundColor: "var(--secondary-color)",
+              position: "absolute",
+              bottom: "30px",
+              left: "-5px",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              width: "50vw",
+              height: "100%",
+              background: "var(--primary-color)",
+              zIndex: "-1",
+              top: "-50px",
+              left: "90px",
+            }}
+          ></div>
+          <img src={aboutus} alt="About us picture" className={classes.image} />
+        </div>
+      </Grid>
+    </Grid>
+  );
+};
+
+const AboutUsContent2 = () => {
+  const classes = useStyles();
+
+  const { t } = useTranslation();
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  return (
+    <Grid container classes={{ root: classes.containerXs }} ref={ref}>
+      <Grid
+        item
+        xs={12}
+        md={12}
+        sx={{ padding: "20px 0 !important", fontSize: "22px" }}
+        className={
+          inView
+            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
+            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
+        }
+      >
+        <Typography
+          fontFamily={"var(--font-family-header)"}
+          variant="h4"
+          component="h4"
+          sx={{ color: "var(--primary-color)" }}
+          fontWeight="bolder"
+        >
+          {t("ABOUT US")}
+        </Typography>
+        <span className={"line-brand"}></span>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        className={
+          inView
+            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
+            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
+        }
+      >
+        <Typography
+          variant="body1"
+          pt={3}
+          className={classes.content}
+          textAlign="justify"
+          color={"var(--primary-color)"}
+        >
+          {t("About us content")}
+        </Typography>
+        <Typography
+          variant="body1"
+          pt={3}
+          className={classes.content}
+          textAlign="justify"
+          color={"var(--primary-color)"}
+        >
+          {t("About us content2")}
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        pt={10}
+        className={
+          classes.aboutUsContent +
+          (inView
+            ? " animate__animated animate__fadeInRight animate__delay-0.7s"
+            : " animate__animated animate__fadeOutLeft animate__delay-0.7s")
+        }
+      >
+        <div>
+          <div
+            style={{
+              width: "100px",
+              height: "30px",
+              backgroundColor: "var(--secondary-color)",
+              position: "absolute",
+              bottom: "30px",
+              left: "-10px",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "80%",
+              background: "var(--primary-color)",
+              zIndex: "-1",
+              top: "40px",
+              left: "50px",
+            }}
+          ></div>
+          <img
+            src={aboutus}
+            alt="About us picture"
+            className={classes.imageXs}
+          />
+        </div>
+      </Grid>
+    </Grid>
   );
 };
 
@@ -156,11 +283,11 @@ const MissionContent = () => {
     threshold: 0,
   });
   return (
-    <Container maxWidth="md" sx={{ p: 2, pt: 15 }} >
+    <Container maxWidth="md" sx={{ p: 2, pt: 15 }}>
       <Grid
         container
         className={classes.aboutUsContent}
-        classes={{ root: classes.container }}
+        classes={{ root: classes.containerMission }}
       >
         <div
           style={{
@@ -191,8 +318,8 @@ const MissionContent = () => {
           }}
           className={
             inView
-            ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-            : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
+              ? "animate__animated animate__fadeInRight animate__delay-0.7s"
+              : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
           }
         >
           <div
@@ -206,8 +333,8 @@ const MissionContent = () => {
             }}
             className={
               inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.8s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.8s"
+                ? "animate__animated animate__fadeInLeft animate__delay-0.8s"
+                : "animate__animated animate__fadeOutRight animate__delay-0.8s"
             }
             ref={ref}
           >
@@ -236,4 +363,3 @@ const MissionContent = () => {
     </Container>
   );
 };
-

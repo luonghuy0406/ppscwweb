@@ -40,6 +40,7 @@ function Home() {
     </Grid>
     <AboutUs/>
     <Brand/>
+    <FeaturedProduct/>
     <OurPartner/>
     </>
    

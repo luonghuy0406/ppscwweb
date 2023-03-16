@@ -295,7 +295,7 @@ const FormContact = ({ ...props }) => {
             label={t("Full name")}
             type="text"
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
           <TextField
             margin="dense"
@@ -304,7 +304,7 @@ const FormContact = ({ ...props }) => {
             label={t("Email address")}
             type="email"
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
           <TextField
             margin="dense"
@@ -313,7 +313,7 @@ const FormContact = ({ ...props }) => {
             label={t("Phone number")}
             type="text"
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
           <TextField
             margin="dense"
@@ -324,7 +324,7 @@ const FormContact = ({ ...props }) => {
             rows={4}
             defaultValue={t("I'm interested in ") + props.content}
             fullWidth
-            variant="standard"
+            variant="outlined"
             pt={1}
           />
         </DialogContent>

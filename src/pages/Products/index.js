@@ -83,18 +83,7 @@ const useStyles = makeStyles((props) => ({
     marginLeft: "0 !important",
   },
   root: {
-    // paddingLeft:"0",
-    // paddingBottom: "25px",
     flexDirection: "column",
-    // "&:hover":{
-    //     '& > div div':{
-    //         backgroundColor:"var(--primary-color)",
-    //         color:"white !important",
-    //         backgroundSize:'210%',
-    //     }, '& > div div p':{
-    //       color:"white !important",
-    //   }
-    // }
   },
   image: {
     maxWidth: "100%",

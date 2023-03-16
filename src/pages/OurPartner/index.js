@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, Box, Container, Typography } from "@mui/material";
+import { Grid, Box, Container, Typography, useTheme } from "@mui/material";
 import API from "../../assets/images/API.jpg";
 import BAO_STEEL from "../../assets/images/BAO_STEEL.jpg";
 import CROWN from "../../assets/images/CROWN.jpg";
@@ -15,7 +15,9 @@ import { useTranslation } from "react-i18next";
 import { useInView } from 'react-intersection-observer';
 const arrBrand = [API, BAO_STEEL, CROWN, GRE_COATING, HYUNDAI, MDF, TBC_BALL, THAINAM,THINH_VUONG];
 
-const useStyles = makeStyles((props) => ({ 
+const useStyles = makeStyles((props) => {
+  const theme = useTheme()
+  return ({ 
   container:{
     width: "calc(100%)  !important",
     marginLeft:"0 !important"
@@ -23,12 +25,18 @@ const useStyles = makeStyles((props) => ({
   background: {
     "&:hover":{
       "& img":{
-        width:"95%",
-        transition: 'width .1s linear !important',
+        [theme.breakpoints.down('sm')] : {
+          width:"65%",
+          transition: 'width .1s linear !important',
+        },
+        [theme.breakpoints.up('md')]: {
+          width:"95%",
+          transition: 'width .1s linear !important',
+        },
       }
     }
   },
-}));
+})});
 
 function OurPartner() {
   useEffect(() => {
@@ -48,7 +56,7 @@ function OurPartner() {
                 alignItems="center">
           <Grid item xs={12} md={12} sx={{padding:'20px 0 !important', fontSize:"22px"}} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
             <Typography fontFamily={"var(--font-family-header)"} color={"var(--primary-color)"} variant="h4" component="h4" fontWeight="bolder">
-              {t("Our partner")}
+              {t("OUR PARTNER")}
             </Typography>
             <span className={'line-brand'}></span>
           </Grid>
