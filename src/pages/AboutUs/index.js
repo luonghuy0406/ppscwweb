@@ -51,12 +51,12 @@ const AboutUsContent = () => {
   });
   return (
     <Container maxWidth="md" sx={{ p: 2 }}>
-      <Grid container classes={{ root: classes.container }}>
+      <Grid container classes={{ root: classes.container }} ref={ref}>
         <Grid
           item
           xs={12}
           md={12}
-          ref={ref}
+          
           sx={{ padding: "20px 0 !important", fontSize: "22px" }}
           className={
             inView
@@ -136,7 +136,7 @@ const AboutUsContent = () => {
                 top: "-50px",
                 left: "90px",
               }}
-              ref={ref}
+              
           
             ></div>
             <img src={aboutus} alt="About us picture" className={classes.image} />

@@ -28,7 +28,7 @@ import {
   ListItemText,
 } from "@mui/material";
 
-const pages = ["Home", "Brand", "Product", "Our business", "Contact"];
+const pages = ["Home", "Brand", "Product", "Our business" ];
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "var(--primary-color) !important",

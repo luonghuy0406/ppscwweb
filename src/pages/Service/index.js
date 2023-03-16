@@ -198,8 +198,13 @@ const ServiceContent = () => {
   return (
     <Grid container classes={{ root: classes.container }} ref={ref}>
       {service.map((item, index) => {
+        let { ref, inView,  } = useInView({
+          /* Optional options */
+          threshold: 0,
+        });
         return (
           <Grid
+            ref={ref}
             item
             xs={12}
             md={12}
