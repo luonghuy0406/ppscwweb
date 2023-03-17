@@ -62,19 +62,7 @@ const service = [
     label: "MAINTENANCE - INSPECTION – REPAIR",
     content: "MIR content",
     img: mir,
-  },
-  {
-    id: "Rental",
-    label: "RENTAL",
-    content: "Rental content",
-    img: rental,
-  },
-  {
-    id: "Other",
-    label: "OTHER SERVICES",
-    content: "Other content",
-    img: other,
-  },
+  }
 ];
 
 const useStyles = makeStyles((props) => ({
@@ -110,6 +98,7 @@ const useStyles = makeStyles((props) => ({
   },
   content: {
     fontFamily: "var(--font-family) !important",
+    textAlign:"center",
     "@media (max-width:600px)": {
       fontSize: "15px !important",
     },
@@ -127,18 +116,23 @@ const useStyles = makeStyles((props) => ({
   },
   card: {
     borderRadius: "0 !important",
-    boxShadow: "unset !important",
+    boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.2) !important",
     backgroundColor: "var(--background-gray) !important",
     color: "var(--primary-color) !important",
     transition: "all .2s linear !important",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "var(--primary-color) !important",
+      "& .card-content-hover":{
+        backgroundColor: "var(--primary-color) !important",
+      },
       "& span": {
         color: "var(--secondary-color) !important",
       },
       "& div": {
         color: "white !important",
+      },
+      "& img": {
+        width: "95% !important",
       },
     },
   },
@@ -161,30 +155,37 @@ function Products() {
     threshold: 0,
   });
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
-      <Container maxWidth="lg" sx={{ p: 2 }}>
-        <Typography
-          style={{ padding: theme.spacing(5), paddingTop: "0" }}
-          color={"var(--primary-color)"}
-          fontFamily={"var(--font-family)"}
-          variant="h4"
-          component="h4"
-          fontWeight="bolder"
-          textAlign={"center"}
-          ref={ref}
+    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }} ref={ref}>
+      <Container maxWidth="md" sx={{ p: 2 }}>
+        <div 
+          style={{display:"flex",alignItems:"center"}}
           className={
             inView
               ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
               : "animate__animated animate__fadeOutRight animate__delay-0.7s"
           }
         >
-          {t("PRODUCT LINES")}
-        </Typography>
+          <div style={{width:"30px",height:"30px",marginRight:"10px",backgroundColor:"var(--secondary-color)"}}>
+
+          </div>
+          <Typography
+            // style={{ padding: theme.spacing(5), paddingTop: "0" }}
+            color={"var(--primary-color)"}
+            fontFamily={"var(--font-family)"}
+            variant="h4"
+            component="h4"
+            fontWeight="bolder"
+            lineHeight={0}
+            
+            
+          >
+            {t("PRODUCT LINES")}
+          </Typography>
+        </div>
         <Grid
           container
           classes={{ root: classes.container }}
-          rowSpacing={{ xs: 3, sm: 4, md: 5 }}
-          columnSpacing={{ xs: 0, sm: 4, md: 5 }}
+          pt={5}
         >
           {service.map((item, index) => {
             let { ref, inView } = useInView({
@@ -195,8 +196,9 @@ function Products() {
               // <Link to={`/product/${item.id}`}>
               <Grid
                 item
-                xs={12}
-                md={6}
+                sx={{p:2}}
+                xs={4}
+                md={4}
                 container
                 ref={ref}
                 className={
@@ -212,21 +214,23 @@ function Products() {
                 <Grid item xs={12}>
                   <Link to={`/product/${item.id}`} style={{ textDecoration: 'none'}}>
                     <Card className={classes.card}>
-                      <CardMedia sx={{ height: 300 }} image={item.img}>
-                        <div
-                        style={{width:"100%",height:"100%"}}
-                        >
-
-                        </div>
-                      </CardMedia>
-                      <CardContent classes={{ root: classes.content }}>
-                        <Typography gutterBottom variant="h5" component="div">
-                          Lizard
+                      <CardContent sx={{ 
+                          height: "200px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background: "white"
+                        }}>
+                        <img src={item.img} style={{width:"90%"}}/>  
+                      </CardContent>
+                      <CardContent classes={{ root: classes.content }} className="card-content-hover">
+                        <Typography gutterBottom variant="h6">
+                          Lizard Lizard LizardLizard Lizard Lizard
+                        </Typography>
+                        <Typography component="span" fontSize="14px" style={{textDecoration: "underline"}}>
+                          {t("LEARN MORE")}
                         </Typography>
                       </CardContent>
-                      <CardActions classes={{ root: classes.content }}>
-                        <span> {t("Learn more")}</span>
-                      </CardActions>
                     </Card>
                   </Link>
                 </Grid>
@@ -241,6 +245,7 @@ function Products() {
 }
 
 export default Products;
+
 
 const FormContact = () => {
   const [open, setOpen] = React.useState(false);

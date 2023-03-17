@@ -80,13 +80,13 @@ const useStyles = makeStyles((props) => ({
   },
   boxContent: {
     "@media (max-width:600px)": {
-      height: "250px",
+      height: "350px",
     },
     "@media (max-width:900px)": {
-      height: "300px",
+      height: "350px",
     },
     "@media (min-width:900px)": {
-      height: "500px",
+      height: "350px",
     },
     backgroundColor: "var(--background-gray)",
     color: "var(--primary-color)",
@@ -99,13 +99,13 @@ const useStyles = makeStyles((props) => ({
   boxImage: {
     width: "100%",
     "@media (max-width:600px)": {
-      height: "250px",
+      height: "350px",
     },
     "@media (max-width:900px)": {
-      height: "300px",
+      height: "350px",
     },
     "@media (min-width:900px)": {
-      height: "500px",
+      height: "350px",
     },
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",

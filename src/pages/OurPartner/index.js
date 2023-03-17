@@ -1,19 +1,40 @@
 import React, { useEffect } from "react";
 import { Grid, Box, Container, Typography, useTheme } from "@mui/material";
-import API from "../../assets/images/API.jpg";
-import BAO_STEEL from "../../assets/images/BAO_STEEL.jpg";
-import CROWN from "../../assets/images/CROWN.jpg";
-import GRE_COATING from "../../assets/images/GRE_COATING.png";
-import HYUNDAI from "../../assets/images/HYUNDAI.png";
-import MDF from "../../assets/images/MDF.png";
-import TBC_BALL from "../../assets/images/TBC_BALL.jpg";
-import THAINAM from "../../assets/images/THAINAM.png";
-import THINH_VUONG from "../../assets/images/THINH_VUONG.png";
 import { makeStyles } from "@mui/styles";
 import { useTranslation } from "react-i18next";
+import l1_1 from './images/l1_1.jpg'
+import l1_2 from './images/l1_2.jpg'
+import l1_3 from './images/l1_3.jpg'
+import l1_4 from './images/l1_4.jpg'
+import l2_1 from './images/l2_1.png'
+import l2_2 from './images/l2_2.png'
+import l2_3 from './images/l2_3.png'
+import l2_4 from './images/l2_4.jpg'
+import l2_5 from './images/l2_5.png'
+import l3_1 from './images/l3_1.png'
+import l3_2 from './images/l3_2.png'
+import l3_3 from './images/l3_3.png'
+import l3_4 from './images/l3_4.jpg'
+import l3_5 from './images/l3_5.png'
+import l3_6 from './images/l3_6.png'
+
 
 import { useInView } from 'react-intersection-observer';
-const arrBrand = [API, BAO_STEEL, CROWN, GRE_COATING, HYUNDAI, MDF, TBC_BALL, THAINAM,THINH_VUONG];
+const arrBrand = [l1_1,
+  l1_2,
+  l1_3,
+  l1_4,
+  l2_1,
+  l2_2,
+  l2_3,
+  l2_4,
+  l2_5,
+  l3_1,
+  l3_2,
+  l3_3,
+  l3_4,
+  l3_5,
+  l3_6];
 
 const useStyles = makeStyles((props) => {
   const theme = useTheme()
@@ -68,8 +89,8 @@ function OurPartner() {
                 classes={{root: classes.background}}
                 sx={{padding:{xs:"10px !important",md:"15px !important"},height:{xs:"100px !important",md:"120px !important"}}}
                 item
-                xs={6}
-                md={3}
+                xs={3}
+                md={2}
                 direction="row"
                 justifyContent="center"
                 alignItems="center"

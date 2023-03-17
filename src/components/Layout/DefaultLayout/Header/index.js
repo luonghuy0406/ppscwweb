@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     top: "0",
     left: "0",
     zIndex: "10",
+    maxWidth: "100vw"
   },
   menu: {
     backgroundColor: "var(--primary-color) !important",

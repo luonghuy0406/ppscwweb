@@ -7,6 +7,11 @@ import { Grid, Box, Container, Typography, useTheme, Button, IconButton } from "
 import { makeStyles } from "@mui/styles";
 import { useTranslation } from "react-i18next";
 import catpump from './images/cat_pump.png'
+import HII from './images/HII.png'
+import spirstar from './images/spirstar.jpg'
+import Techcal from './images/Techcal.png'
+import graphic from './images/graphic.png'
+import Norriseal from './images/Norriseal.png'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -18,31 +23,50 @@ const arrProduct = [
     img: catpump
   },
   {
-    name : "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: catpump
+    name : "HII",
+    description: "Air Driven Air Pressure <br> Amplifiers 7A-DS-8-X-N-G-IAC",
+    img: HII
   },
   {
-    name : "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: catpump
+    name : "SPIR STAR",
+    description: "Hose 13/4H ",
+    img: spirstar
   },
   {
-    name : "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: catpump
+    name : "TECH CAL",
+    description: "Chart Recorder 8",
+    img: Techcal
   },
   {
-    name : "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: catpump
+    name : "GRAPHIC CONTROL",
+    description: "Chart Paper & Pen",
+    img: graphic
   },
   {
-    name : "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: catpump
+    name : "NORRISEAL",
+    description: "Butterfly Valve R200",
+    img: Norriseal
   }
 ];
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 const useStyles = makeStyles((props) => {
   const theme = useTheme();
@@ -79,8 +103,8 @@ function FeaturedProduct() {
     threshold: 0,
   });
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" }, backgroundColor:"var(--background-gray)" }}>
-      <Container maxWidth="md" sx={{ p: 2 }} ref={ref}>
+    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" }, backgroundColor:"var(--background-gray)" ,maxWidth:"100vw"}} ref={ref}>
+      <Container maxWidth="md" sx={{ p: 2 }}>
         <Grid
           container
           classes={{ root: classes.container }}
@@ -142,32 +166,7 @@ function FeaturedProduct() {
                 renderArrowsWhenDisabled={false}
                 renderButtonGroupOutside
                 renderDotsOutside={false}
-                responsive={{
-                  desktop: {
-                    breakpoint: {
-                      max: 3000,
-                      min: 1024,
-                    },
-                    items: 3,
-                    partialVisibilityGutter: 40,
-                  },
-                  mobile: {
-                    breakpoint: {
-                      max: 464,
-                      min: 0,
-                    },
-                    items: 1,
-                    partialVisibilityGutter: 30,
-                  },
-                  tablet: {
-                    breakpoint: {
-                      max: 1024,
-                      min: 464,
-                    },
-                    items: 2,
-                    partialVisibilityGutter: 30,
-                  },
-                }}
+                responsive={responsive}
                 rewind={false}
                 rewindWithAnimation={false}
                 rtl={false}
@@ -196,26 +195,27 @@ export default FeaturedProduct;
 
 const FeaturedProductChild = ({product}) => {
   return (
-    <Grid container item p={5}>
-      <Grid item xs={12}>
+    <Grid container item p={3}>
+      <Grid item xs={12} sx={{display:"flex",alignItems:"center",justifyContent:"center"}}>
         <div 
         style={{
             width:"100%",
-            height:"200px",
+            height:"210px",
             background:"white",
             borderRadius:"15px",
-            boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 20px 10px",
+            boxShadow: "rgba(0, 0, 0, 0.1) 5px 7px 12px 1px",
             display:"flex",
             alignItems:"center",
-            justifyContent:"center"
+            justifyContent:"center",
+            marginTop:"20px"
         }}
         >
             <img src={product.img} style={{width:"80%"}}/>
         </div>
       </Grid>
-      <Grid item xs={12}>
-        <Typography textAlign={"center"} pt={3} fontFamily={"var(--font-family)"} color="var(--primary-color)" fontWeight={"bold"}>{product.name}</Typography>
-        <Typography textAlign={"center"}  pt={1} fontFamily={"var(--font-family)"} color="var(--primary-color)">{product.description}</Typography>
+      <Grid item xs={12} sx={{textAlign:"center"}}>
+        <Typography pt={2} fontFamily={"var(--font-family)"} color="var(--primary-color)" fontWeight={"bold"}>{product.name}</Typography>
+        <span style={{fontFamily:"var(--font-family)",color:"var(--primary-color)"}} dangerouslySetInnerHTML={{__html:product.description}}></span>
       </Grid>
     </Grid>
   );
@@ -228,8 +228,40 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
           textAlign: "center",
         }}
       >
-        <IconButton  variant="outlined" onClick={previous}><ChevronLeftIcon/></IconButton >
-        <IconButton  variant="outlined" onClick={next}><ChevronRightIcon/></IconButton >
+        <IconButton  
+        size="large"
+        onClick={previous}  
+        sx={{
+          color:"var(--secondary-color)",
+          position: {
+            xs : "unset",
+            lg:"absolute"
+          },
+          left: "-35px",
+          top: "35%",
+          backgroundColor:"white",
+          "&:hover" :{
+            backgroundColor:"white"
+          }
+        }}
+        ><ChevronLeftIcon/></IconButton >
+        <IconButton  
+        size="large"
+        onClick={next} 
+        sx={{
+          color:"var(--secondary-color)",
+          position: {
+            xs : "unset",
+            lg:"absolute"
+          },
+          right: "-35px",
+          top: "35%",
+          backgroundColor:"white",
+          "&:hover" :{
+            backgroundColor:"white"
+          }
+        }}
+        ><ChevronRightIcon/></IconButton >
       </div>
     );
   };

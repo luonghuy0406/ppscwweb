@@ -17,6 +17,7 @@ const actions = [
 ];
 const useStyles = makeStyles((theme) => ({
   container: {
+    maxWidth:"100vw",
     '@media (max-width:600px)': {
       marginTop: '56px !important',
     },
@@ -49,7 +50,7 @@ function DefaultLayout({ children }) {
       <Grid container justifyContent="center" classes={{root:classes.container}}>
         {children}
       </Grid>
-      <Box sx={{transform: "translateZ(0px)",position:"fixed",bottom:"0",right:"0"}}>
+      <Box sx={{transform: "translateZ(0px)",position:"fixed",bottom:"0",right:"0",zIndex:"1"}}>
         <SpeedDial
           ariaLabel="SpeedDial basic example"
           sx={{ position: "fixed", bottom: 26, right: 26 }}

@@ -21,26 +21,67 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { useInView } from "react-intersection-observer";
-const arrBrand = [
-  cat_pumps,
-  spir_star,
-  techcal,
-  hydraulics_international,
-  graphic,
-  norriseal,
-  taylor,
-  hidraulics,
-];
-const arrBrandWhite = [
-  white_cat_pumps,
-  white_spir_star,
-  white_techcal,
-  white_hydraulics_international,
-  white_graphic,
-  white_norriseal,
-  white_taylor,
-  white_hidraulics,
-];
+
+
+export const arrBrand ={
+  cat_pumps : {
+    name : "Catpump",
+    logo: cat_pumps,
+    logo_white: white_cat_pumps,
+    description : "catpump_content",
+    products :["PLUNGER PUMP","PISTON PUMP","SPECIAL PUMP"]
+  },
+  spir_star : {
+    name : "SPIR STAR",
+    logo: spir_star,
+    logo_white: white_spir_star,
+    description : "spir_star_content",
+    products :["THERMOPLASTIC HIGH-PRESSURE HOSES"]
+  },
+  techcal : {
+    name : "TECHCAL",
+    logo: techcal,
+    logo_white: white_techcal,
+    description : "techcal_content",
+    products :["CHART RECORDER"]
+  },
+  hydraulics_international : {
+    name : "Hydraulics International, Inc. (HII)",
+    logo: hydraulics_international,
+    logo_white: white_hydraulics_international,
+    description : "hydraulics_international_content",
+    products: ["AIR DRIVEN GAS BOOSTERS", "AIR DRIVEN LIQUID PUMPS", "AIR PRESSURE AMPLIFIER"]
+  },
+  graphic : {
+    name : "Graphic Controls",
+    logo: graphic,
+    logo_white: white_graphic,
+    description : "graphic_content",
+    products:["CHART PAPER & PEN"]
+  },
+  norriseal : {
+    name : "NORRISEAL",
+    logo: norriseal,
+    logo_white: white_norriseal,
+    description : "norriseal_content",
+    products:["BUTTERFLY VALVE","CONTROL VALVE","LIQUID LEVEL CONTROLLER"]
+  },
+  taylor : {
+    name : "TAYLOR",
+    logo: taylor,
+    logo_white: white_taylor,
+    description : "taylor_content",
+    products: []
+  },
+  hidraulics : {
+    name : "SUN HYDRAULICS",
+    logo: hidraulics,
+    logo_white: white_hidraulics,
+    description : "hidraulics_content",
+    products: ["COUNTERBALANCE CARTRIDGE VALVES"]
+  },
+}
+
 
 const useStyles = makeStyles(() => {
   const theme = useTheme();
@@ -110,7 +151,7 @@ function Brand() {
             </Typography>
             <span className={"line-brand"}></span>
           </Grid>
-          {arrBrand.map((brand, index) => {
+          {Object.entries(arrBrand).map((brand,index) => {
             return (
               <Grid
                 className={
@@ -118,7 +159,7 @@ function Brand() {
                     ? "animate__animated animate__fadeInRight animate__delay-0.7s"
                     : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
                 }
-                key={"brand-" + index}
+                key={"brand-" + brand[0]}
                 classes={{ root: classes.background }}
                 sx={{
                   padding: { xs: "10px !important", md: "15px !important" },
@@ -142,15 +183,15 @@ function Brand() {
                 alignItems="center"
                 container
                 onMouseEnter={() => {
-                  document.getElementById("brand" + index).src =
-                    arrBrandWhite[index];
+                  document.getElementById("brand" + brand[0]).src =
+                  brand[1]['logo_white'];
                 }}
                 onMouseLeave={() => {
-                  document.getElementById("brand" + index).src =
-                    arrBrand[index];
+                  document.getElementById("brand" + brand[0]).src =
+                  brand[1]['logo'];
                 }}
               >
-                <Link to={"/brand/" + index} style={{ textDecoration: "none" }}>
+                <Link to={"/brand/" + brand[0]} style={{ textDecoration: "none" }}>
                   <div
                     style={{
                       display: "flex",
@@ -161,7 +202,7 @@ function Brand() {
                     }}
                   >
                     <Box
-                      id={"brand" + index}
+                      id={"brand" + brand[0]}
                       component="img"
                       sx={{
                         width: { xs: "60%", md: "90%" },
@@ -171,7 +212,7 @@ function Brand() {
                         maxWidth: { xs: "auto", md: "auto" },
                       }}
                       // alt="The house from the offer."
-                      src={brand}
+                      src={brand[1].logo}
                     />
                   </div>
                 </Link>
