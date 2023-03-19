@@ -197,7 +197,8 @@ function Products() {
               <Grid
                 item
                 sx={{p:2}}
-                xs={4}
+                xs={12}
+                sm={6}
                 md={4}
                 container
                 ref={ref}

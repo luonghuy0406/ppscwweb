@@ -59,8 +59,8 @@ function AboutUs() {
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
       <Container maxWidth="md" sx={{ p: 2 }}>
-        <AboutUsContent1 />
-        <AboutUsContent2 />
+          <AboutUsContent1 />
+          <AboutUsContent2 />
       </Container>
       <MissionContent />
     </Grid>
@@ -83,7 +83,7 @@ const AboutUsContent1 = () => {
         item
         xs={12}
         md={12}
-        sx={{ padding: "20px 0 !important", fontSize: "22px" }}
+        sx={{ padding: {xs:"10px 0 !important" ,md:"20px 0 !important"}, fontSize: "22px" }}
         className={
           inView
             ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
@@ -184,7 +184,7 @@ const AboutUsContent2 = () => {
         item
         xs={12}
         md={12}
-        sx={{ padding: "20px 0 !important", fontSize: "22px" }}
+        sx={{ padding: {xs:"10px 0 !important" ,md:"20px 0 !important"}, fontSize: "22px" }}
         className={
           inView
             ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
@@ -193,7 +193,7 @@ const AboutUsContent2 = () => {
       >
         <Typography
           fontFamily={"var(--font-family-header)"}
-          variant="h4"
+          variant={"h4"}
           component="h4"
           sx={{ color: "var(--primary-color)" }}
           fontWeight="bolder"

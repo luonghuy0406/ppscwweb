@@ -146,9 +146,8 @@ function ChildProduct() {
             }}
           ></div>
           <Typography
-            // style={{ padding: theme.spacing(5), paddingTop: "0" }}
+            fontFamily={"var(--font-family-header)"}
             color={"var(--primary-color)"}
-            fontFamily={"var(--font-family)"}
             variant="h4"
             component="h4"
             fontWeight="bolder"
@@ -193,7 +192,7 @@ function ChildProduct() {
             <Grid item xs={12} sx={{ textAlign: "justify" }}>
               <Typography
                 color={"var(--primary-color)"}
-                fontFamily={"var(--font-family)"}
+                fontFamily={"var(--font-family-header)"}
                 variant="h6"
                 component="h6"
                 fontWeight="bolder"
@@ -215,7 +214,7 @@ function ChildProduct() {
               </Typography>
               <Typography
                 color={"var(--primary-color)"}
-                fontFamily={"var(--font-family)"}
+                fontFamily={"var(--font-family-header)"}
                 variant="h6"
                 component="h6"
                 fontWeight="bolder"
@@ -295,7 +294,7 @@ function SimilarProducts() {
               <Typography
                 // style={{ padding: theme.spacing(5), paddingTop: "0" }}
                 color={"var(--primary-color)"}
-                fontFamily={"var(--font-family)"}
+                fontFamily={"var(--font-family-header)"}
                 variant="h5"
                 component="h5"
                 fontWeight="500"

@@ -19,69 +19,71 @@ import white_hidraulics from "../../assets/images/white_hidraulics.png";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material/styles";
 import { useInView } from "react-intersection-observer";
 
-
-export const arrBrand ={
-  cat_pumps : {
-    name : "Catpump",
+export const arrBrand = {
+  cat_pumps: {
+    name: "Catpump",
     logo: cat_pumps,
     logo_white: white_cat_pumps,
-    description : "catpump_content",
-    products :["PLUNGER PUMP","PISTON PUMP","SPECIAL PUMP"]
+    description: "catpump_content",
+    products: ["PLUNGER PUMP", "PISTON PUMP", "SPECIAL PUMP"],
   },
-  spir_star : {
-    name : "SPIR STAR",
+  spir_star: {
+    name: "SPIR STAR",
     logo: spir_star,
     logo_white: white_spir_star,
-    description : "spir_star_content",
-    products :["THERMOPLASTIC HIGH-PRESSURE HOSES"]
+    description: "spir_star_content",
+    products: ["THERMOPLASTIC HIGH-PRESSURE HOSES"],
   },
-  techcal : {
-    name : "TECHCAL",
+  techcal: {
+    name: "TECHCAL",
     logo: techcal,
     logo_white: white_techcal,
-    description : "techcal_content",
-    products :["CHART RECORDER"]
+    description: "techcal_content",
+    products: ["CHART RECORDER"],
   },
-  hydraulics_international : {
-    name : "Hydraulics International, Inc. (HII)",
+  hydraulics_international: {
+    name: "Hydraulics International, Inc. (HII)",
     logo: hydraulics_international,
     logo_white: white_hydraulics_international,
-    description : "hydraulics_international_content",
-    products: ["AIR DRIVEN GAS BOOSTERS", "AIR DRIVEN LIQUID PUMPS", "AIR PRESSURE AMPLIFIER"]
+    description: "hydraulics_international_content",
+    products: [
+      "AIR DRIVEN GAS BOOSTERS",
+      "AIR DRIVEN LIQUID PUMPS",
+      "AIR PRESSURE AMPLIFIER",
+    ],
   },
-  graphic : {
-    name : "Graphic Controls",
+  graphic: {
+    name: "Graphic Controls",
     logo: graphic,
     logo_white: white_graphic,
-    description : "graphic_content",
-    products:["CHART PAPER & PEN"]
+    description: "graphic_content",
+    products: ["CHART PAPER & PEN"],
   },
-  norriseal : {
-    name : "NORRISEAL",
+  norriseal: {
+    name: "NORRISEAL",
     logo: norriseal,
     logo_white: white_norriseal,
-    description : "norriseal_content",
-    products:["BUTTERFLY VALVE","CONTROL VALVE","LIQUID LEVEL CONTROLLER"]
+    description: "norriseal_content",
+    products: ["BUTTERFLY VALVE", "CONTROL VALVE", "LIQUID LEVEL CONTROLLER"],
   },
-  taylor : {
-    name : "TAYLOR",
+  taylor: {
+    name: "TAYLOR",
     logo: taylor,
     logo_white: white_taylor,
-    description : "taylor_content",
-    products: []
+    description: "taylor_content",
+    products: [],
   },
-  hidraulics : {
-    name : "SUN HYDRAULICS",
+  hidraulics: {
+    name: "SUN HYDRAULICS",
     logo: hidraulics,
     logo_white: white_hidraulics,
-    description : "hidraulics_content",
-    products: ["COUNTERBALANCE CARTRIDGE VALVES"]
+    description: "hidraulics_content",
+    products: ["COUNTERBALANCE CARTRIDGE VALVES"],
   },
-}
-
+};
 
 const useStyles = makeStyles(() => {
   const theme = useTheme();
@@ -120,6 +122,8 @@ function Brand() {
     /* Optional options */
     threshold: 0,
   });
+  let theme = createTheme();
+  theme = responsiveFontSizes(theme);
   return (
     <Grid
       item
@@ -140,18 +144,21 @@ function Brand() {
                 : "animate__animated animate__fadeOutRight animate__delay-0.7s"
             }
           >
-            <Typography
-              fontFamily={"var(--font-family-header)"}
-              variant="h4"
-              component="h4"
-              sx={{ color: "var(--primary-color)" }}
-              fontWeight="bolder"
-            >
-              {t("OUR BRAND")}
-            </Typography>
+            <ThemeProvider theme={theme}>
+              <Typography
+                fontFamily={"var(--font-family-header)"}
+                variant="h4"
+                component="h4"
+                sx={{ color: "var(--primary-color)" }}
+                fontWeight="bolder"
+              >
+                {t("OUR BRAND")}
+              </Typography>
+            </ThemeProvider>
+
             <span className={"line-brand"}></span>
           </Grid>
-          {Object.entries(arrBrand).map((brand,index) => {
+          {Object.entries(arrBrand).map((brand, index) => {
             return (
               <Grid
                 className={
@@ -184,14 +191,17 @@ function Brand() {
                 container
                 onMouseEnter={() => {
                   document.getElementById("brand" + brand[0]).src =
-                  brand[1]['logo_white'];
+                    brand[1]["logo_white"];
                 }}
                 onMouseLeave={() => {
                   document.getElementById("brand" + brand[0]).src =
-                  brand[1]['logo'];
+                    brand[1]["logo"];
                 }}
               >
-                <Link to={"/brand/" + brand[0]} style={{ textDecoration: "none" }}>
+                <Link
+                  to={"/brand/" + brand[0]}
+                  style={{ textDecoration: "none" }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -205,7 +215,7 @@ function Brand() {
                       id={"brand" + brand[0]}
                       component="img"
                       sx={{
-                        width: { xs: "60%", md: "90%" },
+                        width: { xs: "80%", md: "90%" },
                         aspectRatio: " 3/2",
                         objectFit: "contain",
                         maxHeight: { xs: 233, md: 250 },

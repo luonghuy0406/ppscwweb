@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Container, Grid, Typography, Box } from "@mui/material";
+import { Container, Grid, Typography, Box, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import logo from './image/logo_white.png' 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -10,19 +10,24 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => {
+  const theme = useTheme();
+  return ({
   root: {
     backgroundColor: "var(--primary-color)",
     padding: "40px 0",
     marginTop: "20px",
     marginBottom: "0",
     position:"relative",
-    paddingBottom:"60px"
+    paddingBottom:"60px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize:"13px !important"
+    }
   },
   item: {
     marginBottom: "15px",
   },
-}));
+})});
 
 function Footer() {
   const classes = useStyles();
@@ -31,10 +36,10 @@ function Footer() {
     <div className={classes.root}>
       <Container maxWidth="xl">
         <Grid container>
-          <Grid item xs={6} sm={3} pr={1}>
+          <Grid item xs={12} sm={6} md={3} pr={1}>
             <img src={logo} style={{width:"35%"}}/>
           </Grid>
-          <Grid container item xs={6} sm={3} pr={1} pl={1}>
+          <Grid container item xs={12} sm={6} md={3} pr={1} pl={1}>
             <Grid item xs={12} className={classes.item}>
               <Typography
                 fontFamily={"var(--font-family)"}
@@ -117,7 +122,7 @@ function Footer() {
               </label>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={3} pr={1} pl={1}>
+          <Grid item xs={12} sm={6} md={3} pr={1} pl={1} pt={2}>
           <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0133247493122!2d106.66619731504487!3d10.810290992298562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529224c2bbef1%3A0xfc007a7d34ff8afe!2zMTYgWcOqbiBUaOG6vywgUGjGsOG7nW5nIDIsIFTDom4gQsOsbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1678376933445!5m2!1sen!2s"
               width={"100%"}
@@ -128,7 +133,7 @@ function Footer() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </Grid>
-          <Grid item xs={6} sm={3} pl={4}>
+          <Grid item xs={12} sm={6} md={3} pl={{xs:0,sm:4}}>
             <Typography
                 fontFamily={"var(--font-family)"}
                 variant="h6"

@@ -165,7 +165,7 @@ function Service() {
           ref={ref}
           style={{ padding: theme.spacing(5), paddingTop: "0" }}
           color={"var(--primary-color)"}
-          fontFamily={"var(--font-family)"}
+          fontFamily={"var(--font-family-header)"}
           variant="h4"
           component="h4"
           fontWeight="bolder"
@@ -285,7 +285,7 @@ const FormContact = ({ ...props }) => {
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>{t("Contact")}</DialogTitle>
+        <DialogTitle sx={{backgroundColor:"var(--primary-color)", color: "white", textAlign:"center"}}>{t("Contact us")}</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
