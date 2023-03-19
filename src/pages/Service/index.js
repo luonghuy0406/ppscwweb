@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import $ from 'jquery'
 import {
   Grid,
   Container,
@@ -178,7 +179,7 @@ function Service() {
         >
           {t("OUR BUSINESS")}
         </Typography>
-        <ServiceContent/>
+        <ServiceContent />
       </Container>
     </Grid>
   );
@@ -198,7 +199,7 @@ const ServiceContent = () => {
   return (
     <Grid container classes={{ root: classes.container }} ref={ref}>
       {service.map((item, index) => {
-        let { ref, inView,  } = useInView({
+        let { ref, inView } = useInView({
           /* Optional options */
           threshold: 0,
         });
@@ -274,6 +275,19 @@ const FormContact = ({ ...props }) => {
   const handleClose = () => {
     setOpen(false);
   };
+  const handleSendMail = () => {
+    setOpen(false);
+    let data = $("#send-mail-form").serialize()
+    $.ajax({
+      type: "POST",
+      url: 'https://ppsc-webapi.onrender.com/send',
+      data: data,
+      success: function(data)
+      {
+        
+      }
+  });
+  };
 
   return (
     <div>
@@ -285,53 +299,63 @@ const FormContact = ({ ...props }) => {
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle sx={{backgroundColor:"var(--primary-color)", color: "white", textAlign:"center"}}>{t("Contact us")}</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            name="name"
-            label={t("Full name")}
-            type="text"
-            fullWidth
-            variant="outlined"
-          />
-          <TextField
-            margin="dense"
-            id="email"
-            name="email"
-            label={t("Email address")}
-            type="email"
-            fullWidth
-            variant="outlined"
-          />
-          <TextField
-            margin="dense"
-            id="phone"
-            name="phone"
-            label={t("Phone number")}
-            type="text"
-            fullWidth
-            variant="outlined"
-          />
-          <TextField
-            margin="dense"
-            id="Message"
-            name="Message"
-            label={t("Message")}
-            multiline
-            rows={4}
-            defaultValue={t("I'm interested in ") + props.content}
-            fullWidth
-            variant="outlined"
-            pt={1}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>{t("CANCEL")}</Button>
-          <Button onClick={handleClose}>{t("SEND")}</Button>
-        </DialogActions>
+        <form id="send-mail-form">
+          <DialogTitle
+            sx={{
+              backgroundColor: "var(--primary-color)",
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            {t("Contact us")}
+          </DialogTitle>
+          <DialogContent>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              name="name"
+              label={t("Full name")}
+              type="text"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="email"
+              name="email"
+              label={t("Email address")}
+              type="email"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="phone"
+              name="phone"
+              label={t("Phone number")}
+              type="text"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="Message"
+              name="Message"
+              label={t("Message")}
+              multiline
+              rows={4}
+              defaultValue={t("I'm interested in ") + props.content}
+              fullWidth
+              variant="outlined"
+              pt={1}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>{t("CANCEL")}</Button>
+            <Button onClick={handleSendMail}>{t("SEND")}</Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </div>
   );
