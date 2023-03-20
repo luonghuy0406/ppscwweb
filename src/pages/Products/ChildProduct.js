@@ -281,11 +281,11 @@ function SimilarProducts({ ...props }) {
             item
             xs={12}
             md={12}
-            // className={
-            //   inView
-            //     ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-            //     : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-            // }
+            className={
+              inView
+                ? "animate__animated animate__fadeInRight animate__delay-0.7s"
+                : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
+            }
           >
             <div
               style={{
