@@ -94,7 +94,7 @@ function ChildBrand() {
                     return (
                         <Grid item xs={12}>
                           <Link to={product.path} style={{textDecoration:"none", cursor:"pointer"}}>
-                            <div style={{width:"100%",height:"50px", marginBottom:"15px", backgroundColor:"var(--background-gray)", color:"var(--primary-color)",display: "flex", alignItems: "center"}}>
+                            <div style={{cursor:"pointer", width:"100%",height:"50px", marginBottom:"15px", backgroundColor:"var(--background-gray)", color:"var(--primary-color)",display: "flex", alignItems: "center"}}>
                                 <label style={{color:"var(--secondary-color)", padding: "10px 15px", lineHeight:"0"}}><ChevronRightIcon fontSize="medium"/></label>
                                 <label>{product.name}</label>
                             </div>

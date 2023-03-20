@@ -205,6 +205,7 @@ const ServiceContent = () => {
         });
         return (
           <Grid
+          key={index}
             ref={ref}
             item
             xs={12}
@@ -285,7 +286,11 @@ const FormContact = ({ ...props }) => {
       success: function(data)
       {
         
-      }
+      },
+      error : function(error)
+      {
+        
+      },
   });
   };
 
@@ -340,8 +345,8 @@ const FormContact = ({ ...props }) => {
             />
             <TextField
               margin="dense"
-              id="Message"
-              name="Message"
+              id="content"
+              name="content"
               label={t("Message")}
               multiline
               rows={4}

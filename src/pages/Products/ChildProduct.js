@@ -211,7 +211,7 @@ function ChildProduct() {
           </Grid>
         </Grid>
       </Container>
-      <SimilarProducts similarProducts={data.similar_product} />
+      <SimilarProducts similarProducts={data.similar_product} brand={data.brand}/>
     </Grid>
   );
 }
@@ -281,11 +281,11 @@ function SimilarProducts({ ...props }) {
             item
             xs={12}
             md={12}
-            className={
-              inView
-                ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-            }
+            // className={
+            //   inView
+            //     ? "animate__animated animate__fadeInRight animate__delay-0.7s"
+            //     : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
+            // }
           >
             <div
               style={{
@@ -323,7 +323,7 @@ function SimilarProducts({ ...props }) {
                 swipeable
               >
                 {Object.values(props.similarProducts).map((product) => {
-                  return <SimilarProductsChild product={product} />;
+                  return <SimilarProductsChild product={product} brand={props.brand}/>;
                 })}
               </Carousel>
             </div>
@@ -334,7 +334,7 @@ function SimilarProducts({ ...props }) {
   );
 }
 
-const SimilarProductsChild = ({ product }) => {
+const SimilarProductsChild = ({ ...props }) => {
   return (
     <Grid container item p={3} pt={0}>
       <Grid
@@ -355,7 +355,7 @@ const SimilarProductsChild = ({ product }) => {
             marginTop: "20px",
           }}
         >
-          <img src={product.image} style={{ width: "60%" }} />
+          <img src={props.product.image} style={{ width: "60%" }} />
         </div>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: "center" }}>
@@ -365,15 +365,15 @@ const SimilarProductsChild = ({ product }) => {
           color="var(--primary-color)"
           fontWeight={"bold"}
         >
-          {product.name}
+          {props.brand}
         </Typography>
-        {/* <span
+        <span
           style={{
             fontFamily: "var(--font-family)",
             color: "var(--primary-color)",
           }}
-          dangerouslySetInnerHTML={{ __html: product.description }}
-        ></span> */}
+          dangerouslySetInnerHTML={{ __html: props.product.name }}
+        ></span>
       </Grid>
     </Grid>
   );
