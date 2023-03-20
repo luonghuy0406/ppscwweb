@@ -19,6 +19,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { dataProducts } from "./data";
+
+import { Link as LinkRouter } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
@@ -38,38 +41,6 @@ const responsive = {
     items: 1,
   },
 };
-const arrProduct = [
-  {
-    name: "CAT PUMP",
-    description: "35 Frame Plunger Pump",
-    img: "catpump",
-  },
-  {
-    name: "HII",
-    description: "Air Driven Air Pressure <br> Amplifiers 7A-DS-8-X-N-G-IAC",
-    img: "HII",
-  },
-  {
-    name: "SPIR STAR",
-    description: "Hose 13/4H ",
-    img: "spirstar",
-  },
-  {
-    name: "TECH CAL",
-    description: "Chart Recorder 8",
-    img: "Techcal",
-  },
-  {
-    name: "GRAPHIC CONTROL",
-    description: "Chart Paper & Pen",
-    img: "graphic",
-  },
-  {
-    name: "NORRISEAL",
-    description: "Butterfly Valve R200",
-    img: "Norriseal",
-  },
-];
 
 const useStyles = makeStyles(() => {
   const theme = useTheme();
@@ -99,7 +70,8 @@ const useStyles = makeStyles(() => {
 });
 
 function ChildProduct() {
-  let { id } = useParams();
+  const { id1: firstId, id2: secondId } = useParams();
+  const data = dataProducts[firstId]["product"][secondId];
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -110,27 +82,31 @@ function ChildProduct() {
     threshold: 0,
   });
   return (
-    <Grid
-      item
-      md={12}
-      ref={ref}
-    >
-        
+    <Grid item md={12} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="inherit" href="/">
-            Home
-            </Link>
-            <Link underline="hover" color="inherit" href="/#/product">
-            Product
-            </Link>
-            <Link underline="hover" color="inherit" href="/#/product/pump">
-            Pump
-            </Link>
-            <Typography color="var(--secondary-color)">Piston Pump</Typography>
+          <Link underline="hover" color="inherit">
+            <LinkRouter to="/" style={{ textDecoration: "none" , color:"gray"}}>
+              Home
+            </LinkRouter>
+          </Link>
+          <Link underline="hover" color="inherit">
+            <LinkRouter to="/product" style={{ textDecoration: "none" , color:"gray"}}>
+              Product
+            </LinkRouter>
+          </Link>
+          <Link underline="hover" color="inherit">
+            <LinkRouter
+              to={"/product/" + firstId}
+              style={{ textDecoration: "none", color:"gray" }}
+            >
+              {dataProducts[firstId].name}
+            </LinkRouter>
+          </Link>
+          <Typography color="var(--secondary-color)">Piston Pump</Typography>
         </Breadcrumbs>
-       <div
-          style={{ display: "flex", alignItems: "center",padding: "50px 0"}}
+        <div
+          style={{ display: "flex", alignItems: "center", padding: "50px 0" }}
           className={
             inView
               ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
@@ -153,7 +129,7 @@ function ChildProduct() {
             fontWeight="bolder"
             lineHeight={0}
           >
-            {t("PISTON PUMP")}
+            {data.name}
           </Typography>
         </div>
         <Grid
@@ -184,7 +160,7 @@ function ChildProduct() {
                   aspectRatio: " 3/2",
                   objectFit: "contain",
                 }}
-                //   src={arrBrand[id].logo}
+                src={data.image}
               />
             </div>
           </Grid>
@@ -198,20 +174,19 @@ function ChildProduct() {
                 fontWeight="bolder"
                 pb={2}
               >
-                {t("PISTON PUMP")}
+                {data.name}
               </Typography>
               <Divider />
-              <Typography
-                color={"var(--primary-color)"}
-                fontFamily={"var(--font-family)"}
-                pb={2}
-                pt={1}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </Typography>
+              <Box pt={1} pb={2}>
+                <label
+                  style={{
+                    color: "var(--primary-color)",
+                    fontFamily: "var(--font-family)",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: t(data["description"]) }}
+                ></label>
+              </Box>
+
               <Typography
                 color={"var(--primary-color)"}
                 fontFamily={"var(--font-family-header)"}
@@ -223,29 +198,27 @@ function ChildProduct() {
                 {t("SPECIFICATION")}
               </Typography>
               <Divider />
-              <Typography
-                color={"var(--primary-color)"}
-                fontFamily={"var(--font-family)"}
-                pb={2}
-                pt={1}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </Typography>
+              <Box pt={1} pb={2}>
+                <label
+                  style={{
+                    color: "var(--primary-color)",
+                    fontFamily: "var(--font-family)",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: t(data["specification"]) }}
+                ></label>
+              </Box>
             </Grid>
           </Grid>
         </Grid>
       </Container>
-      <SimilarProducts />
+      <SimilarProducts similarProducts={data.similar_product} />
     </Grid>
   );
 }
 
 export default ChildProduct;
 
-function SimilarProducts() {
+function SimilarProducts({ ...props }) {
   const classes = useStyles();
   const { t } = useTranslation();
   const { ref, inView, entry } = useInView({
@@ -349,7 +322,7 @@ function SimilarProducts() {
                 slidesToSlide={1}
                 swipeable
               >
-                {arrProduct.map((product) => {
+                {Object.values(props.similarProducts).map((product) => {
                   return <SimilarProductsChild product={product} />;
                 })}
               </Carousel>
@@ -382,7 +355,7 @@ const SimilarProductsChild = ({ product }) => {
             marginTop: "20px",
           }}
         >
-          <img src={product.img} style={{ width: "80%" }} />
+          <img src={product.image} style={{ width: "60%" }} />
         </div>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: "center" }}>
@@ -394,13 +367,13 @@ const SimilarProductsChild = ({ product }) => {
         >
           {product.name}
         </Typography>
-        <span
+        {/* <span
           style={{
             fontFamily: "var(--font-family)",
             color: "var(--primary-color)",
           }}
           dangerouslySetInnerHTML={{ __html: product.description }}
-        ></span>
+        ></span> */}
       </Grid>
     </Grid>
   );

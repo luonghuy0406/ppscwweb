@@ -309,7 +309,7 @@ const FormContact = ({ ...props }) => {
           >
             {t("Contact us")}
           </DialogTitle>
-          <DialogContent>
+          <DialogContent sx={{paddingTop:"24px !important"}}>
             <TextField
               autoFocus
               margin="dense"

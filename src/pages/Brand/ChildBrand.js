@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { arrBrand } from ".";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -93,10 +93,12 @@ function ChildBrand() {
                 arrBrand[id].products.map((product)=>{
                     return (
                         <Grid item xs={12}>
+                          <Link to={product.path} style={{textDecoration:"none", cursor:"pointer"}}>
                             <div style={{width:"100%",height:"50px", marginBottom:"15px", backgroundColor:"var(--background-gray)", color:"var(--primary-color)",display: "flex", alignItems: "center"}}>
                                 <label style={{color:"var(--secondary-color)", padding: "10px 15px", lineHeight:"0"}}><ChevronRightIcon fontSize="medium"/></label>
-                                <label>{product}</label>
+                                <label>{product.name}</label>
                             </div>
+                          </Link>
                         </Grid>
                     )
                 })

@@ -19,7 +19,11 @@ import white_hidraulics from "../../assets/images/white_hidraulics.png";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material/styles";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
 import { useInView } from "react-intersection-observer";
 
 export const arrBrand = {
@@ -28,21 +32,44 @@ export const arrBrand = {
     logo: cat_pumps,
     logo_white: white_cat_pumps,
     description: "catpump_content",
-    products: ["PLUNGER PUMP", "PISTON PUMP", "SPECIAL PUMP"],
+    products: [
+      {
+        name: "PLUNGER PUMP",
+        path: "/product/pump/plunger_pump",
+      },
+      {
+        name: "PISTON PUMP",
+        path: "/product/pump/piston_pump",
+      },
+      {
+        name: "SPECIAL PUMP",
+        path: "/product/pump/special_pump",
+      },
+    ],
   },
   spir_star: {
     name: "SPIR STAR",
     logo: spir_star,
     logo_white: white_spir_star,
     description: "spir_star_content",
-    products: ["THERMOPLASTIC HIGH-PRESSURE HOSES"],
+    products: [
+      {
+        name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+        path: "/product/thermoplastic_high_pressure_hoses/thermoplastic_high_pressure_hoses",
+      },
+    ],
   },
   techcal: {
     name: "TECHCAL",
     logo: techcal,
     logo_white: white_techcal,
     description: "techcal_content",
-    products: ["CHART RECORDER"],
+    products: [
+      {
+        name: "CHART RECORDER",
+        path: "/product/chart_recorder/chart_recorder",
+      },
+    ],
   },
   hydraulics_international: {
     name: "Hydraulics International, Inc. (HII)",
@@ -50,9 +77,18 @@ export const arrBrand = {
     logo_white: white_hydraulics_international,
     description: "hydraulics_international_content",
     products: [
-      "AIR DRIVEN GAS BOOSTERS",
-      "AIR DRIVEN LIQUID PUMPS",
-      "AIR PRESSURE AMPLIFIER",
+      {
+        name: "AIR DRIVEN GAS BOOSTERS",
+        path: "/product/pump/air_driven_gas_booters",
+      },
+      {
+        name: "AIR DRIVEN LIQUID PUMPS",
+        path: "/product/pump/air_driven_liquid_pumps",
+      },
+      {
+        name: "AIR PRESSURE AMPLIFIER",
+        path: "/product/pump/air_pressure_amplifier",
+      },
     ],
   },
   graphic: {
@@ -60,14 +96,32 @@ export const arrBrand = {
     logo: graphic,
     logo_white: white_graphic,
     description: "graphic_content",
-    products: ["CHART PAPER & PEN"],
+    products: [
+      {
+        name: "CHART PAPER & PEN",
+        path: "/product/chart_paper_n_pen/chart_paper_n_pen",
+      },
+    ],
   },
   norriseal: {
     name: "NORRISEAL",
     logo: norriseal,
     logo_white: white_norriseal,
     description: "norriseal_content",
-    products: ["BUTTERFLY VALVE", "CONTROL VALVE", "LIQUID LEVEL CONTROLLER"],
+    products: [
+      {
+        name: "BUTTERFLY VALVE",
+        path: "/product/valve_control/butterfly_valve",
+      },
+      {
+        name: "CONTROL VALVE",
+        path: "/product/valve_control/control_valve",
+      },
+      {
+        name: "LIQUID LEVEL CONTROLLER",
+        path: "/product/valve_control/liquid_level_controller",
+      },
+    ],
   },
   taylor: {
     name: "TAYLOR",
@@ -81,7 +135,12 @@ export const arrBrand = {
     logo: hidraulics,
     logo_white: white_hidraulics,
     description: "hidraulics_content",
-    products: ["COUNTERBALANCE CARTRIDGE VALVES"],
+    products: [
+      {
+        name: "COUNTERBALANCE CARTRIDGE VALVES",
+        path: "/product/valve_control/counterbalance_cartridge_valves",
+      },
+    ],
   },
 };
 

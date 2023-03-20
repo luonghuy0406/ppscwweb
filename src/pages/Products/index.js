@@ -7,16 +7,10 @@ import {
   Card,
   Typography,
   useTheme,
-  CardActions,
 } from "@mui/material";
-import mir from "../../assets/images/MIR.png";
-import sales from "../../assets/images/SELL.png";
-import rental from "../../assets/images/RENTAL.png";
-import other from "../../assets/images/OTHER.png";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Box } from "@mui/system";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -25,45 +19,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useInView } from "react-intersection-observer";
-
-const service = [
-  {
-    id: "sales",
-    label: "EQUIPMENT SALES",
-    content: "Sales content",
-    img: sales,
-  },
-  {
-    id: "mir",
-    label: "MAINTENANCE - INSPECTION – REPAIR",
-    content: "MIR content",
-    img: mir,
-  },
-  {
-    id: "Rental",
-    label: "RENTAL",
-    content: "Rental content",
-    img: rental,
-  },
-  {
-    id: "Other",
-    label: "OTHER SERVICES",
-    content: "Other content",
-    img: other,
-  },
-  {
-    id: "sales",
-    label: "EQUIPMENT SALES",
-    content: "Sales content",
-    img: sales,
-  },
-  {
-    id: "mir",
-    label: "MAINTENANCE - INSPECTION – REPAIR",
-    content: "MIR content",
-    img: mir,
-  }
-];
+import { dataProducts } from "./data";
 
 const useStyles = makeStyles((props) => ({
   container: {
@@ -132,7 +88,7 @@ const useStyles = makeStyles((props) => ({
         color: "white !important",
       },
       "& img": {
-        width: "95% !important",
+        width: "85% !important",
       },
     },
   },
@@ -187,7 +143,7 @@ function Products() {
           classes={{ root: classes.container }}
           pt={5}
         >
-          {service.map((item, index) => {
+          {Object.keys(dataProducts).map((item, index) => {
             let { ref, inView } = useInView({
               /* Optional options */
               threshold: 0,
@@ -213,7 +169,7 @@ function Products() {
                 }
               >
                 <Grid item xs={12}>
-                  <Link to={`/product/${item.id}`} style={{ textDecoration: 'none'}}>
+                  <Link to={`/product/${item}`} style={{ textDecoration: 'none'}}>
                     <Card className={classes.card}>
                       <CardContent sx={{ 
                           height: "200px",
@@ -222,12 +178,14 @@ function Products() {
                           justifyContent: "center",
                           background: "white"
                         }}>
-                        <img src={item.img} style={{width:"90%"}}/>  
+                        <img src={dataProducts[item].image} style={{width:"80%"}}/>  
                       </CardContent>
                       <CardContent classes={{ root: classes.content }} className="card-content-hover">
-                        <Typography gutterBottom variant="h6">
-                          Lizard Lizard LizardLizard Lizard Lizard
-                        </Typography>
+                        <div style={{minHeight:"60px"}}>
+                          <Typography gutterBottom variant="h6">
+                            {dataProducts[item].name}
+                          </Typography>
+                        </div>
                         <Typography component="span" fontSize="14px" style={{textDecoration: "underline"}}>
                           {t("LEARN MORE")}
                         </Typography>
@@ -294,3 +252,4 @@ const FormContact = () => {
     </div>
   );
 };
+
