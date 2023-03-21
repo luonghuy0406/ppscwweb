@@ -24,36 +24,43 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 const arrProduct = [
   {
     name: "CAT PUMP",
     description: "35 Frame Plunger Pump",
     img: catpump,
+    path:'/product/pump/plunger_pump'
   },
   {
     name: "HII",
     description: "Air Driven Air Pressure <br> Amplifiers 7A-DS-8-X-N-G-IAC",
     img: HII,
+    path:'/product/pump/air_pressure_amplifier'
   },
   {
     name: "SPIR STAR",
     description: "Hose 13/4H ",
     img: spirstar,
+    path: ''
   },
   {
     name: "TECH CAL",
     description: "Chart Recorder 8",
     img: Techcal,
+    path: ''
   },
   {
     name: "GRAPHIC CONTROL",
     description: "Chart Paper & Pen",
     img: graphic,
+    path: ''
   },
   {
     name: "NORRISEAL",
     description: "Butterfly Valve R200",
     img: Norriseal,
+    path: ''
   },
 ];
 
@@ -197,7 +204,11 @@ function FeaturedProduct() {
                 swipeable
               >
                 {arrProduct.map((product) => {
-                  return <FeaturedProductChild product={product} />;
+                  return (
+                    <Link to={product.path} style={{ textDecoration: "none" }}>
+                      <FeaturedProductChild product={product} />
+                    </Link>
+                  );
                 })}
               </Carousel>
             </div>

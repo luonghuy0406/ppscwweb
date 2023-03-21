@@ -254,7 +254,7 @@ const ServiceContent = () => {
                   </Typography>
                 </label>
                 <label>
-                  <FormContact content={t(item.label)} />
+                  <FormContact content={t(item.label)} id={item.id}/>
                 </label>
               </Box>
             </Grid>
@@ -278,7 +278,7 @@ const FormContact = ({ ...props }) => {
   };
   const handleSendMail = () => {
     setOpen(false);
-    let data = $("#send-mail-form").serialize()
+    let data = $("#send-mail-form"+props.id).serialize()
     $.ajax({
       type: "POST",
       url: 'https://ppsc-webapi.onrender.com/send',
@@ -304,7 +304,7 @@ const FormContact = ({ ...props }) => {
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <form id="send-mail-form">
+        <form id={"send-mail-form"+props.id}>
           <DialogTitle
             sx={{
               backgroundColor: "var(--primary-color)",

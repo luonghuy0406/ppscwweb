@@ -9,6 +9,7 @@ import {
   Link,
   Breadcrumbs,
 } from "@mui/material";
+import $ from 'jquery'
 import { makeStyles } from "@mui/styles";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,6 +23,14 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { dataProducts } from "./data";
 import { arrBrand } from "../Brand";
 import ArticleIcon from '@mui/icons-material/Article';
+
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 
 const responsive = {
@@ -67,6 +76,14 @@ const useStyles = makeStyles(() => {
         },
       },
     },
+    button: {
+      backgroundColor: "var(--primary-color) !important",
+      fontWeight: "bold !important",
+      padding: "10px 15px !important",
+      "&:hover": {
+        backgroundColor: "var(--secondary-color) !important",
+      },
+    }
   };
 });
 
@@ -234,6 +251,7 @@ function ChildProduct() {
                 </label>
                 
               </Box>
+              <FormContact productId={secondId} content={data.name}/>
             </Grid>
           </Grid>
         </Grid>
@@ -451,6 +469,106 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
       >
         <ChevronRightIcon />
       </IconButton>
+    </div>
+  );
+};
+const FormContact = ({ ...props }) => {
+  const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation();
+  const classes = useStyles();
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleSendMail = () => {
+    setOpen(false);
+    let data = $("#send-mail-form"+props.productId).serialize()
+    $.ajax({
+      type: "POST",
+      url: 'https://ppsc-webapi.onrender.com/send',
+      data: data,
+      success: function(data)
+      {
+        
+      },
+      error : function(error)
+      {
+        
+      },
+  });
+  };
+
+  return (
+    <div style={{float:"right"}}>
+      <Button
+        variant="contained"
+        onClick={handleClickOpen}
+        className={classes.button}
+      >
+        {t("Contact us")}
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <form id={"send-mail-form"+props.productId}>
+          <DialogTitle
+            sx={{
+              backgroundColor: "var(--primary-color)",
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            {t("Contact us")}
+          </DialogTitle>
+          <DialogContent sx={{paddingTop:"24px !important"}}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              name="name"
+              label={t("Full name")}
+              type="text"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="email"
+              name="email"
+              label={t("Email address")}
+              type="email"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="phone"
+              name="phone"
+              label={t("Phone number")}
+              type="text"
+              fullWidth
+              variant="outlined"
+            />
+            <TextField
+              margin="dense"
+              id="content"
+              name="content"
+              label={t("Message")}
+              multiline
+              rows={4}
+              defaultValue={t("I'm interested in ") + props.content}
+              fullWidth
+              variant="outlined"
+              pt={1}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>{t("CANCEL")}</Button>
+            <Button onClick={handleSendMail}>{t("SEND")}</Button>
+          </DialogActions>
+        </form>
+      </Dialog>
     </div>
   );
 };
