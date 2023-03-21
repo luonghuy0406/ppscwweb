@@ -14,14 +14,15 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { useParams } from "react-router-dom";
-
+import { Link as LinkRouter } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { dataProducts } from "./data";
+import { arrBrand } from "../Brand";
+import ArticleIcon from '@mui/icons-material/Article';
 
-import { Link as LinkRouter } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
@@ -72,6 +73,7 @@ const useStyles = makeStyles(() => {
 function ChildProduct() {
   const { id1: firstId, id2: secondId } = useParams();
   const data = dataProducts[firstId]["product"][secondId];
+  const logoBrand = arrBrand[data.brand_id].logo
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -151,6 +153,7 @@ function ChildProduct() {
                 alignItems: "center",
                 justifyContent: "center",
                 boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.2)",
+                position:"relative"
               }}
             >
               <Box
@@ -161,6 +164,17 @@ function ChildProduct() {
                   objectFit: "contain",
                 }}
                 src={data.image}
+              />
+              <Box
+                component="img"
+                sx={{
+                  width: {xs:"70px",md: "100px"},
+                  position:"absolute",
+                  padding:"10px",
+                  top:"0",
+                  left:"0"
+                }}
+                src={logoBrand}
               />
             </div>
           </Grid>
@@ -206,6 +220,19 @@ function ChildProduct() {
                   }}
                   dangerouslySetInnerHTML={{ __html: t(data["specification"]) }}
                 ></label>
+                <br/>
+                <br/>
+                <label
+                  style={{
+                    color: "var(--primary-color)",
+                    fontFamily: "var(--font-family)",
+                    display: "flex",
+                    alignItems:"center"
+                  }}
+                >
+                  <ArticleIcon style={{paddingBottom:"3px"}}/> <a href={data.brochue} style={{paddingLeft:"10px"}} target="_blank">{t("Product brochure")}</a>
+                </label>
+                
               </Box>
             </Grid>
           </Grid>
@@ -322,8 +349,8 @@ function SimilarProducts({ ...props }) {
                 slidesToSlide={1}
                 swipeable
               >
-                {Object.values(props.similarProducts).map((product) => {
-                  return <SimilarProductsChild product={product} brand={props.brand}/>;
+                {Object.values(props.similarProducts).map((product,index) => {
+                  return <SimilarProductsChild key={index} product={product} brand={props.brand}/>;
                 })}
               </Carousel>
             </div>

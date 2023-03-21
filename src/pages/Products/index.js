@@ -187,7 +187,7 @@ function Products() {
                           </Typography>
                         </div>
                         <Typography component="span" fontSize="14px" style={{textDecoration: "underline"}}>
-                          {t("LEARN MORE")}
+                          {t("Learn more")}
                         </Typography>
                       </CardContent>
                     </Card>
