@@ -100,6 +100,14 @@ function ChildProduct() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#lb-"+secondId).hasClass("animate__fadeInLeft")) {
+      $("#lb-"+secondId).addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#ct-"+secondId).hasClass("animate__fadeInRight")) {
+      $("#ct-"+secondId).addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid item md={12} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
@@ -125,12 +133,9 @@ function ChildProduct() {
           <Typography color="var(--secondary-color)">{data.name}</Typography>
         </Breadcrumbs>
         <div
+          id={"lb-"+secondId}
           style={{ display: "flex", alignItems: "center", padding: "50px 0" }}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
+          className={"animate__animated animate__delay-0.1s"}
         >
           <div
             style={{
@@ -152,13 +157,10 @@ function ChildProduct() {
           </Typography>
         </div>
         <Grid
+          id={"ct-"+secondId}
           container
           classes={{ root: classes.container }}
-          className={
-            inView
-              ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-              : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-          }
+          className={"animate__animated animate__delay-0.1s"}
         >
           <Grid item xs={12} md={5} sx={{ textAlign: "center" }} p={1}>
             <div
@@ -204,6 +206,7 @@ function ChildProduct() {
                 component="h6"
                 fontWeight="bolder"
                 pb={2}
+                sx={{ textTransform: 'uppercase' }}
               >
                 {data.name}
               </Typography>
@@ -270,10 +273,19 @@ export default ChildProduct;
 function SimilarProducts({ ...props }) {
   const classes = useStyles();
   const { t } = useTranslation();
+  const { id1: firstId, id2: secondId } = useParams();
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#lb2-"+secondId).hasClass("animate__fadeInLeft")) {
+      $("#lb2-"+secondId).addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#ct2-"+secondId).hasClass("animate__fadeInRight")) {
+      $("#ct2-"+secondId).addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid
       item
@@ -298,11 +310,8 @@ function SimilarProducts({ ...props }) {
             xs={12}
             md={12}
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-            }
+            id={"lb2-"+secondId}
+            className={"animate__animated animate__delay-0.1s"}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
               <div
@@ -330,11 +339,8 @@ function SimilarProducts({ ...props }) {
             item
             xs={12}
             md={12}
-            className={
-              inView
-                ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-            }
+            id={"ct2-"+secondId}
+            className={"animate__animated animate__delay-0.1s"}
           >
             <div
               style={{
@@ -413,6 +419,7 @@ const SimilarProductsChild = ({ ...props }) => {
           fontFamily={"var(--font-family)"}
           color="var(--primary-color)"
           fontWeight={"bold"}
+          sx={{ textTransform: 'uppercase' }}
         >
           {props.brand}
         </Typography>

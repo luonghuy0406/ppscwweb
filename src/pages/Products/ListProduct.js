@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import $ from 'jquery'
 import {
   Grid,
   Container,
@@ -112,16 +113,21 @@ function ListProducts() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#"+id+"line").hasClass("animate__fadeInLeft")) {
+      $("#"+id+"line").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#"+id+"line_content").hasClass("animate__fadeInRight")) {
+      $("#"+id+"line_content").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <div 
+          id={id+"line"}
           style={{display:"flex",alignItems:"center"}}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
+          className={"animate__animated animate__delay-0.1s"}
         >
           <div style={{width:"30px",height:"30px",marginRight:"10px",backgroundColor:"var(--secondary-color)"}}>
 
@@ -134,22 +140,20 @@ function ListProducts() {
             component="h4"
             fontWeight="bolder"
             lineHeight={0}
-            
+            sx={{ textTransform: 'uppercase' }}
             
           >
-            {t("LIST PRODUCT")}
+            {dataProducts[id.toLowerCase()].name}
           </Typography>
         </div>
         <Grid
           container
           classes={{ root: classes.container }}
+          id={id+"line_content"}
           pt={5}
+          className={"animate__animated animate__delay-0.1s"}
         >
           {Object.entries(dataProducts[id.toLowerCase()].product).map((item, index) => {
-            let { ref, inView } = useInView({
-              /* Optional options */
-              threshold: 0,
-            });
             return (
               // <Link to={`/product/${item.id}`}>
               <Grid
@@ -159,16 +163,6 @@ function ListProducts() {
                 sm={6}
                 md={4}
                 container
-                ref={ref}
-                className={
-                  inView
-                    ? "animate__animated animate__" +
-                      (index % 2 == 1 ? "fadeInRight" : "fadeInLeft") +
-                      " animate__delay-0.7s"
-                    : "animate__animated animate__" +
-                      (index % 2 == 1 ? "fadeOutRight" : "fadeOutLeft") +
-                      " animate__delay-0.7s"
-                }
               >
                 <Grid item xs={12}>
                   <Link to={`/product/${id.toLowerCase()}/${item[0]}`} style={{ textDecoration: 'none'}}>
@@ -184,7 +178,7 @@ function ListProducts() {
                       </CardContent>
                       <CardContent classes={{ root: classes.content }} className="card-content-hover">
                         <div style={{minHeight:"60px"}}>
-                          <Typography gutterBottom variant="h6">
+                          <Typography gutterBottom variant="h6" sx={{ textTransform: 'uppercase' }}>
                             {item[1].name}
                           </Typography>
                         </div>

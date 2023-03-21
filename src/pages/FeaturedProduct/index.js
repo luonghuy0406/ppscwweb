@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import $ from 'jquery'
 import {
   Grid,
   Box,
@@ -34,19 +35,19 @@ const arrProduct = [
   },
   {
     name: "HII",
-    description: "Air Driven Air Pressure <br> Amplifiers 7A-DS-8-X-N-G-IAC",
+    description: "Air Pressure Amplifiers 7A-DS-8-X-N-G-IAC",
     img: HII,
     path:'/product/pump/air_pressure_amplifier'
   },
   {
     name: "SPIR STAR",
-    description: "Hose 13/4H ",
+    description: "Thermoplastic High-Pressure Hose 13/4H",
     img: spirstar,
     path: '/product/thermoplastic_high_pressure_hoses/Thermoplastic_highpressure_hoses'
   },
   {
     name: "TECH CAL",
-    description: "Chart Recorder 8",
+    description: "Chart Recorder 8 Inch",
     img: Techcal,
     path: '/product/chart_recorder/chart_recorder'
   },
@@ -117,12 +118,20 @@ function FeaturedProduct() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#feature_lb").hasClass("animate__fadeInLeft")) {
+      $("#feature_lb").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#feature_content").hasClass("animate__fadeInRight")) {
+      $("#feature_content").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid
       item
       md={12}
       sx={{
-        padding: { xs: "25px 0", md: "50px 0" },
+        padding: "0px",
         backgroundColor: "var(--background-gray)",
         maxWidth: "100vw",
       }}
@@ -138,14 +147,11 @@ function FeaturedProduct() {
         >
           <Grid
             item
+            id="feature_lb"
             xs={12}
             md={12}
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-            }
+            className={"animate__animated animate__delay-0.1s"}
           >
             <Typography
               fontFamily={"var(--font-family-header)"}
@@ -160,13 +166,10 @@ function FeaturedProduct() {
           </Grid>
           <Grid
             item
+            id="feature_content"
             xs={12}
             md={12}
-            className={
-              inView
-                ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-            }
+            className={"animate__animated animate__delay-0.1s"}
           >
             <div
               style={{

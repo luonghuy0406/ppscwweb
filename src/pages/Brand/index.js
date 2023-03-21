@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import $ from "jquery";
 import { Grid, Box, Container, Typography, useTheme } from "@mui/material";
 import cat_pumps from "../../assets/images/cat_pumps.png";
 import spir_star from "../../assets/images/spir_star.png";
@@ -171,7 +172,7 @@ const useStyles = makeStyles(() => {
   };
 });
 
-function Brand() {
+function Brand({ ...props }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -183,47 +184,75 @@ function Brand() {
   });
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
+  useEffect(() => {
+    if (inView && !$("#brand_lb").hasClass("animate__fadeInLeft")) {
+      $("#brand_lb").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$(".brand_content").hasClass("animate__fadeInRight")) {
+      $(".brand_content").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid
       item
       md={12}
-      sx={{ padding: { xs: "25px 0", md: "50px 0" } }}
+      sx={{ padding: { xs: "15px 0", md: "30px 0" } }}
       ref={ref}
     >
       <Container maxWidth="md" sx={{ p: 2 }}>
         <Grid container spacing={2} classes={{ root: classes.container }}>
           <Grid
             item
+            id="brand_lb"
             xs={12}
             md={12}
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-            }
+            className={"animate__animated animate__delay-0.1s"}
           >
-            <ThemeProvider theme={theme}>
-              <Typography
-                fontFamily={"var(--font-family-header)"}
-                variant="h4"
-                component="h4"
-                sx={{ color: "var(--primary-color)" }}
-                fontWeight="bolder"
-              >
-                {t("OUR BRAND")}
-              </Typography>
-            </ThemeProvider>
-
-            <span className={"line-brand"}></span>
+            {props.home ? (
+              <>
+                <ThemeProvider theme={theme}>
+                  <Typography
+                    fontFamily={"var(--font-family-header)"}
+                    variant="h4"
+                    component="h4"
+                    sx={{ color: "var(--primary-color)" }}
+                    fontWeight="bolder"
+                  >
+                    {t("OUR BRAND")}
+                  </Typography>
+                </ThemeProvider>
+                <span className={"line-brand"}></span>
+              </>
+              
+            ) : (
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    marginRight: "10px",
+                    backgroundColor: "var(--secondary-color)",
+                  }}
+                ></div>
+                <Typography
+                  fontFamily={"var(--font-family-header)"}
+                  variant="h4"
+                  component="h4"
+                  sx={{ color: "var(--primary-color)" }}
+                  fontWeight="bolder"
+                  lineHeight={0}
+                >
+                  {t("OUR BRAND")}
+                </Typography>
+              </div>
+            )}
           </Grid>
           {Object.entries(arrBrand).map((brand, index) => {
             return (
               <Grid
                 className={
-                  inView
-                    ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                    : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
+                  "brand_content animate__animated animate__delay-0.1s"
                 }
                 key={"brand-" + brand[0]}
                 classes={{ root: classes.background }}

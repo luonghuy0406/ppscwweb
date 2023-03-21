@@ -208,6 +208,28 @@ function Header(props) {
                 </Link>
               );
             })}
+            <a href="tel:+84 909 942 855" style={{ textDecoration: "none" }}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    m: 1,
+                    px: 3,
+                    color: "white",
+                    display: "block",
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    borderRadius: "unset",
+                    transition: "0.25s",
+                    fontFamily: "var(--font-family)",
+                    "&:hover": {
+                      boxShadow: "inset 0 -2px 0 0 var(--secondary-color)",
+                      color: "var(--secondary-color)",
+                    },
+                  }}
+                >
+                  {"+84 909 942 855 (Mr. Hoàng)"}
+                </Button>
+              </a>
           </Box>
 
           <Box

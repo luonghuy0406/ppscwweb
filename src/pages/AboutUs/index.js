@@ -1,9 +1,10 @@
 import { Container, Grid, Typography } from "@mui/material";
+import $ from 'jquery'
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import aboutus from "../../assets/images/aboutus.png";
-import aboutus2 from "../../assets/images/aboutus2.jpeg";
+import aboutus2 from "../../assets/images/Ourmission.png";
 import { useInView } from "react-intersection-observer";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 function AboutUs() {
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
+    <Grid item md={12} sx={{ padding: 0 }}>
       <Container maxWidth="md" sx={{ p: 2 }}>
           <AboutUsContent1 />
           <AboutUsContent2 />
@@ -77,18 +78,26 @@ const AboutUsContent1 = () => {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() =>{
+    if(inView && !$("#content_lb1").hasClass("animate__fadeInLeft")){
+      $("#content_lb1").addClass("animate__fadeInLeft")
+    }
+    if(inView && !$("#about_us_content1").hasClass("animate__fadeInLeft")){
+      $("#about_us_content1").addClass("animate__fadeInLeft")
+    }
+    if(inView && !$("#about_us_image1").hasClass("animate__fadeInRight")){
+      $("#about_us_image1").addClass("animate__fadeInRight")
+    }
+  },[inView])
   return (
     <Grid container classes={{ root: classes.container }} ref={ref}>
       <Grid
+        id="content_lb1"
         item
         xs={12}
         md={12}
         sx={{ padding: {xs:"10px 0 !important" ,md:"20px 0 !important"}, fontSize: "22px" }}
-        className={
-          inView
-            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-        }
+        className={"animate__animated animate__delay-0.1s"}
       >
         <Typography
           fontFamily={"var(--font-family-header)"}
@@ -103,12 +112,9 @@ const AboutUsContent1 = () => {
       </Grid>
       <Grid
         item
+        id="about_us_content1"
         xs={6}
-        className={
-          inView
-            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-        }
+        className={"animate__animated animate__delay-0.1s"}
       >
         <Typography
           variant="body1"
@@ -133,13 +139,9 @@ const AboutUsContent1 = () => {
       </Grid>
       <Grid
         item
+        id="about_us_image1"
         xs={6}
-        className={
-          classes.aboutUsContent +
-          (inView
-            ? " animate__animated animate__fadeInRight animate__delay-0.7s"
-            : " animate__animated animate__fadeOutLeft animate__delay-0.7s")
-        }
+        className={classes.aboutUsContent +" animate__animated animate__delay-0.1s"}
       >
         <div style={{ paddingLeft: "40px" }}>
           <div
@@ -178,18 +180,26 @@ const AboutUsContent2 = () => {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() =>{
+    if(inView && !$("#content_lb2").hasClass("animate__fadeInLeft")){
+      $("#content_lb2").addClass("animate__fadeInLeft")
+    }
+    if(inView && !$("#about_us_content2").hasClass("animate__fadeInLeft")){
+      $("#about_us_content2").addClass("animate__fadeInLeft")
+    }
+    if(inView && !$("#about_us_image2").hasClass("animate__fadeInRight")){
+      $("#about_us_image2").addClass("animate__fadeInRight")
+    }
+  },[inView])
   return (
     <Grid container classes={{ root: classes.containerXs }} ref={ref}>
       <Grid
+        id="content_lb2"
         item
         xs={12}
         md={12}
         sx={{ padding: {xs:"10px 0 !important" ,md:"20px 0 !important"}, fontSize: "22px" }}
-        className={
-          inView
-            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-        }
+        className={"animate__animated animate__delay-0.1s"}
       >
         <Typography
           fontFamily={"var(--font-family-header)"}
@@ -203,13 +213,10 @@ const AboutUsContent2 = () => {
         <span className={"line-brand"}></span>
       </Grid>
       <Grid
+        id="about_us_content2"
         item
         xs={12}
-        className={
-          inView
-            ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-            : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-        }
+        className={"animate__animated animate__delay-0.1s"}
       >
         <Typography
           variant="body1"
@@ -231,14 +238,12 @@ const AboutUsContent2 = () => {
         </Typography>
       </Grid>
       <Grid
+        id="about_us_image2"
         item
         xs={12}
         pt={10}
         className={
-          classes.aboutUsContent +
-          (inView
-            ? " animate__animated animate__fadeInRight animate__delay-0.7s"
-            : " animate__animated animate__fadeOutLeft animate__delay-0.7s")
+          classes.aboutUsContent + " animate__animated animate__delay-0.1s"
         }
       >
         <div>
@@ -282,8 +287,17 @@ const MissionContent = () => {
     /* Optional options */
     threshold: 0,
   });
+  
+  useEffect(() =>{
+    if(inView && !$("#content_lb3").hasClass("animate__fadeInRight")){
+      $("#content_lb3").addClass("animate__fadeInRight")
+    }
+    if(inView && !$("#about_us_content3").hasClass("animate__fadeInLeft")){
+      $("#about_us_content3").addClass("animate__fadeInLeft")
+    }
+  },[inView])
   return (
-    <Container maxWidth="md" sx={{ p: 2, pt: 15 }}>
+    <Container maxWidth="md" sx={{ p: 2, pt: 5 }}>
       <Grid
         container
         className={classes.aboutUsContent}
@@ -307,7 +321,6 @@ const MissionContent = () => {
             height: "350px",
             background: "var(--secondary-color)",
             backgroundImage: `url("${aboutus2}")`,
-            backgroundImage: `linear-gradient(var(--secondary-color), #0000005e, #00000033), url("${aboutus2}")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -316,13 +329,11 @@ const MissionContent = () => {
             justifyContent: "center",
             boxShadow: "20px 20px 20px -15px rgb(0 0 0 / 50%)",
           }}
-          className={
-            inView
-              ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-              : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-          }
+          id="content_lb3"
+          className={"animate__animated animate__delay-0.1s"}
         >
           <div
+          id="about_us_content3"
             style={{
               width: "70%",
               height: "50%",
@@ -331,11 +342,7 @@ const MissionContent = () => {
               justifyContent: "center",
               flexDirection: "column",
             }}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.8s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.8s"
-            }
+            className={"animate__animated animate__delay-0.2"}
             ref={ref}
           >
             <Typography

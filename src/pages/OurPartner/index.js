@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import $ from 'jquery'
 import { Grid, Box, Container, Typography, useTheme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useTranslation } from "react-i18next";
@@ -30,6 +31,20 @@ const useStyles = makeStyles((props) => {
       width: "calc(100%)  !important",
       marginLeft: "0 !important",
     },
+    background2: {
+      "&:hover": {
+        "& img": {
+          [theme.breakpoints.down("sm")]: {
+            width: "85%",
+            transition: "width .1s linear !important",
+          },
+          [theme.breakpoints.up("md")]: {
+            width: "105%",
+            transition: "width .1s linear !important",
+          },
+        },
+      },
+    },
     background: {
       "&:hover": {
         "& img": {
@@ -57,8 +72,22 @@ function OurPartner() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#partner_lb").hasClass("animate__fadeInLeft")) {
+      $("#partner_lb").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#partner_content1").hasClass("animate__fadeInRight")) {
+      $("#partner_content1").addClass("animate__fadeInRight");
+    }
+    if (inView && !$("#partner_content2").hasClass("animate__fadeInLeft")) {
+      $("#partner_content2").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#partner_content3").hasClass("animate__fadeInRight")) {
+      $("#partner_content3").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
+    <Grid item md={12} sx={{ padding: 0}}>
       <Container maxWidth="md" sx={{ p: 2 }} ref={ref}>
         <Grid
           container
@@ -75,8 +104,8 @@ function OurPartner() {
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
             className={
               inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
+                ? "animate__animated animate__fadeInLeft animate__delay-0.1s"
+                : "animate__animated animate__fadeOutRight animate__delay-0.1s"
             }
           >
             <Typography
@@ -92,23 +121,20 @@ function OurPartner() {
           </Grid>
           <Grid
             direction="row"
+            id="partner_content1"
             justifyContent="center"
             alignItems="center"
             container
+            className={"animate__animated animate__delay-0.1s"}
           >
             {arrBrand.map((brand, index) => {
               return (
                 <Grid
-                  className={
-                    inView
-                      ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                      : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-                  }
                   key={"brand-" + index}
-                  classes={{ root: classes.background }}
+                  classes={{ root: classes.background2 }}
                   sx={{
-                    padding: { xs: "5px !important", md: "15px !important" },
-                    height: { xs: "50px !important", md: "120px !important" },
+                    padding: 0,
+                    height: { xs: "50px !important", md: "90px !important" },
                   }}
                   item
                   xs={2}
@@ -125,7 +151,7 @@ function OurPartner() {
                     <Box
                       component="img"
                       sx={{
-                        width: { xs: "80%", md: "90%" },
+                        width: { xs: "80%", md: "100%" },
                         aspectRatio: " 3/2",
                         objectFit: "contain",
                         maxHeight: { xs: 233, md: 250 },
@@ -141,23 +167,21 @@ function OurPartner() {
           </Grid>
           <Grid
             direction="row"
+            id="partner_content2"
             justifyContent="center"
             alignItems="center"
             container
+            className={"animate__animated animate__delay-0.1s"}
           >
             {arrBrand2.map((brand, index) => {
               return (
                 <Grid
-                  className={
-                    inView
-                      ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                      : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-                  }
+                  
                   key={"brand-" + index}
                   classes={{ root: classes.background }}
                   sx={{
-                    padding: { xs: "5px !important", md: "15px !important" },
-                    height: { xs: "50px !important", md: "120px !important" },
+                    padding: 0,
+                    height: { xs: "50px !important", md: "90px !important" },
                   }}
                   item
                   xs={2}
@@ -174,7 +198,7 @@ function OurPartner() {
                     <Box
                       component="img"
                       sx={{
-                        width: { xs: "80%", md: "90%" },
+                        width: { xs: "70%", md: "80%" },
                         aspectRatio: " 3/2",
                         objectFit: "contain",
                         maxHeight: { xs: 233, md: 250 },
@@ -190,23 +214,21 @@ function OurPartner() {
           </Grid>
           <Grid
             direction="row"
+            id="partner_content3"
             justifyContent="center"
             alignItems="center"
             container
+            className={"animate__animated animate__delay-0.1s"}
           >
             {arrBrand3.map((brand, index) => {
               return (
                 <Grid
-                  className={
-                    inView
-                      ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                      : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-                  }
+                  
                   key={"brand-" + index}
                   classes={{ root: classes.background }}
                   sx={{
-                    padding: { xs: "5px !important", md: "15px !important" },
-                    height: { xs: "50px !important", md: "120px !important" },
+                    padding: 0,
+                    height: { xs: "50px !important", md: "90px !important" },
                   }}
                   item
                   xs={2}
@@ -223,7 +245,7 @@ function OurPartner() {
                     <Box
                       component="img"
                       sx={{
-                        width: { xs: "80%", md: "90%" },
+                        width: { xs: "70%", md: "80%" },
                         aspectRatio: " 3/2",
                         objectFit: "contain",
                         maxHeight: { xs: 233, md: 250 },

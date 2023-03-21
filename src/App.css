@@ -5,6 +5,8 @@
   --font-family-header: 'Roboto Condensed', sans-serif;
   --gray-color: #eee;
   --background-gray: #f5f5f5;
+  --animate-delay: 0.5s !important;
+  --animate-duration: 0.5s !important;
 }
 
 *{

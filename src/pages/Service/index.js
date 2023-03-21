@@ -159,6 +159,14 @@ function Service() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#service_id_lb").hasClass("animate__fadeInLeft")) {
+      $("#service_id_lb").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#service_id_content").hasClass("animate__fadeInRight")) {
+      $("#service_id_content").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
       <Container maxWidth="md" sx={{ p: 2 }}>
@@ -171,11 +179,8 @@ function Service() {
           component="h4"
           fontWeight="bolder"
           textAlign={"center"}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
+          id="service_id_lb"
+          className={"animate__animated animate__delay-0.1s"}
         >
           {t("OUR BUSINESS")}
         </Typography>
@@ -197,12 +202,8 @@ const ServiceContent = () => {
     threshold: 0,
   });
   return (
-    <Grid container classes={{ root: classes.container }} ref={ref}>
+    <Grid id="service_id_content" container classes={{ root: classes.container }} ref={ref} className={"animate__animated animate__delay-0.1s"}>
       {service.map((item, index) => {
-        let { ref, inView } = useInView({
-          /* Optional options */
-          threshold: 0,
-        });
         return (
           <Grid
           key={index}
@@ -213,15 +214,6 @@ const ServiceContent = () => {
             container
             direction={index % 2 != 0 ? "row-reverse" : "row"}
             classes={{ root: classes.root }}
-            className={
-              inView
-                ? "animate__animated animate__" +
-                  (index % 2 == 0 ? "fadeInRight" : "fadeInLeft") +
-                  " animate__delay-0.7s"
-                : "animate__animated animate__" +
-                  (index % 2 == 0 ? "fadeOutRight" : "fadeOutLeft") +
-                  " animate__delay-0.7s"
-            }
           >
             <Grid item xs={12} md={6}>
               <Box

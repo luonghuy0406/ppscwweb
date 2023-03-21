@@ -64,7 +64,7 @@
 //     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "70px 0" } }}>
 //       <Container maxWidth="md" sx={{ p: 2 }}>
 //       <Grid container classes={{root:classes.container}}>
-//           <Grid item xs={12} md={12} ref={ref} sx={{padding:'20px 0 !important', fontSize:"22px"}} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
+//           <Grid item xs={12} md={12} ref={ref} sx={{padding:'20px 0 !important', fontSize:"22px"}} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.1s" : "animate__animated animate__fadeOutRight animate__delay-0.1s"}>
 //             <Typography fontFamily={"var(--font-family-header)"} variant="h4" component="h4" sx={{color:"var(--primary-color)"}} fontWeight="bolder">
 //               {t("ABOUT US")}
 //             </Typography>
@@ -96,7 +96,7 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <Grid item xs={12} ref={ref} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
+//     <Grid item xs={12} ref={ref} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.1s" : "animate__animated animate__fadeOutRight animate__delay-0.1s"}>
 //       <Typography variant="body1" pr={2} className={classes.content}>
 //         {t("About us content")}
 //       </Typography>
@@ -114,7 +114,7 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <Grid item xs={12} ref={ref} classes={{ root: classes.imgContent }} className={inView ? "animate__animated animate__fadeInRight animate__delay-0.7s" : "animate__animated animate__fadeOutLeft animate__delay-0.7s"}>
+//     <Grid item xs={12} ref={ref} classes={{ root: classes.imgContent }} className={inView ? "animate__animated animate__fadeInRight animate__delay-0.1s" : "animate__animated animate__fadeOutLeft animate__delay-0.1s"}>
 //       <div
 //         style={{
 //           display: "flex",
@@ -137,7 +137,7 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <Grid item xs={12} ref={ref} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.7s" : "animate__animated animate__fadeOutRight animate__delay-0.7s"}>
+//     <Grid item xs={12} ref={ref} className={inView ? "animate__animated animate__fadeInLeft animate__delay-0.1s" : "animate__animated animate__fadeOutRight animate__delay-0.1s"}>
 //       <Typography
 //         fontFamily={"var(--font-family-header)"}
 //         variant="h5"
@@ -162,7 +162,7 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <Grid item xs={12} ref={ref} classes={{ root: classes.imgContent }} className={inView ? "animate__animated animate__fadeInRight animate__delay-0.7s" : "animate__animated animate__fadeOutLeft animate__delay-0.7s"}>
+//     <Grid item xs={12} ref={ref} classes={{ root: classes.imgContent }} className={inView ? "animate__animated animate__fadeInRight animate__delay-0.1s" : "animate__animated animate__fadeOutLeft animate__delay-0.1s"}>
 //       <div
 //         style={{
 //           display: "flex",
@@ -200,7 +200,7 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <img ref={ref} src={aboutus} alt="About us picture" className={classes.image + (inView ? " animate__animated animate__fadeInRight animate__delay-0.7s" : " animate__animated animate__fadeOutLeft animate__delay-0.7s")} />
+//     <img ref={ref} src={aboutus} alt="About us picture" className={classes.image + (inView ? " animate__animated animate__fadeInRight animate__delay-0.1s" : " animate__animated animate__fadeOutLeft animate__delay-0.1s")} />
 //   )
 // }
 
@@ -211,6 +211,6 @@
 //     threshold: 0,
 //   });
 //   return (
-//     <img ref={ref} src={aboutus2} alt="About us picture" className={classes.image + (inView ? " animate__animated animate__fadeInRight animate__delay-0.7s" : " animate__animated animate__fadeOutLeft animate__delay-0.7s")} />
+//     <img ref={ref} src={aboutus2} alt="About us picture" className={classes.image + (inView ? " animate__animated animate__fadeInRight animate__delay-0.1s" : " animate__animated animate__fadeOutLeft animate__delay-0.1s")} />
 //   )
 // }

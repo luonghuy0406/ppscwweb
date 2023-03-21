@@ -39,7 +39,7 @@ function Home() {
       </Box>
     </Grid>
     <AboutUs/>
-    <Brand/>
+    <Brand home={true}/>
     <FeaturedProduct/>
     <OurPartner/>
     </>

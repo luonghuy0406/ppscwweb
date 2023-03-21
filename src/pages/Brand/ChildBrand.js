@@ -1,4 +1,5 @@
 import { Box, Container, Grid, useTheme } from "@mui/material";
+import $ from 'jquery'
 import { makeStyles } from "@mui/styles";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -45,6 +46,17 @@ function ChildBrand() {
     /* Optional options */
     threshold: 0,
   });
+  useEffect(() => {
+    if (inView && !$("#child-brand1"+id).hasClass("animate__fadeInLeft")) {
+      $("#child-brand1"+id).addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#child-brand2"+id).hasClass("animate__fadeInRight")) {
+      $("#child-brand2"+id).addClass("animate__fadeInRight");
+    }
+    if (inView && !$("#child-brand3"+id).hasClass("animate__fadeInLeft")) {
+      $("#child-brand3"+id).addClass("animate__fadeInLeft");
+    }
+  }, [inView]);
   return (
     <Grid
       item
@@ -55,11 +67,8 @@ function ChildBrand() {
       <Container maxWidth="md" sx={{ p: 2 }}>
         <Grid container classes={{ root: classes.container }}>
           <Grid item xs={12} md={6} sx={{textAlign:"center"}} p={3}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-            }
+            id={"child-brand1"+id}
+            className={"animate__animated animate__delay-0.1s"}
           >
             <Box
               component="img"
@@ -72,22 +81,16 @@ function ChildBrand() {
             />
           </Grid>
           <Grid item xs={12} md={6} sx={{textAlign:"justify"}}
-            className={
-              inView
-                ? "animate__animated animate__fadeInRight animate__delay-0.7s"
-                : "animate__animated animate__fadeOutLeft animate__delay-0.7s"
-            }
+            id={"child-brand2"+id}
+            className={"animate__animated animate__delay-0.1s"}
           >
             <label style={{fontFamily:"var(--font-family)",color:"var(--primary-color)"}} dangerouslySetInnerHTML={{__html:t(arrBrand[id].description)}}>
 
             </label>
           </Grid>
           <Grid item xs={12} container pt={3}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-            }
+            id={"child-brand3"+id}
+            className={"animate__animated animate__delay-0.1s"}
           >
               {
                 arrBrand[id].products.map((product)=>{

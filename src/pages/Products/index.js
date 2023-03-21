@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
+import $ from 'jquery'
 import {
   Grid,
   Container,
-  CardMedia,
   CardContent,
   Card,
   Typography,
@@ -110,16 +110,22 @@ function Products() {
     /* Optional options */
     threshold: 0,
   });
+  
+  useEffect(() => {
+    if (inView && !$("#product_line_lb").hasClass("animate__fadeInLeft")) {
+      $("#product_line_lb").addClass("animate__fadeInLeft");
+    }
+    if (inView && !$("#product_line_content").hasClass("animate__fadeInRight")) {
+      $("#product_line_content").addClass("animate__fadeInRight");
+    }
+  }, [inView]);
   return (
     <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <div 
+          id="product_line_lb"
           style={{display:"flex",alignItems:"center"}}
-          className={
-            inView
-              ? "animate__animated animate__fadeInLeft animate__delay-0.7s"
-              : "animate__animated animate__fadeOutRight animate__delay-0.7s"
-          }
+          className={"animate__animated animate__delay-0.1s"}
         >
           <div style={{width:"30px",height:"30px",marginRight:"10px",backgroundColor:"var(--secondary-color)"}}>
 
@@ -139,15 +145,13 @@ function Products() {
           </Typography>
         </div>
         <Grid
+          id="product_line_content"
           container
           classes={{ root: classes.container }}
           pt={5}
+          className={"animate__animated animate__delay"}
         >
           {Object.keys(dataProducts).map((item, index) => {
-            let { ref, inView } = useInView({
-              /* Optional options */
-              threshold: 0,
-            });
             return (
               // <Link to={`/product/${item.id}`}>
               <Grid
@@ -157,16 +161,6 @@ function Products() {
                 sm={6}
                 md={4}
                 container
-                ref={ref}
-                className={
-                  inView
-                    ? "animate__animated animate__" +
-                      (index % 2 == 1 ? "fadeInRight" : "fadeInLeft") +
-                      " animate__delay-0.7s"
-                    : "animate__animated animate__" +
-                      (index % 2 == 1 ? "fadeOutRight" : "fadeOutLeft") +
-                      " animate__delay-0.7s"
-                }
               >
                 <Grid item xs={12}>
                   <Link to={`/product/${item}`} style={{ textDecoration: 'none'}}>
@@ -182,7 +176,7 @@ function Products() {
                       </CardContent>
                       <CardContent classes={{ root: classes.content }} className="card-content-hover">
                         <div style={{minHeight:"60px"}}>
-                          <Typography gutterBottom variant="h6">
+                          <Typography gutterBottom variant="h6" style={{ textTransform: 'uppercase' }}>
                             {dataProducts[item].name}
                           </Typography>
                         </div>
