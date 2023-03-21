@@ -122,7 +122,7 @@ function ChildProduct() {
               {dataProducts[firstId].name}
             </LinkRouter>
           </Link>
-          <Typography color="var(--secondary-color)">Piston Pump</Typography>
+          <Typography color="var(--secondary-color)">{data.name}</Typography>
         </Breadcrumbs>
         <div
           style={{ display: "flex", alignItems: "center", padding: "50px 0" }}
@@ -239,16 +239,20 @@ function ChildProduct() {
                 ></label>
                 <br/>
                 <br/>
-                <label
-                  style={{
-                    color: "var(--primary-color)",
-                    fontFamily: "var(--font-family)",
-                    display: "flex",
-                    alignItems:"center"
-                  }}
-                >
-                  <ArticleIcon style={{paddingBottom:"3px"}}/> <a href={data.brochue} style={{paddingLeft:"10px"}} target="_blank">{t("Product brochure")}</a>
-                </label>
+                {
+                  data.brochue &&
+                  <label
+                    style={{
+                      color: "var(--primary-color)",
+                      fontFamily: "var(--font-family)",
+                      display: "flex",
+                      alignItems:"center"
+                    }}
+                  >
+                    <ArticleIcon style={{paddingBottom:"3px"}}/> <a href={data.brochue} style={{paddingLeft:"10px"}} target="_blank">{t("Product brochure")}</a>
+                  </label>
+                }
+                
                 
               </Box>
               <FormContact productId={secondId} content={data.name}/>

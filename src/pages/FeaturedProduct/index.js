@@ -42,25 +42,25 @@ const arrProduct = [
     name: "SPIR STAR",
     description: "Hose 13/4H ",
     img: spirstar,
-    path: ''
+    path: '/product/thermoplastic_high_pressure_hoses/Thermoplastic_highpressure_hoses'
   },
   {
     name: "TECH CAL",
     description: "Chart Recorder 8",
     img: Techcal,
-    path: ''
+    path: '/product/chart_recorder/chart_recorder'
   },
   {
     name: "GRAPHIC CONTROL",
     description: "Chart Paper & Pen",
     img: graphic,
-    path: ''
+    path: '/product/chart_paper_n_pen/chart_paper_n_pen'
   },
   {
     name: "NORRISEAL",
     description: "Butterfly Valve R200",
     img: Norriseal,
-    path: ''
+    path: '/product/valve_control/butterfly_valve'
   },
 ];
 
