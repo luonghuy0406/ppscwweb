@@ -106,12 +106,12 @@ function ChildProduct() {
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit">
             <LinkRouter to="/" style={{ textDecoration: "none" , color:"gray"}}>
-              Home
+              {t("Home")}
             </LinkRouter>
           </Link>
           <Link underline="hover" color="inherit">
             <LinkRouter to="/product" style={{ textDecoration: "none" , color:"gray"}}>
-              Product
+              {t("Product")}
             </LinkRouter>
           </Link>
           <Link underline="hover" color="inherit">
