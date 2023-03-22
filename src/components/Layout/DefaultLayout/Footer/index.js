@@ -89,7 +89,7 @@ function Footer() {
                 alignItems: "center",
               }}
             >
-              <EmailIcon style={{marginBottom:"5px"}} />
+              <EmailIcon style={{marginBottom:"3px"}} />
               <label style={{ paddingLeft: "15px" }}>info@pacificpsc.com</label>
             </label>
           </Grid>

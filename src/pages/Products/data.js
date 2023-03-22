@@ -266,7 +266,7 @@ export const dataProducts = {
         brand: "Norriseal",
         brand_id: "norriseal",
         brochue:
-          "https://drive.google.com/drive/folders/1yvbYC2ODH9HJ7kNNxfDQ66HmRzGW0-b2",
+          "https://drive.google.com/drive/folders/1LHk-VhSd5w0FdLqqKgib5V4WUqygB8aE",
         similar_product: {
           model1: {
             name: "Series 1001XL",
@@ -286,7 +286,7 @@ export const dataProducts = {
         brand: "SunHydraulic",
         brand_id: "hidraulics",
         brochue:
-          "https://drive.google.com/drive/folders/1yvbYC2ODH9HJ7kNNxfDQ66HmRzGW0-b2",
+          "https://drive.google.com/drive/folders/13kBDgD3dG6f9yYmB80py6o3UGVPTEMwS",
         similar_product: {
           model1: {
             name: "Counterbalance Cartrdge Valve Series CB",
@@ -365,7 +365,7 @@ export const dataProducts = {
         brand: "Spir Star",
         brand_id: "spir_star",
         brochue:
-          "https://drive.google.com/drive/folders/1yvbYC2ODH9HJ7kNNxfDQ66HmRzGW0-b2",
+          "https://drive.google.com/drive/folders/1mBZclKe91UIGznMEO3mSdlKRbpklDN45",
         similar_product: {
           model1: {
             name: "Type 25-4",

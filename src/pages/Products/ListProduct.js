@@ -157,6 +157,7 @@ function ListProducts() {
             return (
               // <Link to={`/product/${item.id}`}>
               <Grid
+                key={index}
                 item
                 sx={{p:2}}
                 xs={12}
