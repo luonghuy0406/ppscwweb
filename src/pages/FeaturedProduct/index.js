@@ -28,7 +28,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 const arrProduct = [
   {
-    name: "CAT PUMP",
+    name: "CAT PUMPS",
     description: "35 Frame Plunger Pump",
     img: catpump,
     path:'/product/pump/plunger_pump'
@@ -52,7 +52,7 @@ const arrProduct = [
     path: '/product/chart_recorder/chart_recorder'
   },
   {
-    name: "GRAPHIC CONTROL",
+    name: "GRAPHIC CONTROLS",
     description: "Chart Paper & Pen",
     img: graphic,
     path: '/product/chart_paper_n_pen/chart_paper_n_pen'

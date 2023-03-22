@@ -311,7 +311,7 @@ export const dataProducts = {
         },
       },
       control_valve: {
-        name: "CONTROL & VALVE",
+        name: "CONTROL VALVE",
         description: "control_valve_description",
         specification: "control_valve_specification",
         image: Series_2200,
@@ -426,25 +426,25 @@ export const dataProducts = {
         description: "chart_recorder_description",
         specification: "chart_recorder_specification",
         image: main_size,
-        brand: "TechCal",
+        brand: "TECH CAL",
         brand_id: "techcal",
         brochue:
           "https://drive.google.com/drive/folders/1gKva7OvJsGl6HYHjnmo-RFsorMCbrbi3",
         similar_product: {
           model1: {
-            name: "Front size",
+            name: "Front Side",
             image: front_size,
           },
           model2: {
-            name: "Open size",
+            name: "Open Side",
             image: open_size,
           },
           model3: {
-            name: "Back size",
+            name: "Back Side",
             image: back_size1,
           },
           model4: {
-            name: "Back size",
+            name: "Back Side",
             image: back_size2,
           },
         },
