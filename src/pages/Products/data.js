@@ -93,7 +93,7 @@ export const dataProducts = {
         description: "piston_pump_description",
         specification: "piston_pump_specification",
         image: Model_335,
-        brand: "CATPUMP",
+        brand: "CAT PUMPS",
         brand_id: "cat_pumps",
         brochue:
           "https://drive.google.com/drive/folders/1yvbYC2ODH9HJ7kNNxfDQ66HmRzGW0-b2",
@@ -121,7 +121,7 @@ export const dataProducts = {
         description: "special_pump_description",
         specification: "special_pump_specification",
         image: CO2,
-        brand: "CATPUMP",
+        brand: "CAT PUMPS",
         brand_id: "cat_pumps",
         brochue:
           "https://drive.google.com/drive/folders/1gVDfRosV90TOuuoXxsCzQQpNPwhvY760",
@@ -145,7 +145,7 @@ export const dataProducts = {
         description: "plunger_pump_description",
         specification: "plunger_pump_specification",
         image: Model1570,
-        brand: "CATPUMP",
+        brand: "CAT PUMPS",
         brand_id: "cat_pumps",
         brochue:
           "https://drive.google.com/drive/folders/1Cqz7GGvLoRXzkgdM0Q6tFfkk3BrNV4OB",
@@ -159,11 +159,11 @@ export const dataProducts = {
             image: Model2537,
           },
           model3: {
-            name: "model 2SF11ES",
+            name: "Model 2SF11ES",
             image: Model2SF11ES,
           },
           model4: {
-            name: "model 2SFO5SEL",
+            name: "Model 2SFO5SEL",
             image: Model2SF05SEEL,
           },
         },
@@ -197,7 +197,7 @@ export const dataProducts = {
         },
       },
       air_driven_liquid_pumps: {
-        name: "AIR DRIVEN <br> LIQUID PUMPS ",
+        name: "AIR DRIVEN <br> LIQUID PUMP",
         description: "air_driven_liquid_pumps_description",
         specification: "air_driven_liquid_pumps_specification",
         image: a7L_DD_200,
@@ -225,7 +225,7 @@ export const dataProducts = {
         },
       },
       air_driven_gas_booters: {
-        name: "AIR DRIVEN <br> GAS BOOSTERS ",
+        name: "AIR DRIVEN <br> GAS BOOSTER",
         description: "air_driven_gas_booters_description",
         specification: "air_driven_gas_booters_specification",
         image: TwoStageSeries,
@@ -279,11 +279,11 @@ export const dataProducts = {
         },
       },
       counterbalance_cartridge_valves: {
-        name: "COUNTERBALANCE CARTRIDGE VALVES",
+        name: "COUNTERBALANCE CARTRIDGE VALVE",
         description: "counterbalance_cartridge_valves_description",
         specification: "counterbalance_cartridge_valves_specification",
         image: Sunhydraulic,
-        brand: "SunHydraulic",
+        brand: "SUN HYDRAULICS",
         brand_id: "hidraulics",
         brochue:
           "https://drive.google.com/drive/folders/13kBDgD3dG6f9yYmB80py6o3UGVPTEMwS",
@@ -354,11 +354,11 @@ export const dataProducts = {
     },
   },
   thermoplastic_high_pressure_hoses: {
-    name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+    name: "THERMOPLASTIC HIGH-PRESSURE HOSE",
     image: thph,
     product: {
       thermoplastic_high_pressure_hoses: {
-        name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+        name: "THERMOPLASTIC HIGH-PRESSURE HOSE",
         description: "thermoplastic_high_pressure_hoses_description",
         specification: "thermoplastic_high_pressure_hoses_specification",
         image: OnePiece,
@@ -418,7 +418,7 @@ export const dataProducts = {
     },
   },
   chart_recorder: {
-    name: "CHART RECORDER ",
+    name: "CHART RECORDER",
     image: cr,
     product: {
       chart_recorder: {
@@ -452,7 +452,7 @@ export const dataProducts = {
     },
   },
   chart_paper_n_pen: {
-    name: "CHART PAPER & PEN ",
+    name: "CHART PAPER & PEN",
     image: cpnp,
     product: {
       chart_paper_n_pen: {
@@ -460,7 +460,7 @@ export const dataProducts = {
         description: "chart_paper_n_pen_description",
         specification: "chart_paper_n_pen_specification",
         image: graphic_control,
-        brand: "Graphic Control",
+        brand: "GRAPHIC CONTROLS",
         brand_id: "graphic",
         brochue: null,
         similar_product: {

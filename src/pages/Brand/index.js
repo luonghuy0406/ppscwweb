@@ -55,7 +55,7 @@ export const arrBrand = {
     description: "spir_star_content",
     products: [
       {
-        name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+        name: "THERMOPLASTIC HIGH-PRESSURE HOSE",
         path: "/product/thermoplastic_high_pressure_hoses/thermoplastic_high_pressure_hoses",
       },
     ],
@@ -79,11 +79,11 @@ export const arrBrand = {
     description: "hydraulics_international_content",
     products: [
       {
-        name: "AIR DRIVEN GAS BOOSTERS",
+        name: "AIR DRIVEN GAS BOOSTER",
         path: "/product/pump/air_driven_gas_booters",
       },
       {
-        name: "AIR DRIVEN LIQUID PUMPS",
+        name: "AIR DRIVEN LIQUID PUMP",
         path: "/product/pump/air_driven_liquid_pumps",
       },
       {
@@ -129,7 +129,12 @@ export const arrBrand = {
     logo: taylor,
     logo_white: white_taylor,
     description: "taylor_content",
-    products: [],
+    products: [
+      {
+        name: "THERMOMETER",
+        path: "/product/thermometer/thermometer"
+      }
+    ],
   },
   hidraulics: {
     name: "SUN HYDRAULICS",
@@ -138,7 +143,7 @@ export const arrBrand = {
     description: "hidraulics_content",
     products: [
       {
-        name: "COUNTERBALANCE CARTRIDGE VALVES",
+        name: "COUNTERBALANCE CARTRIDGE VALVE",
         path: "/product/valve_control/counterbalance_cartridge_valves",
       },
     ],
