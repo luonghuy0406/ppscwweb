@@ -79,7 +79,7 @@ function Footer() {
               }}
             >
               <PhoneIcon style={{marginBottom:"5px"}}/>
-              <label style={{ paddingLeft: "15px" }}>+08 283 5472 694</label>
+              <label style={{ paddingLeft: "15px" }}>+84 909 942 855</label>
             </label>
             <label
               style={{
