@@ -54,8 +54,8 @@ import Series_MB from "./images/valve/Counterbalance Cartrdge Valve Series MB.pn
 import Series_2200 from "./images/valve/Control Valve Series 2200 ( ảnh chính).png";
 import Series_2220 from "./images/valve/Control Valve Series 2220.png";
 
-import Series_M200 from "./images/butterfly_valve/Butterfly Valve Series M200.jpg";
-import Series_M285 from "./images/butterfly_valve/Butterfly Valve Series M285.jpg";
+import Series_M200 from "./images/butterfly_valve/Butterfly Valve Series M200.png";
+import Series_M285 from "./images/butterfly_valve/Butterfly Valve Series M285.png";
 import Series_R285 from "./images/butterfly_valve/Butterfly Valve Series R285.png";
 import Series_R200 from "./images/butterfly_valve/Butterfly Valve Series R200 (ảnh chính).png";
 
@@ -117,7 +117,7 @@ export const dataProducts = {
         },
       },
       special_pump: {
-        name: "Special Pump",
+        name: "SPECIAL_PUMP",
         description: "special_pump_description",
         specification: "special_pump_specification",
         image: CO2,
@@ -255,11 +255,11 @@ export const dataProducts = {
     },
   },
   valve_control: {
-    name: "Valve & Control",
+    name: "VALVE & CONTROL",
     image: val,
     product: {
       liquid_level_controller: {
-        name: "Liquid Level Controller",
+            name: "LIQUID LEVEL CONTROLLER",
         description: "liquid_level_controller_description",
         specification: "liquid_level_controller_specification",
         image: llc1001,
@@ -279,7 +279,7 @@ export const dataProducts = {
         },
       },
       counterbalance_cartridge_valves: {
-        name: "Counterbalance Cartridge Valves",
+        name: "COUNTERBALANCE CARTRIDGE VALVES",
         description: "counterbalance_cartridge_valves_description",
         specification: "counterbalance_cartridge_valves_specification",
         image: Sunhydraulic,
@@ -311,7 +311,7 @@ export const dataProducts = {
         },
       },
       control_valve: {
-        name: "Control Valve",
+        name: "CONTROL & VALVE",
         description: "control_valve_description",
         specification: "control_valve_specification",
         image: Series_2200,
@@ -327,7 +327,7 @@ export const dataProducts = {
         },
       },
       butterfly_valve: {
-        name: "Butterfly Valve",
+        name: "BUTTERFLY VALVE",
         description: "butterfly_valve_description",
         specification: "butterfly_valve_specification",
         image: Series_R200,
@@ -354,11 +354,11 @@ export const dataProducts = {
     },
   },
   thermoplastic_high_pressure_hoses: {
-    name: "Thermoplastic high-pressure hoses",
+      name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
     image: thph,
     product: {
       thermoplastic_high_pressure_hoses: {
-        name: "Thermoplastic high-pressure hoses",
+            name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
         description: "thermoplastic_high_pressure_hoses_description",
         specification: "thermoplastic_high_pressure_hoses_specification",
         image: OnePiece,
@@ -388,11 +388,11 @@ export const dataProducts = {
     },
   },
   thermometer: {
-    name: "Thermometer",
+      name: "THERMOMETER",
     image: ther,
     product: {
       thermometer: {
-        name: "Thermometer",
+            name: "THERMOMETER",
         description: "thermometer_description",
         specification: "thermometer_specification",
         image: main_Thermometer,
@@ -418,11 +418,11 @@ export const dataProducts = {
     },
   },
   chart_recorder: {
-    name: "Chart Recorder ",
+      name: "CHART RECORDER ",
     image: cr,
     product: {
       chart_recorder: {
-        name: "Chart Recorder",
+            name: "CHART RECORDER",
         description: "chart_paper_n_pen_description",
         specification: "chart_paper_n_pen_specification",
         image: main_size,
@@ -452,11 +452,11 @@ export const dataProducts = {
     },
   },
   chart_paper_n_pen: {
-    name: "Chart Paper & Pen ",
+      name: "CHART PAPER & PEN ",
     image: cpnp,
     product: {
       chart_paper_n_pen: {
-        name: "Chart Paper & Pen",
+            name: "CHART PAPER & PEN",
         description: "chart_paper_n_pen_description",
             specification: "chart_paper_n_pen_specification",
             image: graphic_control,

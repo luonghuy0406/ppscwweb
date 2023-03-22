@@ -98,15 +98,12 @@ function OurPartner() {
           alignItems="center"
         >
           <Grid
+            id="partner_lb"
             item
             xs={12}
             md={12}
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-            className={
-              inView
-                ? "animate__animated animate__fadeInLeft animate__delay-0.1s"
-                : "animate__animated animate__fadeOutRight animate__delay-0.1s"
-            }
+            className={"animate__animated animate__delay-0.1s"}
           >
             <Typography
               fontFamily={"var(--font-family-header)"}
