@@ -60,7 +60,7 @@ import Series_R285 from "./images/butterfly_valve/Butterfly Valve Series R285.pn
 import Series_R200 from "./images/butterfly_valve/Butterfly Valve Series R200 (ảnh chính).png";
 
 import main_size from "./images/chart_Recorder/Chart Recorder (Ảnh chính).png";
-import back_size1 from "./images/chart_Recorder/Chart Recorder (Back Side).jpg";
+import back_size1 from "./images/chart_Recorder/Chart Recorder (Back Side).png";
 import back_size2 from "./images/chart_Recorder/Chart Recorder (Back Side).png";
 import front_size from "./images/chart_Recorder/Chart Recorder (Front Side).png";
 import open_size from "./images/chart_Recorder/Chart Recorder (Open Side).png";
@@ -117,7 +117,7 @@ export const dataProducts = {
         },
       },
       special_pump: {
-        name: "SPECIAL_PUMP",
+        name: "SPECIAL PUMP",
         description: "special_pump_description",
         specification: "special_pump_specification",
         image: CO2,
@@ -259,7 +259,7 @@ export const dataProducts = {
     image: val,
     product: {
       liquid_level_controller: {
-            name: "LIQUID LEVEL CONTROLLER",
+        name: "LIQUID LEVEL CONTROLLER",
         description: "liquid_level_controller_description",
         specification: "liquid_level_controller_specification",
         image: llc1001,
@@ -354,11 +354,11 @@ export const dataProducts = {
     },
   },
   thermoplastic_high_pressure_hoses: {
-      name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+    name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
     image: thph,
     product: {
       thermoplastic_high_pressure_hoses: {
-            name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
+        name: "THERMOPLASTIC HIGH-PRESSURE HOSES",
         description: "thermoplastic_high_pressure_hoses_description",
         specification: "thermoplastic_high_pressure_hoses_specification",
         image: OnePiece,
@@ -388,11 +388,11 @@ export const dataProducts = {
     },
   },
   thermometer: {
-      name: "THERMOMETER",
+    name: "THERMOMETER",
     image: ther,
     product: {
       thermometer: {
-            name: "THERMOMETER",
+        name: "THERMOMETER",
         description: "thermometer_description",
         specification: "thermometer_specification",
         image: main_Thermometer,
@@ -418,13 +418,13 @@ export const dataProducts = {
     },
   },
   chart_recorder: {
-      name: "CHART RECORDER ",
+    name: "CHART RECORDER ",
     image: cr,
     product: {
       chart_recorder: {
-            name: "CHART RECORDER",
-        description: "chart_paper_n_pen_description",
-        specification: "chart_paper_n_pen_specification",
+        name: "CHART RECORDER",
+        description: "chart_recorder_description",
+        specification: "chart_recorder_specification",
         image: main_size,
         brand: "TechCal",
         brand_id: "techcal",
@@ -432,19 +432,19 @@ export const dataProducts = {
           "https://drive.google.com/drive/folders/1gKva7OvJsGl6HYHjnmo-RFsorMCbrbi3",
         similar_product: {
           model1: {
-            name: "front size",
+            name: "Front size",
             image: front_size,
           },
           model2: {
-            name: "open size",
+            name: "Open size",
             image: open_size,
           },
           model3: {
-            name: "back size",
+            name: "Back size",
             image: back_size1,
           },
           model4: {
-            name: "back size",
+            name: "Back size",
             image: back_size2,
           },
         },
@@ -452,35 +452,35 @@ export const dataProducts = {
     },
   },
   chart_paper_n_pen: {
-      name: "CHART PAPER & PEN ",
+    name: "CHART PAPER & PEN ",
     image: cpnp,
     product: {
       chart_paper_n_pen: {
-            name: "CHART PAPER & PEN",
+        name: "CHART PAPER & PEN",
         description: "chart_paper_n_pen_description",
-            specification: "chart_paper_n_pen_specification",
-            image: graphic_control,
+        specification: "chart_paper_n_pen_specification",
+        image: graphic_control,
         brand: "Graphic Control",
         brand_id: "graphic",
         brochue: null,
         similar_product: {
           model1: {
-          name: "MP 82-39-0303-06 BLU MKR",
-          image: MP_BLU_MKR,
+            name: "MP 82-39-0303-06 BLU MKR",
+            image: MP_BLU_MKR,
           },
           model2: {
-              name: "MC MP-100",
-              image: MC_MP_100,
+            name: "MC MP-100",
+            image: MC_MP_100,
           },
           model3: {
-              name: "MC MP-5000",
-              image: MC_MP_5000,
+            name: "MC MP-5000",
+            image: MC_MP_5000,
           },
           model4: {
-              name: "BR B 0-500-8",
-              image: BR_500
-          }
-      }
+            name: "BR B 0-500-8",
+            image: BR_500,
+          },
+        },
       },
     },
   },

@@ -159,7 +159,7 @@ const useStyles = makeStyles(() => {
         backgroundColor: "var(--primary-color)",
         "& img": {
           [theme.breakpoints.down("sm")]: {
-            width: "65%",
+            width: "75%",
             transition: "width .1s linear !important",
           },
           [theme.breakpoints.up("md")]: {
@@ -303,7 +303,7 @@ function Brand({ ...props }) {
                       id={"brand" + brand[0]}
                       component="img"
                       sx={{
-                        width: { xs: "80%", md: "90%" },
+                        width: { xs: "70%", md: "90%" },
                         aspectRatio: " 3/2",
                         objectFit: "contain",
                         maxHeight: { xs: 233, md: 250 },
