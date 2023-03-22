@@ -259,6 +259,12 @@ const ServiceContent = () => {
 
 const FormContact = ({ ...props }) => {
   const [open, setOpen] = React.useState(false);
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [nameValid, setNameValid] = React.useState(false);
+  const [emailValid, setEmailValid] = React.useState(false);
+  const [phoneValid, setPhoneValid] = React.useState(false);
   const { t } = useTranslation();
   const classes = useStyles();
   const handleClickOpen = () => {
@@ -267,23 +273,48 @@ const FormContact = ({ ...props }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setOpen('')
+    setName('')
+    setEmail('')
   };
   const handleSendMail = () => {
-    setOpen(false);
-    let data = $("#send-mail-form"+props.id).serialize()
-    $.ajax({
-      type: "POST",
-      url: 'https://ppsc-webapi.onrender.com/send',
-      data: data,
-      success: function(data)
-      {
-        
-      },
-      error : function(error)
-      {
-        
-      },
-  });
+    if(name.length > 0 && email.length >0 && phone.length >0){
+      setOpen(false);
+      setNameValid(false)
+      setEmailValid(false)
+      setPhoneValid(false)
+      let data = $("#send-mail-form"+props.id).serialize()
+      $.ajax({
+        type: "POST",
+        url: 'https://ppsc-webapi.onrender.com/send',
+        data: data,
+        success: function(data)
+        {
+          
+        },
+        error : function(error)
+        {
+          
+        },
+      });
+    }else{
+      if(name.length ==0){
+        setNameValid(true)
+      }else{
+        setNameValid(false)
+      }
+      if(email.length ==0){
+        setEmailValid(true)
+      }else{
+        setEmailValid(false)
+      }
+      if(phone.length ==0){
+        setPhoneValid(true)
+      }else{
+        setPhoneValid(false)
+      }
+    }
+    
   };
 
   return (
@@ -308,32 +339,65 @@ const FormContact = ({ ...props }) => {
           </DialogTitle>
           <DialogContent sx={{paddingTop:"24px !important"}}>
             <TextField
+              required
               autoFocus
               margin="dense"
-              id="name"
               name="name"
               label={t("Full name")}
               type="text"
               fullWidth
               variant="outlined"
+              value={name}
+              onChange={(e) =>{
+                setName(e.target.value)
+                if(e.target.value.length > 0){
+                  setNameValid(false)
+                }else{
+                  setNameValid(true)
+                }
+              }}
+              error={nameValid}
+              helperText={nameValid ? t("Name is not null.") : ""}
             />
             <TextField
+              required
               margin="dense"
-              id="email"
               name="email"
               label={t("Email address")}
               type="email"
               fullWidth
               variant="outlined"
+              value={email}
+              onChange={(e) =>{
+                setEmail(e.target.value)
+                if(e.target.value.length > 0){
+                  setEmailValid(false)
+                }else{
+                  setEmailValid(true)
+                }
+              }}
+              error={emailValid}
+              helperText={emailValid ? t("Email is not null.") : ""}
             />
             <TextField
+              required
               margin="dense"
-              id="phone"
               name="phone"
               label={t("Phone number")}
               type="text"
               fullWidth
               variant="outlined"
+              value={phone}
+              onChange={(e) =>{
+                setPhone(e.target.value)
+                if(e.target.value.length > 0){
+                  setPhoneValid(false)
+                }else{
+                  setPhoneValid(true)
+                }
+              }}
+              error={phoneValid}
+              helperText={phoneValid ? t("Phone number is not null.") : ""}
             />
             <TextField
               margin="dense"

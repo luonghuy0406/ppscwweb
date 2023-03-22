@@ -9,7 +9,7 @@ import {
   Link,
   Breadcrumbs,
 } from "@mui/material";
-import $ from 'jquery'
+import $ from "jquery";
 import { makeStyles } from "@mui/styles";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,7 +22,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { dataProducts } from "./data";
 import { arrBrand } from "../Brand";
-import ArticleIcon from '@mui/icons-material/Article';
+import ArticleIcon from "@mui/icons-material/Article";
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -31,7 +31,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-
 
 const responsive = {
   superLargeDesktop: {
@@ -83,14 +82,14 @@ const useStyles = makeStyles(() => {
       "&:hover": {
         backgroundColor: "var(--secondary-color) !important",
       },
-    }
+    },
   };
 });
 
 function ChildProduct() {
   const { id1: firstId, id2: secondId } = useParams();
   const data = dataProducts[firstId]["product"][secondId];
-  const logoBrand = arrBrand[data.brand_id].logo
+  const logoBrand = arrBrand[data.brand_id].logo;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -101,11 +100,11 @@ function ChildProduct() {
     threshold: 0,
   });
   useEffect(() => {
-    if (inView && !$("#lb-"+secondId).hasClass("animate__fadeInLeft")) {
-      $("#lb-"+secondId).addClass("animate__fadeInLeft");
+    if (inView && !$("#lb-" + secondId).hasClass("animate__fadeInLeft")) {
+      $("#lb-" + secondId).addClass("animate__fadeInLeft");
     }
-    if (inView && !$("#ct-"+secondId).hasClass("animate__fadeInRight")) {
-      $("#ct-"+secondId).addClass("animate__fadeInRight");
+    if (inView && !$("#ct-" + secondId).hasClass("animate__fadeInRight")) {
+      $("#ct-" + secondId).addClass("animate__fadeInRight");
     }
   }, [inView]);
   return (
@@ -113,27 +112,35 @@ function ChildProduct() {
       <Container maxWidth="md" sx={{ p: 2 }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit">
-            <LinkRouter to="/" style={{ textDecoration: "none" , color:"gray"}}>
+            <LinkRouter
+              to="/"
+              style={{ textDecoration: "none", color: "gray" }}
+            >
               {t("Home")}
             </LinkRouter>
           </Link>
           <Link underline="hover" color="inherit">
-            <LinkRouter to="/product" style={{ textDecoration: "none" , color:"gray"}}>
+            <LinkRouter
+              to="/product"
+              style={{ textDecoration: "none", color: "gray" }}
+            >
               {t("Product")}
             </LinkRouter>
           </Link>
           <Link underline="hover" color="inherit">
             <LinkRouter
               to={"/product/" + firstId}
-              style={{ textDecoration: "none", color:"gray" }}
+              style={{ textDecoration: "none", color: "gray" }}
             >
               {dataProducts[firstId].name}
             </LinkRouter>
           </Link>
-          <Typography color="var(--secondary-color)">{data.name.replace("<br>","")}</Typography>
+          <Typography color="var(--secondary-color)">
+            {data.name.replace("<br>", "")}
+          </Typography>
         </Breadcrumbs>
         <div
-          id={"lb-"+secondId}
+          id={"lb-" + secondId}
           style={{ display: "flex", alignItems: "center", padding: "50px 0" }}
           className={"animate__animated animate__delay-0.1s"}
         >
@@ -153,11 +160,11 @@ function ChildProduct() {
             fontWeight="bolder"
             lineHeight={0}
           >
-            {data.name.replace("<br>","")}
+            {data.name.replace("<br>", "")}
           </Typography>
         </div>
         <Grid
-          id={"ct-"+secondId}
+          id={"ct-" + secondId}
           container
           classes={{ root: classes.container }}
           className={"animate__animated animate__delay-0.1s"}
@@ -172,7 +179,7 @@ function ChildProduct() {
                 alignItems: "center",
                 justifyContent: "center",
                 boxShadow: "0px 0px 1px 1px rgba(0,0,0,0.2)",
-                position:"relative"
+                position: "relative",
               }}
             >
               <Box
@@ -187,11 +194,11 @@ function ChildProduct() {
               <Box
                 component="img"
                 sx={{
-                  width: {xs:"70px",md: "100px"},
-                  position:"absolute",
-                  padding:"10px",
-                  top:"0",
-                  left:"0"
+                  width: { xs: "70px", md: "100px" },
+                  position: "absolute",
+                  padding: "10px",
+                  top: "0",
+                  left: "0",
                 }}
                 src={logoBrand}
               />
@@ -206,9 +213,9 @@ function ChildProduct() {
                 component="h6"
                 fontWeight="bolder"
                 pb={2}
-                sx={{ textTransform: 'uppercase' }}
+                sx={{ textTransform: "uppercase" }}
               >
-                {data.name.replace("<br>","")}
+                {data.name.replace("<br>", "")}
               </Typography>
               <Divider />
               <Box pt={1} pb={2}>
@@ -240,30 +247,40 @@ function ChildProduct() {
                   }}
                   dangerouslySetInnerHTML={{ __html: t(data["specification"]) }}
                 ></label>
-                <br/>
-                <br/>
-                {
-                  data.brochue &&
+                <br />
+                <br />
+                {data.brochue && (
                   <label
                     style={{
                       color: "var(--primary-color)",
                       fontFamily: "var(--font-family)",
                       display: "flex",
-                      alignItems:"center"
+                      alignItems: "center",
                     }}
                   >
-                    <ArticleIcon style={{paddingBottom:"3px"}}/> <a href={data.brochue} style={{paddingLeft:"10px"}} target="_blank">{t("Product brochure")}</a>
+                    <ArticleIcon style={{ paddingBottom: "3px" }} />{" "}
+                    <a
+                      href={data.brochue}
+                      style={{ paddingLeft: "10px" }}
+                      target="_blank"
+                    >
+                      {t("Product brochure")}
+                    </a>
                   </label>
-                }
-                
-                
+                )}
               </Box>
-              <FormContact productId={secondId} content={data.name.replace("<br>","")}/>
+              <FormContact
+                productId={secondId}
+                content={data.name.replace("<br>", "")}
+              />
             </Grid>
           </Grid>
         </Grid>
       </Container>
-      <SimilarProducts similarProducts={data.similar_product} brand={data.brand}/>
+      <SimilarProducts
+        similarProducts={data.similar_product}
+        brand={data.brand}
+      />
     </Grid>
   );
 }
@@ -279,11 +296,11 @@ function SimilarProducts({ ...props }) {
     threshold: 0,
   });
   useEffect(() => {
-    if (inView && !$("#lb2-"+secondId).hasClass("animate__fadeInLeft")) {
-      $("#lb2-"+secondId).addClass("animate__fadeInLeft");
+    if (inView && !$("#lb2-" + secondId).hasClass("animate__fadeInLeft")) {
+      $("#lb2-" + secondId).addClass("animate__fadeInLeft");
     }
-    if (inView && !$("#ct2-"+secondId).hasClass("animate__fadeInRight")) {
-      $("#ct2-"+secondId).addClass("animate__fadeInRight");
+    if (inView && !$("#ct2-" + secondId).hasClass("animate__fadeInRight")) {
+      $("#ct2-" + secondId).addClass("animate__fadeInRight");
     }
   }, [inView]);
   return (
@@ -310,7 +327,7 @@ function SimilarProducts({ ...props }) {
             xs={12}
             md={12}
             sx={{ padding: "20px 0 !important", fontSize: "22px" }}
-            id={"lb2-"+secondId}
+            id={"lb2-" + secondId}
             className={"animate__animated animate__delay-0.1s"}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -339,7 +356,7 @@ function SimilarProducts({ ...props }) {
             item
             xs={12}
             md={12}
-            id={"ct2-"+secondId}
+            id={"ct2-" + secondId}
             className={"animate__animated animate__delay-0.1s"}
           >
             <div
@@ -377,8 +394,14 @@ function SimilarProducts({ ...props }) {
                 slidesToSlide={1}
                 swipeable
               >
-                {Object.values(props.similarProducts).map((product,index) => {
-                  return <SimilarProductsChild key={index} product={product} brand={props.brand}/>;
+                {Object.values(props.similarProducts).map((product, index) => {
+                  return (
+                    <SimilarProductsChild
+                      key={index}
+                      product={product}
+                      brand={props.brand}
+                    />
+                  );
                 })}
               </Carousel>
             </div>
@@ -419,7 +442,7 @@ const SimilarProductsChild = ({ ...props }) => {
           fontFamily={"var(--font-family)"}
           color="var(--primary-color)"
           fontWeight={"bold"}
-          sx={{ textTransform: 'uppercase' }}
+          sx={{ textTransform: "uppercase" }}
         >
           {props.brand}
         </Typography>
@@ -485,6 +508,12 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
 };
 const FormContact = ({ ...props }) => {
   const [open, setOpen] = React.useState(false);
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [nameValid, setNameValid] = React.useState(false);
+  const [emailValid, setEmailValid] = React.useState(false);
+  const [phoneValid, setPhoneValid] = React.useState(false);
   const { t } = useTranslation();
   const classes = useStyles();
   const handleClickOpen = () => {
@@ -493,27 +522,45 @@ const FormContact = ({ ...props }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setOpen("");
+    setName("");
+    setEmail("");
   };
   const handleSendMail = () => {
-    setOpen(false);
-    let data = $("#send-mail-form"+props.productId).serialize()
-    $.ajax({
-      type: "POST",
-      url: 'https://ppsc-webapi.onrender.com/send',
-      data: data,
-      success: function(data)
-      {
-        
-      },
-      error : function(error)
-      {
-        
-      },
-  });
+    if (name.length > 0 && email.length > 0 && phone.length > 0) {
+      setOpen(false);
+      setNameValid(false);
+      setEmailValid(false);
+      setPhoneValid(false);
+      let data = $("#send-mail-form" + props.productId).serialize();
+      $.ajax({
+        type: "POST",
+        url: "https://ppsc-webapi.onrender.com/send",
+        data: data,
+        success: function (data) {},
+        error: function (error) {},
+      });
+    } else {
+      if (name.length == 0) {
+        setNameValid(true);
+      } else {
+        setNameValid(false);
+      }
+      if (email.length == 0) {
+        setEmailValid(true);
+      } else {
+        setEmailValid(false);
+      }
+      if (phone.length == 0) {
+        setPhoneValid(true);
+      } else {
+        setPhoneValid(false);
+      }
+    }
   };
 
   return (
-    <div style={{float:"right"}}>
+    <div style={{ float: "right" }}>
       <Button
         variant="contained"
         onClick={handleClickOpen}
@@ -522,7 +569,7 @@ const FormContact = ({ ...props }) => {
         {t("Contact us")}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <form id={"send-mail-form"+props.productId}>
+        <form id={"send-mail-form" + props.productId}>
           <DialogTitle
             sx={{
               backgroundColor: "var(--primary-color)",
@@ -532,34 +579,67 @@ const FormContact = ({ ...props }) => {
           >
             {t("Contact us")}
           </DialogTitle>
-          <DialogContent sx={{paddingTop:"24px !important"}}>
+          <DialogContent sx={{ paddingTop: "24px !important" }}>
             <TextField
+              required
               autoFocus
               margin="dense"
-              id="name"
               name="name"
               label={t("Full name")}
               type="text"
               fullWidth
               variant="outlined"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                if (e.target.value.length > 0) {
+                  setNameValid(false);
+                } else {
+                  setNameValid(true);
+                }
+              }}
+              error={nameValid}
+              helperText={nameValid ? t("Name is not null.") : ""}
             />
             <TextField
+              required
               margin="dense"
-              id="email"
               name="email"
               label={t("Email address")}
               type="email"
               fullWidth
               variant="outlined"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (e.target.value.length > 0) {
+                  setEmailValid(false);
+                } else {
+                  setEmailValid(true);
+                }
+              }}
+              error={emailValid}
+              helperText={emailValid ? t("Email is not null.") : ""}
             />
             <TextField
+              required
               margin="dense"
-              id="phone"
               name="phone"
               label={t("Phone number")}
               type="text"
               fullWidth
               variant="outlined"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+                if (e.target.value.length > 0) {
+                  setPhoneValid(false);
+                } else {
+                  setPhoneValid(true);
+                }
+              }}
+              error={phoneValid}
+              helperText={phoneValid ? t("Phone number is not null.") : ""}
             />
             <TextField
               margin="dense"
