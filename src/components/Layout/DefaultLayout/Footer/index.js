@@ -37,8 +37,10 @@ function Footer() {
     <div className={classes.root}>
       <Container maxWidth="xl">
         <Grid container>
-          <Grid item xs={12} sm={6} md={3} pr={1}>
-            <img src={logo} style={{ width: "70%" }} />
+          <Grid item xs={12} sm={6} md={3} pr={1} container
+  justifyContent="center"
+  alignItems="center">
+            <img src={logo} style={{ width: "65%" }} />
           </Grid>
           <Grid container item xs={12} sm={6} md={3} pr={1} pl={1} direction="column">
             <Typography
