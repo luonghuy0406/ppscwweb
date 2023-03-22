@@ -130,7 +130,7 @@ function ChildProduct() {
               {dataProducts[firstId].name}
             </LinkRouter>
           </Link>
-          <Typography color="var(--secondary-color)">{data.name}</Typography>
+          <Typography color="var(--secondary-color)">{data.name.replace("<br>","")}</Typography>
         </Breadcrumbs>
         <div
           id={"lb-"+secondId}
@@ -153,7 +153,7 @@ function ChildProduct() {
             fontWeight="bolder"
             lineHeight={0}
           >
-            {data.name}
+            {data.name.replace("<br>","")}
           </Typography>
         </div>
         <Grid
@@ -208,7 +208,7 @@ function ChildProduct() {
                 pb={2}
                 sx={{ textTransform: 'uppercase' }}
               >
-                {data.name}
+                {data.name.replace("<br>","")}
               </Typography>
               <Divider />
               <Box pt={1} pb={2}>
@@ -258,7 +258,7 @@ function ChildProduct() {
                 
                 
               </Box>
-              <FormContact productId={secondId} content={data.name}/>
+              <FormContact productId={secondId} content={data.name.replace("<br>","")}/>
             </Grid>
           </Grid>
         </Grid>

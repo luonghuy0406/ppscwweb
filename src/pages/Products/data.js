@@ -197,7 +197,7 @@ export const dataProducts = {
         },
       },
       air_driven_liquid_pumps: {
-        name: "AIR DRIVEN LIQUID PUMPS ",
+        name: "AIR DRIVEN <br> LIQUID PUMPS ",
         description: "air_driven_liquid_pumps_description",
         specification: "air_driven_liquid_pumps_specification",
         image: a7L_DD_200,
@@ -225,7 +225,7 @@ export const dataProducts = {
         },
       },
       air_driven_gas_booters: {
-        name: "AIR DRIVEN GAS BOOSTERS ",
+        name: "AIR DRIVEN <br> GAS BOOSTERS ",
         description: "air_driven_gas_booters_description",
         specification: "air_driven_gas_booters_specification",
         image: TwoStageSeries,

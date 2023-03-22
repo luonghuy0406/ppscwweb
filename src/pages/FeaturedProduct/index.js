@@ -43,7 +43,7 @@ const arrProduct = [
     name: "SPIR STAR",
     description: "Thermoplastic High-Pressure Hose 13/4H",
     img: spirstar,
-    path: '/product/thermoplastic_high_pressure_hoses/Thermoplastic_highpressure_hoses'
+    path: '/product/thermoplastic_high_pressure_hoses/thermoplastic_high_pressure_hoses'
   },
   {
     name: "TECH CAL",

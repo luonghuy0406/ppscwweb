@@ -178,8 +178,7 @@ function ListProducts() {
                       </CardContent>
                       <CardContent classes={{ root: classes.content }} className="card-content-hover">
                         <div style={{minHeight:"60px"}}>
-                          <Typography gutterBottom variant="h6" sx={{ textTransform: 'uppercase' }}>
-                            {item[1].name}
+                          <Typography gutterBottom variant="h6" sx={{ textTransform: 'uppercase' }} dangerouslySetInnerHTML={{__html:item[1].name}}>
                           </Typography>
                         </div>
                         <Typography component="span" fontSize="14px" style={{textDecoration: "underline"}}>
