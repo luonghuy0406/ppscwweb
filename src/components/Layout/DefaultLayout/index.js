@@ -13,7 +13,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const actions = [
   { icon: <FacebookIcon />, name: "facebook", link: 'https://www.facebook.com/ppscvn' },
-  { icon: <LinkedInIcon />, name: "linkedin", link: 'https://www.linkedin.com/company/pacific-pressure-systems-components/' },
+{ icon: <LinkedInIcon />, name: "linkedin", link: 'https://www.linkedin.com/company/pacific-pressure-systems-components/' },
 ];
 const useStyles = makeStyles((theme) => ({
   container: {

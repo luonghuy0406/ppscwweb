@@ -153,7 +153,7 @@ function Footer() {
               />
               <LinkedInIcon
                 onClick={() => {
-                  window.open("https://www.linkedin.com/in/ppscvn/", "_blank");
+                  window.open("https://www.linkedin.com/company/pacific-pressure-systems-components/", "_blank");
                 }}
                 style={{ color: "#fff", cursor: "pointer" }}
                 fontSize="large"
