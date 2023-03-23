@@ -30,6 +30,7 @@ const useStyles = makeStyles((props) => {
     container: {
       width: "calc(100%)  !important",
       marginLeft: "0 !important",
+      marginBottom:"20px",
     },
     background2: {
       "&:hover": {

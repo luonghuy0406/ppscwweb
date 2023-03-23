@@ -53,7 +53,7 @@ function DefaultLayout({ children }) {
       <Box sx={{transform: "translateZ(0px)",position:"fixed",bottom:"0",right:"0",zIndex:"1"}}>
         <SpeedDial
           ariaLabel="SpeedDial basic example"
-          sx={{ position: "fixed", bottom: 26, right: 26 }}
+          sx={{ position: "fixed", bottom: {xs: "10px",sm: "10px", md: "26px"}, right: {xs: "5px",sm: "5px", md: "26px"} }}
           icon={<ChatBubbleIcon />}
           className={classes.buttonPulse}
         >

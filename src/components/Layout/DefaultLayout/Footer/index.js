@@ -8,7 +8,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const useStyles = makeStyles(() => {
   const theme = useTheme();
@@ -16,10 +16,10 @@ const useStyles = makeStyles(() => {
     root: {
       backgroundColor: "var(--primary-color)",
       padding: "40px 0",
-      marginTop: "20px",
+      paddingBottom: "10px",
       marginBottom: "0",
       position: "relative",
-      paddingBottom: "60px",
+      // paddingBottom: "60px",
       [theme.breakpoints.down("sm")]: {
         fontSize: "13px !important",
       },
@@ -37,12 +37,33 @@ function Footer() {
     <div className={classes.root}>
       <Container maxWidth="xl">
         <Grid container>
-          <Grid item xs={12} sm={6} md={3} pr={1} container
-  justifyContent="center"
-  alignItems="center">
-            <img src={logo} style={{ width: "65%" }} />
+          <Grid
+            item
+            xs={12}
+            md={3}
+            pr={1}
+            container
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box
+              component="img"
+              sx={{
+                width: { xs: "30%", md: "65%" }
+              }}
+              src={logo}
+            />
           </Grid>
-          <Grid container item xs={12} sm={6} md={3} pr={1} pl={1} direction="column">
+          <Grid
+            container
+            item
+            xs={12}
+            sm={4}
+            md={3}
+            pr={1}
+            pl={1}
+            direction="column"
+          >
             <Typography
               fontFamily={"var(--font-family)"}
               variant="h6"
@@ -74,26 +95,35 @@ function Footer() {
               style={{
                 fontFamily: "var(--font-family)",
                 color: "white",
-                display:"flex",
+                display: "flex",
                 alignItems: "center",
               }}
             >
-              <PhoneIcon style={{marginBottom:"5px"}}/>
+              <PhoneIcon style={{ marginBottom: "5px" }} />
               <label style={{ paddingLeft: "15px" }}>+84 909 942 855</label>
             </label>
             <label
               style={{
                 fontFamily: "var(--font-family)",
                 color: "white",
-                display:"flex",
+                display: "flex",
                 alignItems: "center",
               }}
             >
-              <EmailIcon style={{marginBottom:"3px"}} />
+              <EmailIcon style={{ marginBottom: "3px" }} />
               <label style={{ paddingLeft: "15px" }}>info@pacificpsc.com</label>
             </label>
           </Grid>
-          <Grid item container xs={12} sm={6} md={3} pr={1} pl={1} direction="column">
+          <Grid
+            item
+            container
+            xs={12}
+            sm={4}
+            md={3}
+            pr={1}
+            pl={1}
+            direction="column"
+          >
             <Typography
               fontFamily={"var(--font-family)"}
               variant="h6"
@@ -108,7 +138,7 @@ function Footer() {
                 fontFamily: "var(--font-family)",
                 color: "white",
                 display: "flex",
-                alignItems: "center"
+                alignItems: "center",
               }}
             >
               <LocationOnIcon />
@@ -126,14 +156,23 @@ function Footer() {
                 fontFamily: "var(--font-family)",
                 color: "white",
                 display: "flex",
-                alignItems: "center"
+                alignItems: "center",
               }}
             >
-              <PhoneIcon style={{marginBottom:"5px"}}/>
+              <PhoneIcon style={{ marginBottom: "5px" }} />
               <label style={{ paddingLeft: "15px" }}>+84 254 351 3923</label>
             </label>
           </Grid>
-          <Grid container item xs={12} sm={6} md={3} pr={1} pl={1} direction="column">
+          <Grid
+            container
+            item
+            xs={12}
+            sm={4}
+            md={3}
+            pr={1}
+            pl={1}
+            direction="column"
+          >
             <Typography
               fontFamily={"var(--font-family)"}
               variant="h6"
@@ -153,7 +192,10 @@ function Footer() {
               />
               <LinkedInIcon
                 onClick={() => {
-                  window.open("https://www.linkedin.com/company/pacific-pressure-systems-components/", "_blank");
+                  window.open(
+                    "https://www.linkedin.com/company/pacific-pressure-systems-components/",
+                    "_blank"
+                  );
                 }}
                 style={{ color: "#fff", cursor: "pointer" }}
                 fontSize="large"
@@ -166,18 +208,14 @@ function Footer() {
                 fontSize="large"
               />
             </div>
-            
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{ paddingTop: "30px", paddingRight: "60px" ,fontSize: {xs:"11px",sm:"11px", sm:"13px"}}}>
             <label
               style={{
                 fontFamily: "var(--font-family)",
                 color: "white",
                 lineHeight: "1.6rem",
-                fontSize: "13px",
-                position: "absolute",
-                right: "80px",
-                bottom: "10px",
+                float: "right",
               }}
             >
               ©2023 Pacific Pressure Systems and Components Co., Ltd (PPSC), All
