@@ -119,7 +119,6 @@ const AboutUsContent1 = () => {
         <Typography
           variant="body1"
           pr={5}
-          pt={3}
           className={classes.content}
           textAlign="justify"
           color={"var(--primary-color)"}
@@ -129,7 +128,7 @@ const AboutUsContent1 = () => {
         <Typography
           variant="body1"
           pr={5}
-          pt={3}
+          pt={2}
           className={classes.content}
           textAlign="justify"
           color={"var(--primary-color)"}
@@ -143,7 +142,7 @@ const AboutUsContent1 = () => {
         xs={6}
         className={classes.aboutUsContent +" animate__animated animate__delay-0.1s"}
       >
-        <div style={{ paddingLeft: "40px" }}>
+        <div style={{ paddingLeft: "40px",position: "relative"}}>
           <div
             style={{
               width: "100px",
