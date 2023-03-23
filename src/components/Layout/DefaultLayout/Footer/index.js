@@ -130,7 +130,7 @@ function Footer() {
               }}
             >
               <PhoneIcon style={{marginBottom:"5px"}}/>
-              <label style={{ paddingLeft: "15px" }}>+08 254 351 3923</label>
+              <label style={{ paddingLeft: "15px" }}>+84 254 351 3923</label>
             </label>
           </Grid>
           <Grid container item xs={12} sm={6} md={3} pr={1} pl={1} direction="column">

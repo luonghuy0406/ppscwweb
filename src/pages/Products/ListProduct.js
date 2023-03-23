@@ -139,7 +139,7 @@ function ListProducts() {
             variant="h4"
             component="h4"
             fontWeight="bolder"
-            lineHeight={0}
+            // lineHeight={0}
             sx={{ textTransform: 'uppercase' }}
             
           >

@@ -286,7 +286,7 @@ const FormContact = ({ ...props }) => {
       let data = $("#send-mail-form"+props.id).serialize()
       $.ajax({
         type: "POST",
-        url: 'https://pacificpsc.com/send',
+        url: 'https://ppsc-webapi.onrender.com/send',
         data: data,
         success: function(data)
         {

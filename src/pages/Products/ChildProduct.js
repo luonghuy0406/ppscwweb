@@ -158,7 +158,7 @@ function ChildProduct() {
             variant="h4"
             component="h4"
             fontWeight="bolder"
-            lineHeight={0}
+            // lineHeight={0}
           >
             {data.name.replace("<br>", "")}
           </Typography>
@@ -535,7 +535,7 @@ const FormContact = ({ ...props }) => {
       let data = $("#send-mail-form" + props.productId).serialize();
       $.ajax({
         type: "POST",
-        url: "https://pacificpsc.com/send",
+        url: 'https://ppsc-webapi.onrender.com/send',
         data: data,
         success: function (data) {},
         error: function (error) {},
