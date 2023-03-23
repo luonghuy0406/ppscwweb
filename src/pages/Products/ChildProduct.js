@@ -141,11 +141,13 @@ function ChildProduct() {
         </Breadcrumbs>
         <div
           id={"lb-" + secondId}
-          style={{ display: "flex", alignItems: "center", padding: "50px 0" }}
+          style={{ display: "flex", padding: "50px 0" }}
           className={"animate__animated animate__delay-0.1s"}
         >
           <div
             style={{
+              marginTop: "2px",
+              minWidth: "30px",
               width: "30px",
               height: "30px",
               marginRight: "10px",

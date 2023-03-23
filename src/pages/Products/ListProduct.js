@@ -126,10 +126,10 @@ function ListProducts() {
       <Container maxWidth="md" sx={{ p: 2 }}>
         <div 
           id={id+"line"}
-          style={{display:"flex",alignItems:"center"}}
+          style={{display:"flex"}}
           className={"animate__animated animate__delay-0.1s"}
         >
-          <div style={{width:"30px",height:"30px",marginRight:"10px",backgroundColor:"var(--secondary-color)"}}>
+          <div style={{marginTop: "2px", minWidth: "30px",width:"30px",height:"30px",marginRight:"10px",backgroundColor:"var(--secondary-color)"}}>
 
           </div>
           <Typography

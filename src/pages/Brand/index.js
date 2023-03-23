@@ -231,9 +231,11 @@ function Brand({ ...props }) {
               </>
               
             ) : (
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: "flex"}}>
                 <div
                   style={{
+                    marginTop: "2px",
+                    minWidth: "30px",
                     width: "30px",
                     height: "30px",
                     marginRight: "10px",
