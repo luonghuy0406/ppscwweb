@@ -224,7 +224,7 @@ function Header(props) {
                 display: { xs: "none", md: "none", lg: "block" }
               }}
             >
-              <label style={{paddingRight:"20px",fontSize:"13px"}}>+84 909 942 855 (MR. HOÀNG)</label>
+              <label style={{paddingRight:"20px",fontSize:"13px"}}>{t("phone header")}</label>
             </Box>
             <LanguageSwitch />
           </Box>
