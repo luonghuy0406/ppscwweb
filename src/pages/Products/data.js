@@ -60,8 +60,8 @@ import Series_R285 from "./images/butterfly_valve/Butterfly Valve Series R285.pn
 import Series_R200 from "./images/butterfly_valve/Butterfly Valve Series R200 (ảnh chính).png";
 
 import main_size from "./images/chart_Recorder/Chart Recorder (Ảnh chính).png";
-import back_size1 from "./images/chart_Recorder/Chart Recorder (Back Side).png";
-import back_size2 from "./images/chart_Recorder/Chart Recorder (Back Side).png";
+import back_size1 from "./images/chart_Recorder/Chart Recorder(Back Side)1.png";
+import back_size2 from "./images/chart_Recorder/Chart Recorder(Back Side)2.png";
 import front_size from "./images/chart_Recorder/Chart Recorder (Front Side).png";
 import open_size from "./images/chart_Recorder/Chart Recorder (Open Side).png";
 
@@ -289,23 +289,23 @@ export const dataProducts = {
           "https://drive.google.com/drive/folders/13kBDgD3dG6f9yYmB80py6o3UGVPTEMwS",
         similar_product: {
           model1: {
-            name: "Counterbalance Cartrdge Valve Series CB",
+            name: "Counterbalance Cartridge Valve Series CB",
             image: Series_CB,
           },
           model2: {
-            name: "Counterbalance Cartrdge Valve Series CE",
+            name: "Counterbalance Cartridge Valve Series CE",
             image: Series_CE,
           },
           model3: {
-            name: "Counterbalance Cartrdge Valve Series CW_CA",
+            name: "Counterbalance Cartridge Valve Series CW_CA",
             image: Series_CW_CA,
           },
           model4: {
-            name: "Counterbalance Cartrdge Valve Series MB_MW",
+            name: "Counterbalance Cartridge Valve Series MB_MW",
             image: Series_MB_MW,
           },
           model5: {
-            name: "Counterbalance Cartrdge Valve Series MB",
+            name: "Counterbalance Cartridge Valve Series MB",
             image: Series_MB,
           },
         },
