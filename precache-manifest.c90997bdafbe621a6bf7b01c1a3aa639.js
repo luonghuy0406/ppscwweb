@@ -1,31 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "325da2fde691595f8995",
-    "url": "./static/css/main.341ad00a.chunk.css"
+    "revision": "342e76bf2ab385b0f347",
+    "url": "./static/css/main.d787c6c4.chunk.css"
   },
   {
-    "revision": "325da2fde691595f8995",
-    "url": "./static/js/main.b861131f.chunk.js"
+    "revision": "342e76bf2ab385b0f347",
+    "url": "./static/js/main.abf39489.chunk.js"
   },
   {
-    "revision": "d9ae471ea89fcd1e1e1d",
-    "url": "./static/js/runtime~main.2f7f18d4.js"
+    "revision": "98b966e4e3b2e9e5cebe",
+    "url": "./static/js/runtime~main.863282fd.js"
   },
   {
-    "revision": "3593200861bf783f4b29",
-    "url": "./static/css/2.1fadf906.chunk.css"
+    "revision": "c0569e32a246192b195b",
+    "url": "./static/css/2.da01fc74.chunk.css"
   },
   {
-    "revision": "3593200861bf783f4b29",
-    "url": "./static/js/2.72bb7e63.chunk.js"
+    "revision": "c0569e32a246192b195b",
+    "url": "./static/js/2.15a1611b.chunk.js"
   },
   {
-    "revision": "a38341207b2e21017783",
-    "url": "./static/js/3.8e21e722.chunk.js"
-  },
-  {
-    "revision": "0b8eec681bcc0bf354e119bd9d415792",
-    "url": "./static/media/Chart Recorder (Back Side).0b8eec68.png"
+    "revision": "1314443bd3715f46413d",
+    "url": "./static/js/3.1d1b5d5d.chunk.js"
   },
   {
     "revision": "2b2b7da40e9fe37746226683d444215a",
@@ -48,12 +44,12 @@ self.__precacheManifest = [
     "url": "./static/media/revicons.04eb8fc5.woff"
   },
   {
-    "revision": "17629a5dfe0d3c3946cf401e1895f091",
-    "url": "./static/media/revicons.17629a5d.ttf"
-  },
-  {
     "revision": "2feb69ccb596730c72920c6ba3e37ef8",
     "url": "./static/media/revicons.2feb69cc.eot"
+  },
+  {
+    "revision": "17629a5dfe0d3c3946cf401e1895f091",
+    "url": "./static/media/revicons.17629a5d.ttf"
   },
   {
     "revision": "ed44c7222ce06cfe347cc662a91126fe",
@@ -356,6 +352,14 @@ self.__precacheManifest = [
     "url": "./static/media/Chart Recorder (Ảnh chính).2ab65e93.png"
   },
   {
+    "revision": "d6f4fd44fb7c4e8697b3701bd63192db",
+    "url": "./static/media/Chart Recorder(Back Side)1.d6f4fd44.png"
+  },
+  {
+    "revision": "0b8eec681bcc0bf354e119bd9d415792",
+    "url": "./static/media/Chart Recorder(Back Side)2.0b8eec68.png"
+  },
+  {
     "revision": "e085c8fc5769745076c1b82cab2bfaa9",
     "url": "./static/media/Chart Recorder (Front Side).e085c8fc.png"
   },
@@ -444,7 +448,7 @@ self.__precacheManifest = [
     "url": "./static/media/MP_RED_MKR.3a4bd5f6.jpeg"
   },
   {
-    "revision": "21f7b0d55f22a2a7be94e7a2f8c1083d",
+    "revision": "409bcf8f54f29fa815d1ce9150cda70d",
     "url": "./index.html"
   }
 ];
