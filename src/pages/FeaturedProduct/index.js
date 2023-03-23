@@ -206,9 +206,9 @@ function FeaturedProduct() {
                 slidesToSlide={1}
                 swipeable
               >
-                {arrProduct.map((product) => {
+                {arrProduct.map((product,index) => {
                   return (
-                    <Link to={product.path} style={{ textDecoration: "none" }}>
+                    <Link key={index} to={product.path} style={{ textDecoration: "none" }}>
                       <FeaturedProductChild product={product} />
                     </Link>
                   );

@@ -213,13 +213,19 @@ function Header(props) {
           <Box
             sx={{
               flexGrow: 0,
-              width: "300px",
+              width: { xs: "100px",md: "100px", lg: "300px" },
               justifyContent: { xs: "flex-end",md: "flex-end", lg: "center" },
               display: "flex",
               alignItems:"center"
             }}
           >
-            <label style={{paddingRight:"20px",fontSize:"13px"}}>+84 909 942 855 (MR. HOÀNG)</label>
+            <Box
+              sx={{
+                display: { xs: "none", md: "none", lg: "block" }
+              }}
+            >
+              <label style={{paddingRight:"20px",fontSize:"13px"}}>+84 909 942 855 (MR. HOÀNG)</label>
+            </Box>
             <LanguageSwitch />
           </Box>
         </Toolbar>
