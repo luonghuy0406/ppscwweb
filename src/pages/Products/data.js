@@ -44,22 +44,22 @@ import llc1001 from "./images/valve/llc1001.png";
 import llc1001A from "./images/valve/llc1001A.jpeg";
 import llc1001XL from "./images/valve/llc1001XL.jpeg";
 
-import Sunhydraulic from "./images/valve/Sunhydraulic ( ảnh chính).png";
+import Sunhydraulic from "./images/valve/Sunhydraulic.png";
 import Series_CB from "./images/valve/Counterbalance Cartrdge Valve Series CB.png";
 import Series_CE from "./images/valve/Counterbalance Cartrdge Valve Series CE.png";
 import Series_CW_CA from "./images/valve/Counterbalance Cartrdge Valve Series CW _ CA.png";
 import Series_MB_MW from "./images/valve/Counterbalance Cartrdge Valve Series MB _ MW.png";
 import Series_MB from "./images/valve/Counterbalance Cartrdge Valve Series MB.png";
 
-import Series_2200 from "./images/valve/Control Valve Series 2200 ( ảnh chính).png";
+import Series_2200 from "./images/valve/Control Valve Series 2200.png";
 import Series_2220 from "./images/valve/Control Valve Series 2220.png";
 
 import Series_M200 from "./images/butterfly_valve/Butterfly Valve Series M200.png";
 import Series_M285 from "./images/butterfly_valve/Butterfly Valve Series M285.png";
 import Series_R285 from "./images/butterfly_valve/Butterfly Valve Series R285.png";
-import Series_R200 from "./images/butterfly_valve/Butterfly Valve Series R200 (ảnh chính).png";
+import Series_R200 from "./images/butterfly_valve/Butterfly Valve Series R200.png";
 
-import main_size from "./images/chart_Recorder/Chart Recorder (Ảnh chính).png";
+import main_size from "./images/chart_Recorder/Chart Recorder.png";
 import back_size1 from "./images/chart_Recorder/Chart Recorder(Back Side)1.png";
 import back_size2 from "./images/chart_Recorder/Chart Recorder(Back Side)2.png";
 import front_size from "./images/chart_Recorder/Chart Recorder (Front Side).png";
