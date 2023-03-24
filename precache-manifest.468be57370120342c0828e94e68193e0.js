@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "e643612ea6b751b378f1",
+    "revision": "5a964bff14947df623ce",
     "url": "./static/css/main.341ad00a.chunk.css"
   },
   {
-    "revision": "e643612ea6b751b378f1",
-    "url": "./static/js/main.485d83ad.chunk.js"
+    "revision": "5a964bff14947df623ce",
+    "url": "./static/js/main.5609fc01.chunk.js"
   },
   {
     "revision": "98b966e4e3b2e9e5cebe",
@@ -448,7 +448,7 @@ self.__precacheManifest = [
     "url": "./static/media/MP_RED_MKR.e1e09a6d.jpeg"
   },
   {
-    "revision": "285f7a445faac38366424d327a7117c7",
+    "revision": "fc24621b3e6dbfafe5129307af3e0855",
     "url": "./index.html"
   }
 ];
