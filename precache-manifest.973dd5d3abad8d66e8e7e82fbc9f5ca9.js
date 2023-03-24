@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5a964bff14947df623ce",
+    "revision": "c913e63d8644e7630192",
     "url": "./static/css/main.341ad00a.chunk.css"
   },
   {
-    "revision": "5a964bff14947df623ce",
-    "url": "./static/js/main.5609fc01.chunk.js"
+    "revision": "c913e63d8644e7630192",
+    "url": "./static/js/main.a8d68d6c.chunk.js"
   },
   {
     "revision": "98b966e4e3b2e9e5cebe",
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "./static/media/logo_white.3dc17bb6.png"
   },
   {
-    "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
-    "url": "./static/media/revicons.04eb8fc5.woff"
-  },
-  {
     "revision": "17629a5dfe0d3c3946cf401e1895f091",
     "url": "./static/media/revicons.17629a5d.ttf"
+  },
+  {
+    "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
+    "url": "./static/media/revicons.04eb8fc5.woff"
   },
   {
     "revision": "2feb69ccb596730c72920c6ba3e37ef8",
@@ -448,7 +448,7 @@ self.__precacheManifest = [
     "url": "./static/media/MP_RED_MKR.e1e09a6d.jpeg"
   },
   {
-    "revision": "fc24621b3e6dbfafe5129307af3e0855",
+    "revision": "eb73b223fe3d4a4d4af1403aa1ed020a",
     "url": "./index.html"
   }
 ];
