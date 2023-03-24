@@ -48,11 +48,10 @@ const useStyles = makeStyles((props) => ({
   boxImage: {
     width: "100%",
     height: 400,
-
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "200%",
-    transition: "background-size .3s linear",
+    transition: "background-size .2s linear",
   },
   content: {
     fontFamily: "var(--font-family) !important",
@@ -82,15 +81,19 @@ const useStyles = makeStyles((props) => ({
     "&:hover": {
       "& .card-content-hover":{
         backgroundColor: "var(--primary-color) !important",
+        transition: "background-color .2s linear !important",
       },
       "& span": {
         color: "var(--secondary-color) !important",
+        transition: "color .2s linear !important",
       },
       "& div": {
         color: "white !important",
+        transition: "color .2s linear !important",
       },
       "& img": {
         width: "85% !important",
+        transition: "width .3s linear !important",
       },
     },
   },
@@ -122,7 +125,7 @@ function ListProducts() {
     }
   }, [inView]);
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }} ref={ref}>
+    <Grid item md={12}  sx={{ padding: { xs: "15px 0", md: "30px 0" } }} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <div 
           id={id+"line"}
@@ -135,7 +138,7 @@ function ListProducts() {
           <Typography
             // style={{ padding: theme.spacing(5), paddingTop: "0" }}
             color={"var(--primary-color)"}
-            fontFamily={"var(--font-family)"}
+            fontFamily={"var(--font-family-header)"}
             variant="h4"
             component="h4"
             fontWeight="bolder"

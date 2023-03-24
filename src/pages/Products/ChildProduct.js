@@ -63,14 +63,15 @@ const useStyles = makeStyles(() => {
         filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))",
         zIndex: "1",
         backgroundColor: "var(--primary-color)",
+        transition: "background-color .2s linear !important",
         "& img": {
           [theme.breakpoints.down("sm")]: {
             width: "65%",
-            transition: "width .1s linear !important",
+            transition: "width .3s linear !important",
           },
           [theme.breakpoints.up("md")]: {
             width: "95%",
-            transition: "width .1s linear !important",
+            transition: "width .3s linear !important",
           },
         },
       },
@@ -109,7 +110,7 @@ function ChildProduct() {
   }, [inView]);
   return (
     <Grid item md={12} ref={ref}>
-      <Container maxWidth="md" sx={{ p: 2 }}>
+      <Container maxWidth="md"  sx={{ padding: { xs: "15px 0", md: "30px 0" } }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit">
             <LinkRouter
@@ -473,7 +474,7 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
         sx={{
           color: "var(--secondary-color)",
           position: {
-            xs: "unset",
+            xs: "",
             lg: "absolute",
           },
           left: "-35px",
@@ -492,7 +493,7 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
         sx={{
           color: "var(--secondary-color)",
           position: {
-            xs: "unset",
+            xs: "",
             lg: "absolute",
           },
           right: "-35px",

@@ -41,7 +41,7 @@ function Footer() {
             item
             xs={12}
             md={3}
-            pr={1}
+            pb={2}
             container
             justifyContent="center"
             alignItems="center"
@@ -49,7 +49,7 @@ function Footer() {
             <Box
               component="img"
               sx={{
-                width: { xs: "30%", md: "65%" }
+                width: { xs: "30%", md: "65%" },
               }}
               src={logo}
             />
@@ -62,10 +62,11 @@ function Footer() {
             md={3}
             pr={1}
             pl={1}
+            pb={2}
             direction="column"
           >
             <Typography
-              fontFamily={"var(--font-family)"}
+              fontFamily={"var(--font-family-header)"}
               variant="h6"
               gutterBottom
               color="var(--secondary-color)"
@@ -122,10 +123,11 @@ function Footer() {
             md={3}
             pr={1}
             pl={1}
+            pb={2}
             direction="column"
           >
             <Typography
-              fontFamily={"var(--font-family)"}
+              fontFamily={"var(--font-family-header)"}
               variant="h6"
               gutterBottom
               color="var(--secondary-color)"
@@ -174,7 +176,7 @@ function Footer() {
             direction="column"
           >
             <Typography
-              fontFamily={"var(--font-family)"}
+              fontFamily={"var(--font-family-header)"}
               variant="h6"
               gutterBottom
               color="var(--secondary-color)"
@@ -209,21 +211,29 @@ function Footer() {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sx={{ paddingTop: "30px", paddingRight: "60px" ,fontSize: {xs:"11px",sm:"11px", sm:"13px"}}}>
-            <label
-              style={{
-                fontFamily: "var(--font-family)",
-                color: "white",
-                lineHeight: "1.6rem",
-                float: "right",
-              }}
-            >
-              ©2023 Pacific Pressure Systems and Components Co., Ltd (PPSC), All
-              Rights Reserved.
-            </label>
-          </Grid>
         </Grid>
       </Container>
+      <div
+        style={{
+          height: "auto",
+          padding: "10px 20px",
+          paddingTop: "40px",
+          fontSize: "13px",
+          display: "flex",
+          justifyContent: "end",
+        }}
+      >
+        <label
+          style={{
+            fontFamily: "var(--font-family)",
+            color: "white",
+            lineHeight: "1.6rem",
+            float: "right",
+          }}
+        >
+          ©2023 Pacific Pressure Systems and Components Co., Ltd (PPSC), All Rights Reserved.
+        </label>
+      </div>
     </div>
   );
 }

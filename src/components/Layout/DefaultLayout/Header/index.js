@@ -62,8 +62,8 @@ function Header(props) {
         <Toolbar disableGutters>
           <Box
             sx={{
-              width: { xs: "0",md: "0", lg: "150px" },
-              justifyContent: "center",
+              width: { xs: "0",md: "0", lg: "300px" },
+              justifyContent: "start",
               display: "flex",
             }}
           >
@@ -214,7 +214,7 @@ function Header(props) {
             sx={{
               flexGrow: 0,
               width: { xs: "100px",md: "100px", lg: "300px" },
-              justifyContent: { xs: "flex-end",md: "flex-end", lg: "center" },
+              justifyContent: { xs: "flex-end",md: "flex-end", lg: "end" },
               display: "flex",
               alignItems:"center"
             }}

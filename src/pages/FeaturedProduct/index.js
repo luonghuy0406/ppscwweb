@@ -282,7 +282,7 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
         sx={{
           color: "var(--secondary-color)",
           position: {
-            xs: "unset",
+            xs: "",
             lg: "absolute",
           },
           left: "-35px",
@@ -301,7 +301,7 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
         sx={{
           color: "var(--secondary-color)",
           position: {
-            xs: "unset",
+            xs: "",
             lg: "absolute",
           },
           right: "-35px",

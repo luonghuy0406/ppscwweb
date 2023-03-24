@@ -80,15 +80,19 @@ const useStyles = makeStyles((props) => ({
     "&:hover": {
       "& .card-content-hover":{
         backgroundColor: "var(--primary-color) !important",
+        transition: "background-color .2s linear !important",
       },
       "& span": {
         color: "var(--secondary-color) !important",
+        transition: "color .2s linear !important",
       },
       "& div": {
         color: "white !important",
+        transition: "color .2s linear !important",
       },
       "& img": {
         width: "85% !important",
+        transition: "width .3s linear !important",
       },
     },
   },
@@ -120,7 +124,7 @@ function Products() {
     }
   }, [inView]);
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }} ref={ref}>
+    <Grid item md={12}  sx={{ padding: { xs: "15px 0", md: "30px 0" } }} ref={ref}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <div 
           id="product_line_lb"
@@ -133,11 +137,11 @@ function Products() {
           <Typography
             // style={{ padding: theme.spacing(5), paddingTop: "0" }}
             color={"var(--primary-color)"}
-            fontFamily={"var(--font-family)"}
+            fontFamily={"var(--font-family-header)"}
             variant="h4"
             component="h4"
             fontWeight="bolder"
-            lineHeight={0}
+            // lineHeight={0}
             
             
           >

@@ -35,7 +35,7 @@ const service = [
   },
   {
     id: "mir",
-    label: "MAINTENANCE - INSPECTION – REPAIR",
+    label: "MAINTENANCE - INSPECTION - REPAIR",
     content: "MIR content",
     img: mir,
   },
@@ -168,7 +168,7 @@ function Service() {
     }
   }, [inView]);
   return (
-    <Grid item md={12} sx={{ padding: { xs: "25px 0", md: "50px 0" } }}>
+    <Grid item md={12}  sx={{ padding: { xs: "15px 0", md: "30px 0" } }}>
       <Container maxWidth="md" sx={{ p: 2 }}>
         <Typography
           ref={ref}

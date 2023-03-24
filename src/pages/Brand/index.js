@@ -162,14 +162,15 @@ const useStyles = makeStyles(() => {
         filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))",
         zIndex: "1",
         backgroundColor: "var(--primary-color)",
+        transition: "background-color .2s linear !important",
         "& img": {
           [theme.breakpoints.down("sm")]: {
             width: "75%",
-            transition: "width .1s linear !important",
+            transition: "width .3s linear !important",
           },
           [theme.breakpoints.up("md")]: {
             width: "95%",
-            transition: "width .1s linear !important",
+            transition: "width .3s linear !important",
           },
         },
       },
@@ -248,7 +249,7 @@ function Brand({ ...props }) {
                   component="h4"
                   sx={{ color: "var(--primary-color)" }}
                   fontWeight="bolder"
-                  lineHeight={0}
+                  // lineHeight={0}
                 >
                   {t("OUR BRAND")}
                 </Typography>
