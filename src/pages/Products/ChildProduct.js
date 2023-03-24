@@ -553,7 +553,7 @@ const FormContact = ({ ...props }) => {
       let data = $("#send-mail-form" + props.productId).serialize();
       $.ajax({
         type: "POST",
-        url: 'https://ppsc-webapi.onrender.com/send',
+        url: 'https://api.pacificpsc.com/send',
         data: data,
         success: function (data) {},
         error: function (error) {},
