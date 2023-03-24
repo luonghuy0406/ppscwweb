@@ -109,8 +109,8 @@ function ChildProduct() {
     }
   }, [inView]);
   return (
-    <Grid item md={12} ref={ref}>
-      <Container maxWidth="md"  sx={{ padding: { xs: "15px 0", md: "30px 0" } }}>
+    <Grid item md={12} ref={ref}  sx={{ padding: { xs: "15px 0", md: "30px 0" },paddingBottom:"0 !important"}}>
+      <Container maxWidth="md" sx={{ p: 2 }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit">
             <LinkRouter
@@ -173,10 +173,11 @@ function ChildProduct() {
           className={"animate__animated animate__delay-0.1s"}
         >
           <Grid item xs={12} md={5} sx={{ textAlign: "center" }} p={1}>
-            <div
-              style={{
+            <Box
+              component="div"
+              sx={{
                 width: "100%",
-                height: "100%",
+                height: {xs:"fit-content", md:"100%"},
                 background: "white",
                 display: "flex",
                 alignItems: "center",
@@ -205,9 +206,9 @@ function ChildProduct() {
                 }}
                 src={logoBrand}
               />
-            </div>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={7} container pl={4}>
+          <Grid item xs={12} md={7} container sx={{paddingLeft:{xs:"0",md:"20px"}}}>
             <Grid item xs={12} sx={{ textAlign: "justify" }}>
               <Typography
                 color={"var(--primary-color)"}
@@ -436,7 +437,21 @@ const SimilarProductsChild = ({ ...props }) => {
             marginTop: "20px",
           }}
         >
-          <img src={props.product.image} style={{ width: "60%" }} />
+           <Box
+            component="img"
+            src={props.product.image} 
+            alt={props.brand+" "+props.product.name}
+            sx={{
+              width:{
+                xs : "60%",
+                sm:"50%",
+                md:"50%",
+                lg:"60%"
+              }
+            }}
+          >
+
+          </Box>
         </div>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: "center" }}>

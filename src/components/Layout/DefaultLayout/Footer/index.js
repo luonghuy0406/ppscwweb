@@ -22,7 +22,8 @@ const useStyles = makeStyles(() => {
       // paddingBottom: "60px",
       [theme.breakpoints.down("sm")]: {
         fontSize: "13px !important",
-      },
+        padding: "20px 0 !important",
+      }
     },
     item: {
       marginBottom: "15px",

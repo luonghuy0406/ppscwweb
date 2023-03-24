@@ -178,7 +178,7 @@ function ListProducts() {
                           justifyContent: "center",
                           background: "white"
                         }}>
-                        <img src={item[1].image} style={{width:"80%"}}/>  
+                        <img src={item[1].image} style={{width:"80%"}} alt={item[1].name}/>  
                       </CardContent>
                       <CardContent classes={{ root: classes.content }} className="card-content-hover">
                         <div style={{minHeight:"60px"}}>

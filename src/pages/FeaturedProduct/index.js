@@ -245,7 +245,22 @@ const FeaturedProductChild = ({ product }) => {
             marginTop: "20px",
           }}
         >
-          <img src={product.img} style={{ width: "80%" }} />
+          <Box
+            component="img"
+            src={product.img} 
+            alt={product.name +" " + product.description}
+            sx={{
+              width:{
+                xs : "80%",
+                sm:"60%",
+                md:"60%",
+                lg:"60%"
+              }
+            }}
+          >
+
+          </Box>
+          {/* <img src={product.img} style={{ width: "80%" }} alt={product.name +" " + product.description}/> */}
         </div>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: "center" }}>
