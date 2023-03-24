@@ -84,7 +84,7 @@ function ChildBrand() {
             id={"child-brand2"+id}
             className={"animate__animated animate__delay-0.1s"}
           >
-            <label style={{fontFamily:"var(--font-family)",color:"var(--primary-color)"}} dangerouslySetInnerHTML={{__html:t(arrBrand[id].description)}}>
+            <label style={{fontFamily:"var(--font-family-header)",color:"var(--primary-color)",fontSize:"16px"}} dangerouslySetInnerHTML={{__html:t(arrBrand[id].description)}}>
 
             </label>
           </Grid>
@@ -99,7 +99,7 @@ function ChildBrand() {
                           <Link to={product.path} style={{textDecoration:"none", cursor:"pointer"}}>
                             <div style={{cursor:"pointer", width:"100%",height:"50px", marginBottom:"15px", backgroundColor:"var(--background-gray)", color:"var(--primary-color)",display: "flex", alignItems: "center"}}>
                                 <label style={{cursor:"pointer",color:"var(--secondary-color)", padding: "10px 15px", lineHeight:"0"}}><ChevronRightIcon fontSize="medium"/></label>
-                                <label style={{cursor:"pointer"}}>{product.name}</label>
+                                <label style={{cursor:"pointer",fontFamily:"var(--font-family)", fontWeight:"500"}}>{product.name}</label>
                             </div>
                           </Link>
                         </Grid>
